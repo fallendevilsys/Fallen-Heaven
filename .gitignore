@@ -1,0 +1,7 @@
+.freebuff/
+tools/venv/
+*.log
+*.bak
+tools/dnlib.dll
+tools/patch.exe
+release/

@@ -1,0 +1,83 @@
+# =====================================================================
+# Release-Workflow: VOLLAUTOMATISCH
+#
+# Ablauf:   Neuen Tag pushen (z. B. v6.3.0)  ->  alles passiert automatisch
+#
+#   1. Release-ZIP bauen  (tools/make_release.sh)
+#   2. Update-Manifest erzeugen  (docs/update-manifest.json)
+#   3. GitHub-Release anlegen + ZIP als Asset hochladen
+#   4. Manifest committen + pushen  ->  GitHub Pages liefert es aus
+#
+# Voraussetzung (einmalig): Repo -> Settings -> Pages ->
+#   "Deploy from a branch" -> main -> /docs  aktivieren.
+#
+# WICHTIG: Die EXE/DLL im Repo ist die Version, die verpackt wird.
+#   Vor dem Taggen also die neue App-Version committen+pushen
+#   (sonst wird die alte Version als "neu" verpackt).
+# =====================================================================
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Version aus Tag ermitteln
+        id: version
+        shell: bash
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG#v}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Release-ZIP + Update-Manifest bauen
+        shell: bash
+        run: |
+          bash tools/make_release.sh "${{ steps.version.outputs.version }}" "${{ github.repository }}"
+        env:
+          GITHUB_ACTIONS: "true"
+
+      - name: GitHub-Release anlegen + ZIP hochladen
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ steps.version.outputs.tag }}"
+          VERSION="${{ steps.version.outputs.version }}"
+          ZIP="release/fallen-heaven-${VERSION}.zip"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG existiert bereits - ZIP ergaenzen."
+            gh release upload "$TAG" "$ZIP" --clobber
+          else
+            echo "Release $TAG wird erstellt."
+            gh release create "$TAG" "$ZIP" \
+              --title "Fallen Heaven ${VERSION}" \
+              --notes "Automatisch erstellt aus Tag ${TAG}."
+          fi
+
+      - name: Manifest committen (GitHub Pages)
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout main
+          git add docs/update-manifest.json
+          if git diff --cached --quiet; then
+            echo "Manifest unveraendert - nichts zu committen."
+          else
+            git commit -m "Update-Manifest ${{ steps.version.outputs.version }}"
+            git push origin main
+          fi
