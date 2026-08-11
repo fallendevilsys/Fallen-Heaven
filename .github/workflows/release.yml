@@ -2,11 +2,18 @@
 # Release-Workflow: VOLLAUTOMATISCH
 #
 # Ablauf:   Neuen Tag pushen (z. B. v6.3.0)  ->  alles passiert automatisch
+#           Manuell/Selbstheilung: Workflow -> Release -> Run workflow -> tag angeben
 #
 #   1. Release-ZIP bauen  (tools/make_release.sh)
 #   2. Update-Manifest erzeugen  (docs/update-manifest.json)
 #   3. GitHub-Release anlegen + ZIP als Asset hochladen
-#   4. Manifest committen + pushen  ->  GitHub Pages liefert es aus
+#   4. Release validieren (Selbstcheck)  ->  Workflow wird rot, wenn etwas kaputt ist
+#   5. Manifest committen + pushen  ->  GitHub Pages liefert es aus
+#
+# Ausloeser:
+#   - push von Tag v*  (normaler Release-Ablauf)
+#   - workflow_dispatch mit 'tag'-Eingabe  (manuell ODER automatisch durch
+#     den Ueberwachungs-Workflow verify-release.yml, wenn ein Release fehlt)
 #
 # Voraussetzung (einmalig): Repo -> Settings -> Pages ->
 #   "Deploy from a branch" -> main -> /docs  aktivieren.
@@ -21,6 +28,12 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag, fuer den das Release erstellt werden soll (z. B. v6.2.0)'
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -33,12 +46,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.inputs.tag || github.ref }}
 
       - name: Version aus Tag ermitteln
         id: version
         shell: bash
         run: |
           TAG="${GITHUB_REF#refs/tags/}"
+          if [ -n "${{ github.event.inputs.tag }}" ]; then
+            TAG="${{ github.event.inputs.tag }}"
+          fi
           VERSION="${TAG#v}"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
@@ -65,15 +82,34 @@ jobs:
             echo "Release $TAG wird erstellt."
             gh release create "$TAG" "$ZIP" \
               --title "Fallen Heaven ${VERSION}" \
-              --notes "Automatisch erstellt aus Tag ${TAG}."
+              --notes "Automatisch erstellt aus Tag ${TAG}." \
+              || {
+                # Zwei Workflows koennen sich ueberholen (z. B. Selbstheilung
+                # + normaler Tag-Push) - dann existiert das Release inzwischen.
+                echo "Release wurde parallel erstellt - ZIP ergaenzen."
+                gh release upload "$TAG" "$ZIP" --clobber
+              }
           fi
+
+      - name: Release validieren (Selbstcheck)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          bash tools/validate_build.sh "${{ steps.version.outputs.version }}" "${{ github.repository }}"
 
       - name: Manifest committen (GitHub Pages)
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout main
+          # Neues Manifest sichern, bevor main ausgecheckt wird:
+          # Wenn der Tag und main auseinanderlaufen (oder main die Datei
+          # schon hat), blockiert/ueberschreibt der Checkout sonst die
+          # frisch gebaute Manifest-Datei.
+          cp docs/update-manifest.json "${RUNNER_TEMP}/update-manifest.json"
+          git checkout -f main
+          cp "${RUNNER_TEMP}/update-manifest.json" docs/update-manifest.json
           git add docs/update-manifest.json
           if git diff --cached --quiet; then
             echo "Manifest unveraendert - nichts zu committen."

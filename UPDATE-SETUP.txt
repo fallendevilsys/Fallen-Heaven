@@ -1,0 +1,159 @@
+======================================================================
+ FALLEN HEAVEN — UPDATE-SETUP
+ Automatische Updates einrichten und veröffentlichen
+ (Deutsch, Stand August 2026)
+======================================================================
+
+INHALT
+  1. Was du für Updates brauchst
+  2. app-config.json richtig eintragen
+  3. Ein Release veröffentlichen (Schritt für Schritt)
+  4. Release validieren (Sicherheitsnetz)
+  5. So bekommen deine Nutzer das Update
+  6. Fehlerbehebung
+  7. Kurzreferenz (alle Befehle)
+
+----------------------------------------------------------------------
+1. WAS DU FÜR UPDATES BRAUCHST
+----------------------------------------------------------------------
+Die App kann Updates auf zwei Wegen finden:
+
+  A) GitHub Pages (vollautomatisch, empfohlen):
+     Ein Manifest (update-manifest.json) liegt auf GitHub Pages und
+     verweist auf das Release-ZIP. Die App lädt das ZIP automatisch,
+     prüft die SHA-256-Prüfsumme und startet neu.
+
+  B) GitHub Releases (Fallback):
+     Die App fragt die GitHub-Releases-API ab und zeigt einen Link
+     zur Release-Seite an. Kein automatischer Download.
+
+Voraussetzungen:
+  - Ein öffentliches GitHub-Repo (z. B. fallendevilsys/Fallen-Heaven)
+  - GitHub Pages aktiviert: Repo -> Settings -> Pages ->
+    "Deploy from a branch" -> main -> Ordner /docs -> Save
+  - Der Workflow .github/workflows/release.yml (liegt im Repo)
+
+----------------------------------------------------------------------
+2. APP-CONFIG.JSON RICHTIG EINTRAGEN
+----------------------------------------------------------------------
+In der app-config.json (im selben Ordner wie die EXE) müssen
+mindestens diese zwei Felder ausgefüllt sein:
+
+  "githubRepository": "DEINUSERNAME/DEINREPO",
+  "updateManifestUrl": "https://DEINUSERNAME.github.io/DEINREPO/update-manifest.json"
+
+Beispiel (Fallen-Heaven):
+
+  "githubRepository": "fallendevilsys/Fallen-Heaven",
+  "updateManifestUrl": "https://fallendevilsys.github.io/Fallen-Heaven/update-manifest.json",
+
+Dazu muss "automaticUpdateCheck": true stehen (Standard).
+App vorher schließen, Datei ändern, speichern, App wieder starten.
+Die geänderte Datei auch ins Repo committen (sie wird als
+app-config.example.json ins Update-Paket übernommen).
+
+Hinweis: Das Feld "updatePublicKeyXml" kann leer bleiben. Es ist nur
+für signierte Manifeste gedacht (Signature-Check über den
+Manifest-Eintrag "signature").
+
+----------------------------------------------------------------------
+3. EIN RELEASE VERÖFFENTLICHEN (SCHRITT FÜR SCHRITT)
+----------------------------------------------------------------------
+WICHTIGSTE REGEL (davor warnt auch der Workflow):
+  Die EXE im Repo IST die Version, die verpackt wird.
+  Die Version im Release-Tag MUSS zur Version der EXE passen.
+  Sonst lehnt die App das Update ab ("The update entry executable
+  is invalid").
+
+Ablauf für eine neue Version (z. B. 6.3.0):
+
+  1) Neue App bauen (mit deiner Build-Pipeline) und die neue
+     EXE + DLL in den Projektordner legen.
+
+  2) Kurz prüfen, welche Version die EXE hat:
+       bash tools/make_release.sh 6.3.0
+     (Das Skript zeigt die EXE-Version an und bricht ab, wenn der
+     Tag nicht dazu passt.)
+
+  3) Committen und pushen (NICHT vergessen!):
+       git add .
+       git commit -m "Version 6.3.0"
+       git push
+
+  4) Tag erstellen und pushen:
+       git tag v6.3.0
+       git push origin v6.3.0
+
+  5) Fertig. Der Workflow baut automatisch:
+       - release/fallen-heaven-6.3.0.zip (das Update-Paket)
+       - docs/update-manifest.json (für GitHub Pages)
+       - das GitHub-Release mit dem ZIP als Download
+
+  Danach 2-3 Minuten warten, bis Pages das Manifest ausgeliefert hat.
+
+----------------------------------------------------------------------
+4. RELEASE VALIDIEREN (SICHERHEITSNETZ)
+----------------------------------------------------------------------
+Nach jedem Release kannst du in einem Schritt prüfen, ob alles stimmt:
+
+  bash tools/validate_release.sh 6.3.0 fallendevilsys/Fallen-Heaven
+
+Das Skript prüft:
+  - GitHub-Release + ZIP-Asset vorhanden?
+  - Manifest (GitHub Pages) erreichbar?
+  - Manifest-Version == EXE-Version?
+  - SHA-256 und Größe des ZIP == Manifest?
+  - Entry-Executable liegt im ZIP?
+
+Ausgabe "ALLES OK" = Release ist gültig. Exit-Code 1 = NICHT
+veröffentlichen, Problem erst beheben.
+
+----------------------------------------------------------------------
+5. SO BEKOMMEN DEINE NUTZER DAS UPDATE
+----------------------------------------------------------------------
+Beim Start (und über "UPDATES SUCHEN" in der App) prüft die App:
+
+  1. Manifest unter updateManifestUrl laden
+  2. Version im Manifest mit der eigenen Version vergleichen
+     (ist sie neuer -> Update anbieten)
+  3. ZIP herunterladen, SHA-256 prüfen, entpacken, neu starten
+
+Passt die EXE-Version im Paket nicht zur angekündigten Version,
+verweigert die App die Installation (Sicherheitsfunktion).
+
+----------------------------------------------------------------------
+6. FEHLERBEHEBUNG
+----------------------------------------------------------------------
+"Update-Prüfung nicht erreichbar" / (404) Nicht gefunden
+  - Kurz nach einem Release: Pages braucht 1-3 Minuten zum
+    Ausliefern -> einfach erneut prüfen.
+  - Manifest-URL im Browser testen; wenn 404: wurde der letzte
+    Workflow-Lauf grün? (Repo -> Actions)
+
+"The update entry executable is invalid."
+  - Tag-Version passt nicht zur EXE-Version im Paket.
+  - Prüfen: bash tools/make_release.sh <VERSION> (zeigt die
+    EXE-Version und blockt falsche Tags).
+  - Lösung: neue EXE mit passender Version committen, dann neu taggen.
+
+Workflow schlägt fehl mit "... passt nicht zur EXE-Version ..."
+  - Gleiche Ursache wie oben: Vor dem Taggen die neue EXE committen.
+
+"Gefährliche Dateierweiterung aus dem Web" (Windows blockt die App)
+  - Hat nichts mit Updates zu tun. Rechtsklick auf die Datei (EXE
+    oder .lnk) -> Eigenschaften -> "Zulassen"/"Entsperren" anhaken.
+
+----------------------------------------------------------------------
+7. KURZREFERENZ (ALLE BEFEHLE)
+----------------------------------------------------------------------
+Release validieren (nach jedem Release):
+  bash tools/validate_release.sh 6.3.0 fallendevilsys/Fallen-Heaven
+
+Neue Version veröffentlichen:
+  git add . && git commit -m "Version 6.3.0" && git push
+  git tag v6.3.0 && git push origin v6.3.0
+
+Lokal testen (ohne zu veröffentlichen):
+  bash tools/make_release.sh 6.3.0 fallendevilsys/Fallen-Heaven
+  (erzeugt release/ + docs/update-manifest.json nur lokal)
+======================================================================

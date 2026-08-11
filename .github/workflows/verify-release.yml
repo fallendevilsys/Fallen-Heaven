@@ -1,0 +1,107 @@
+# =====================================================================
+# Release-Ueberwachung — warnt und heilt fehlende Releases selbst
+#
+# Prueft stuendlich (und manuell ausloesbar), ob das Release, das das
+# Update-Manifest ankündigt, wirklich auf GitHub existiert.
+#
+#   - Release fehlt    -> Warnung als GitHub-Issue + automatischer
+#                         Neustart des Release-Workflows (Selbstheilung)
+#   - Release wieder da -> Warnungs-Issue wird automatisch geschlossen
+#   - Tag fehlt        -> Warnung als Issue, manuelle Aktion noetig
+#                         (Selbstheilung ohne Tag nicht moeglich)
+#
+# Kein Checkout noetig - alles laeuft ueber die GitHub-API.
+# =====================================================================
+name: Release-Ueberwachung
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release-Pruefung + Selbstheilung
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          REPO="${{ github.repository }}"
+
+          # -----------------------------------------------------------
+          # 1) Manifest von main holen -> daraus den erwarteten Tag
+          #    (packageUrl enthaelt releases/download/<TAG>/<ASSET>)
+          # -----------------------------------------------------------
+          MANIFEST="$(curl -sfSL "https://raw.githubusercontent.com/${REPO}/main/docs/update-manifest.json" 2>/dev/null || true)"
+          if [ -z "$MANIFEST" ]; then
+            echo "Kein Manifest auf main gefunden - nichts zu ueberwachen."
+            exit 0
+          fi
+          PKG_URL="$(echo "$MANIFEST" | grep -o '"packageUrl": *"[^"]*"' | head -1 | sed -E 's/.*"packageUrl": *"([^"]*)".*/\1/')"
+          TAG="$(echo "$PKG_URL" | sed -E 's|.*/releases/download/([^/]+)/.*|\1|')"
+          ASSET="$(basename "$PKG_URL" 2>/dev/null || true)"
+          if [ -z "$TAG" ] || [ -z "$ASSET" ] || [ "$TAG" = "$PKG_URL" ]; then
+            echo "Manifest enthaelt keine gueltige packageUrl - nichts zu ueberwachen."
+            exit 0
+          fi
+          echo "Erwartetes Release: ${TAG} (Asset: ${ASSET})"
+
+          # -----------------------------------------------------------
+          # 2) Existiert der Git-Tag noch? (Ohne Tag keine Selbstheilung)
+          # -----------------------------------------------------------
+          if ! gh api "repos/${REPO}/git/ref/tags/${TAG}" >/dev/null 2>&1; then
+            echo "FEHLER: Tag ${TAG} fehlt - Selbstheilung nicht moeglich."
+            OPEN=$(gh issue list --repo "$REPO" --search "\"Tag ${TAG} fehlt\" in:title" --state open --json number --jq 'length' 2>/dev/null || echo 0)
+            if [ "${OPEN:-0}" -eq 0 ]; then
+              gh issue create --repo "$REPO" \
+                --title "Tag ${TAG} fehlt - manuell noetig" \
+                --body "Das Update-Manifest zeigt auf ${TAG}, aber der Git-Tag existiert nicht mehr. Selbstheilung ist ohne den Tag nicht moeglich. Bitte Tag neu anlegen und pushen (git tag ${TAG} && git push origin ${TAG})." \
+                || true
+            fi
+            exit 1
+          fi
+
+          # -----------------------------------------------------------
+          # 3) Existiert das Release inkl. ZIP-Asset?
+          # -----------------------------------------------------------
+          RELEASE="$(gh api "repos/${REPO}/releases/tags/${TAG}" 2>/dev/null || true)"
+          if [ -n "$RELEASE" ] && printf '%s' "$RELEASE" | grep -q "\"${ASSET}\""; then
+            echo "OK: Release ${TAG} mit Asset ${ASSET} vorhanden."
+            ISSUE=$(gh issue list --repo "$REPO" --search "\"Release ${TAG} fehlt\" in:title" --state open --json number --jq '.[0].number // empty' 2>/dev/null || true)
+            if [ -n "$ISSUE" ]; then
+              gh issue comment "$ISSUE" --repo "$REPO" \
+                --body "Release ${TAG} ist wieder vorhanden - Selbstheilung erfolgreich." || true
+              gh issue close "$ISSUE" --repo "$REPO" || true
+              echo "Warnungs-Issue #${ISSUE} geschlossen."
+            fi
+            exit 0
+          fi
+
+          # -----------------------------------------------------------
+          # 4) Release fehlt -> Warnung + Selbstheilung starten
+          # -----------------------------------------------------------
+          echo "FEHLER: Release ${TAG} fehlt - starte Selbstheilung."
+          OPEN=$(gh issue list --repo "$REPO" --search "\"Release ${TAG} fehlt\" in:title" --state open --json number --jq 'length' 2>/dev/null || echo 0)
+          if [ "${OPEN:-0}" -eq 0 ]; then
+            gh issue create --repo "$REPO" \
+              --title "Release ${TAG} fehlt - Selbstheilung gestartet" \
+              --body "Das Update-Manifest zeigt auf ${TAG}, aber das Release existiert nicht mehr. Der Release-Workflow wird automatisch neu gestartet. Erst wenn das Release wieder da ist, koennen die App-Nutzer das Update herunterladen." \
+              || true
+          fi
+          RUNNING=$(gh run list --repo "$REPO" --workflow release.yml --limit 5 --json status --jq '[.[] | select(.status == "in_progress" or .status == "queued")] | length' 2>/dev/null || echo 0)
+          if [ "${RUNNING:-0}" -gt 0 ]; then
+            echo "Release-Workflow laeuft bereits - kein doppelter Start."
+          elif gh workflow run release.yml --repo "$REPO" -f tag="${TAG}"; then
+            echo "Selbstheilung gestartet: Release-Workflow fuer ${TAG}."
+          else
+            echo "FEHLER: Selbstheilung konnte nicht gestartet werden."
+            exit 1
+          fi

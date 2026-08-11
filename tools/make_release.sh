@@ -6,8 +6,17 @@
 #   bash tools/make_release.sh <VERSION> [<GITHUB_REPO>]
 #
 # Beispiele:
-#   bash tools/make_release.sh 6.3.0 fallendevilsys/Fallen-Heaven
-#   bash tools/make_release.sh 6.3.0            (ohne Repo -> packageUrl leer)
+#   bash tools/make_release.sh 6.2.0 fallendevilsys/Fallen-Heaven
+#   bash tools/make_release.sh 6.2.0            (ohne Repo -> packageUrl leer)
+#
+# WICHTIG (Versions-Guard):
+#   Die App lehnt ein Update ab, wenn die Version im Manifest nicht zur
+#   Version der EXE im Paket passt ("The update entry executable is
+#   invalid"). Deshalb:
+#     - Die Version wird IMMER aus der EXE-Datei ausgelesen (FileVersion).
+#     - Passt die uebergebene VERSION nicht zur EXE-Version, bricht das
+#       Skript mit einer klaren Meldung ab (Exit-Code 1).
+#   -> Vor dem Taggen immer die NEUE EXE/DLL committen und pushen!
 #
 # Erzeugt:
 #   release/fallen-heaven-<VERSION>.zip   - das Update-Paket
@@ -15,12 +24,12 @@
 #   release/update-manifest.json          - identische Kopie
 #
 # Manifest-Felder (aus der App-EXE ermittelt):
-#   version, expectedVersion, packageUrl, packageSize, sha256,
-#   createdUtc, releaseNotes, signature (leer, solange kein Key hinterlegt)
+#   version, expectedVersion, entryExecutable, packageUrl, packageSize,
+#   sha256, createdUtc, releaseNotes, signature (leer ohne Signatur-Key)
 # =====================================================================
 set -euo pipefail
 
-VERSION="${1:?Verwendung: make_release.sh <VERSION> [<GITHUB_REPO>]}"
+VERSION="${1:-}"
 REPO="${2:-}"
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -29,19 +38,74 @@ cd "$ROOT"
 RELEASE_DIR="release"
 STAGE_DIR="${RELEASE_DIR}/stage"
 ZIP_NAME="fallen-heaven-${VERSION}.zip"
-ZIP_PATH="${RELEASE_DIR}/${ZIP_NAME}"
 TAG="v${VERSION}"
 
-mkdir -p "$RELEASE_DIR" docs
+# ---------------------------------------------------------------------
+# 1) Haupt-EXE finden
+# ---------------------------------------------------------------------
+EXE="Fallen-Heaven Discord App.exe"
+if [ ! -f "$EXE" ]; then
+  EXE="$(ls *.exe 2>/dev/null | head -1 || true)"
+fi
+if [ -z "${EXE:-}" ] || [ ! -f "$EXE" ]; then
+  echo "FEHLER: Keine App-EXE im Projektstamm gefunden." >&2
+  exit 1
+fi
 
 # ---------------------------------------------------------------------
-# 1) Dateien in einen Staging-Ordner legen (nur was ins Paket gehört)
+# 2) EXE-Infos auslesen (FileVersion + Assembly-Name, via PowerShell)
+# ---------------------------------------------------------------------
+export FH_EXE="$EXE"
+EXE_INFO="$(powershell -NoProfile -Command \
+  "\$i=[Diagnostics.FileVersionInfo]::GetVersionInfo(\$env:FH_EXE); \
+   \$a=[Reflection.AssemblyName]::GetAssemblyName(\$env:FH_EXE); \
+   Write-Output \$i.FileVersion; Write-Output \$a.Name")"
+
+EXE_VERSION="$(echo "$EXE_INFO" | sed -n '1p' | tr -d '[:space:]')"
+ASSEMBLY_NAME="$(echo "$EXE_INFO" | sed -n '2p' | tr -d '[:space:]')"
+ENTRY_EXE="${ASSEMBLY_NAME}.exe"
+
+if [ -z "$EXE_VERSION" ] || [ -z "$ASSEMBLY_NAME" ]; then
+  echo "FEHLER: EXE-Infos konnten nicht ausgelesen werden ($EXE)." >&2
+  exit 1
+fi
+
+# ---------------------------------------------------------------------
+# 3) Versions-Guard: Tag-Version muss zur EXE-Version passen
+#    (6.2.0 == 6.2.0.0, fuehrende Nullen ignoriert)
+# ---------------------------------------------------------------------
+norm_version() {
+  echo "$1" | sed -E 's/(\.0)+$//'
+}
+
+if [ -n "$VERSION" ]; then
+  if [ "$(norm_version "$VERSION")" != "$(norm_version "$EXE_VERSION")" ]; then
+    echo "FEHLER: Tag-Version '${VERSION}' passt nicht zur EXE-Version '${EXE_VERSION}'." >&2
+    echo "  Die App wuerde das Update ablehnen (\"The update entry executable is invalid\")." >&2
+    echo "  Loesung: Neue EXE/DLL mit Version ${VERSION} in den Projektordner legen," >&2
+    echo "           committen+pushen, DANN taggen." >&2
+    exit 1
+  fi
+else
+  VERSION="$EXE_VERSION"
+  ZIP_NAME="fallen-heaven-${VERSION}.zip"
+  TAG="v${VERSION}"
+fi
+
+ZIP_PATH="${RELEASE_DIR}/${ZIP_NAME}"
+mkdir -p "$RELEASE_DIR" docs
+
+echo "EXE           : ${EXE} (Version ${EXE_VERSION})"
+echo "Entry-EXE     : ${ENTRY_EXE}"
+
+# ---------------------------------------------------------------------
+# 4) Dateien in einen Staging-Ordner legen (nur was ins Paket gehört)
 # ---------------------------------------------------------------------
 rm -rf "$STAGE_DIR"
 mkdir -p "$STAGE_DIR"
 
 for f in \
-  "Fallen-Heaven Discord App.exe" \
+  "$EXE" \
   "FH.YoutubeResolver.dll" \
   "fh-app.ico" \
   "fh-ui-logo.png" \
@@ -52,6 +116,10 @@ do
   [ -f "$f" ] && cp "$f" "$STAGE_DIR/"
 done
 
+# EXE zusaetzlich unter dem internen Assembly-Namen ablegen
+# (die App sucht ihre Entry-Executable ueber diesen Namen)
+cp "$EXE" "$STAGE_DIR/${ENTRY_EXE}"
+
 # app-config.json als Vorlage "app-config.example.json" beilegen
 [ -f "app-config.json" ] && cp "app-config.json" "$STAGE_DIR/app-config.example.json"
 
@@ -61,7 +129,7 @@ if [ -z "$(ls -A "$STAGE_DIR")" ]; then
 fi
 
 # ---------------------------------------------------------------------
-# 2) ZIP erstellen (Fallback-Kette: zip -> bsdtar -> PowerShell)
+# 5) ZIP erstellen (Fallback-Kette: zip -> bsdtar -> PowerShell)
 # ---------------------------------------------------------------------
 rm -f "$ZIP_PATH"
 
@@ -72,8 +140,8 @@ make_zip() {
     (cd "$STAGE_DIR" && bsdtar -a -cf "../${ZIP_NAME}" .)
   elif command -v powershell >/dev/null 2>&1; then
     local win_stage win_zip
-    win_stage="$(cd "$STAGE_DIR" && pwd -W 2>/dev/null || cygpath -w "$PWD")"
-    win_zip="$(cd "$RELEASE_DIR" && pwd -W 2>/dev/null || cygpath -w "$PWD")/${ZIP_NAME}"
+    win_stage="$(cygpath -w "$PWD" 2>/dev/null || echo "$PWD")/${STAGE_DIR}"
+    win_zip="$(cygpath -w "$PWD" 2>/dev/null || echo "$PWD")/${RELEASE_DIR}/${ZIP_NAME}"
     powershell -NoProfile -Command \
       "Compress-Archive -Path '${win_stage}\\*' -DestinationPath '${win_zip}' -Force"
   else
@@ -91,7 +159,7 @@ if [ ! -s "$ZIP_PATH" ]; then
 fi
 
 # ---------------------------------------------------------------------
-# 3) SHA-256 + Groesse berechnen
+# 6) SHA-256 + Groesse berechnen
 # ---------------------------------------------------------------------
 SHA256="$(sha256sum "$ZIP_PATH" | awk '{print $1}')"
 PACKAGE_SIZE="$(stat -c %s "$ZIP_PATH" 2>/dev/null || wc -c < "$ZIP_PATH" | tr -d ' ')"
@@ -105,13 +173,14 @@ else
 fi
 
 # ---------------------------------------------------------------------
-# 4) Update-Manifest schreiben
+# 7) Update-Manifest schreiben
 # ---------------------------------------------------------------------
 write_manifest() {
   cat > "$1" <<EOF
 {
-  "version": "${VERSION}",
-  "expectedVersion": "${VERSION}",
+  "version": "${EXE_VERSION}",
+  "expectedVersion": "${EXE_VERSION}",
+  "entryExecutable": "${ENTRY_EXE}",
   "packageUrl": "${PACKAGE_URL}",
   "packageSize": ${PACKAGE_SIZE},
   "sha256": "${SHA256}",
