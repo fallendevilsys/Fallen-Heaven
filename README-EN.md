@@ -4,7 +4,7 @@
 > truly yours. Show games, YouTube & Twitch, or advertise your own Discord
 > server right in your presence. Simple, local, no installation required.
 
-[![Version](https://img.shields.io/badge/Version-6.3.1-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
+[![Version](https://img.shields.io/badge/Version-6.3.3-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Languages](https://img.shields.io/badge/Languages-6-blue)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-black)
 
@@ -132,9 +132,15 @@ Locally in the app folder. The app is portable — just copy the folder and take
 
 ## 📜 Version history
 
-**6.3.1** *(current)*
-- 🐛 **Save fix** — changes (e.g. a button name) are applied immediately; your presence stays active without stop/start.
-- 🛠️ **Stability fix** — the app logo loads reliably; settings can always be saved.
+**6.3.3** *(current)*
+- 🚀 **Even more reliable updates** — new versions install cleanly even when Windows strictly checks the app; the app restarts automatically afterwards.
+
+**6.3.2**
+- 🎮 **Detection fixed** — games, browsers, and YouTube (title + thumbnail) are recognized and shown reliably again.
+
+**6.3.1**
+- 🐛 **Saved instantly** — changes (e.g. a button name) apply immediately; your presence stays active without stop/start.
+- 🛠️ **More stable** — the app logo loads reliably; settings can always be saved.
 
 **6.3.0**
 - 🚀 **Fully automatic updates** — new versions are downloaded, verified, and installed automatically; the app restarts itself.

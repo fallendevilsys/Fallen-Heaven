@@ -4,7 +4,7 @@
 > das zu dir passt. Zeige Spiele, YouTube & Twitch oder bewirb deinen eigenen
 > Discord-Server direkt in deiner Presence. Einfach, lokal, ohne Installation.
 
-[![Version](https://img.shields.io/badge/Version-6.3.1-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
+[![Version](https://img.shields.io/badge/Version-6.3.3-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Sprachen](https://img.shields.io/badge/Sprachen-6-blue)
 ![Lizenz](https://img.shields.io/badge/Lizenz-All%20Rights%20Reserved-black)
 
@@ -132,9 +132,15 @@ Lokal im App-Ordner. Die App ist portabel — kopiere einfach den Ordner und nim
 
 ## 📜 Versionshistorie
 
-**6.3.1** *(aktuell)*
-- 🐛 **Speichern-Fix** — Änderungen (z. B. Button-Name) werden sofort übernommen; deine Presence bleibt ohne Stopp/Start aktiv.
-- 🛠️ **Stabilitäts-Fix** — das App-Logo wird zuverlässig geladen; Einstellungen lassen sich immer speichern.
+**6.3.3** *(aktuell)*
+- 🚀 **Updates noch zuverlässiger** — neue Versionen installieren sich auch dann sauber, wenn Windows die App besonders streng prüft; die App startet danach automatisch neu.
+
+**6.3.2**
+- 🎮 **Erkennung repariert** — Spiele, Browser und YouTube (Titel + Thumbnail) werden wieder zuverlässig erkannt und angezeigt.
+
+**6.3.1**
+- 🐛 **Sofort gespeichert** — Änderungen (z. B. ein Button-Name) werden sofort übernommen; deine Presence bleibt ohne Stopp/Start aktiv.
+- 🛠️ **Stabiler** — das App-Logo wird zuverlässig geladen; Einstellungen lassen sich immer speichern.
 
 **6.3.0**
 - 🚀 **Vollautomatische Updates** — neue Versionen werden automatisch geladen, geprüft und installiert; die App startet selbst neu.
