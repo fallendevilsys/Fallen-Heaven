@@ -63,7 +63,12 @@ EXE_INFO="$(powershell -NoProfile -Command \
 
 EXE_VERSION="$(echo "$EXE_INFO" | sed -n '1p' | tr -d '[:space:]')"
 ASSEMBLY_NAME="$(echo "$EXE_INFO" | sed -n '2p' | tr -d '[:space:]')"
-ENTRY_EXE="${ASSEMBLY_NAME}.exe"
+# WICHTIG: entryExecutable muss der Dateiname der tatsaechlich installierten
+# EXE sein (z. B. "Fallen-Heaven Discord App.exe") - NICHT der interne
+# Assembly-Name. Der Update-Helper validiert, dass im Zielordner eine Datei
+# mit diesem Namen existiert ("The installed app was not found.").
+# Die installierte App heisst aber wie der Anzeigename der EXE-Datei.
+ENTRY_EXE="${EXE}"
 
 if [ -z "$EXE_VERSION" ] || [ -z "$ASSEMBLY_NAME" ]; then
   echo "FEHLER: EXE-Infos konnten nicht ausgelesen werden ($EXE)." >&2
@@ -107,6 +112,7 @@ mkdir -p "$STAGE_DIR"
 for f in \
   "$EXE" \
   "FH.YoutubeResolver.dll" \
+  "Fallen-Heaven Launcher.exe" \
   "fh-app.ico" \
   "fh-ui-logo.png" \
   "fh_logo.png" \
@@ -116,12 +122,16 @@ do
   [ -f "$f" ] && cp "$f" "$STAGE_DIR/"
 done
 
-# EXE zusaetzlich unter dem internen Assembly-Namen ablegen
-# (die App sucht ihre Entry-Executable ueber diesen Namen)
-cp "$EXE" "$STAGE_DIR/${ENTRY_EXE}"
 
 # app-config.json als Vorlage "app-config.example.json" beilegen
 [ -f "app-config.json" ] && cp "app-config.json" "$STAGE_DIR/app-config.example.json"
+
+# app-config.json MIT ins Paket nehmen: Der Update-Helper startet aus dem
+# Staging-Ordner und braucht die Config dort (AppStorage.Initialize), sonst
+# crasht er beim Start und das Update wird nie installiert.
+# Beim Installieren wird app-config.json NICHT ueberschrieben (ShouldPreserve),
+# der Nutzer behaelt also seine eigene Config.
+[ -f "app-config.json" ] && cp "app-config.json" "$STAGE_DIR/app-config.json"
 
 if [ -z "$(ls -A "$STAGE_DIR")" ]; then
   echo "FEHLER: Keine App-Dateien im Projektstamm gefunden." >&2

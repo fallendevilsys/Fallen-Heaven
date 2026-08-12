@@ -1,11 +1,11 @@
 {
-  "version": "6.2.0.0",
-  "expectedVersion": "6.2.0.0",
-  "entryExecutable": "Fallen-Heaven-Discord-App-active-server-badge-release.exe",
-  "packageUrl": "https://github.com/fallendevilsys/Fallen-Heaven/releases/download/v6.2.0/fallen-heaven-6.2.0.zip",
-  "packageSize": 2674080,
-  "sha256": "e661321ffa308dae93219e5aa041d542c6bc23a083f62b70b5527c38371d5171",
-  "createdUtc": "2026-08-11T12:55:01Z",
-  "releaseNotes": "Automatisch erstellt aus Tag v6.2.0.",
+  "version": "6.3.1.0",
+  "expectedVersion": "6.3.1.0",
+  "entryExecutable": "Fallen-Heaven Discord App.exe",
+  "packageUrl": "https://github.com/fallendevilsys/Fallen-Heaven/releases/download/v6.3.1/fallen-heaven-6.3.1.zip",
+  "packageSize": 2438205,
+  "sha256": "5406924c6d819d7e8873aa4e09dc04bdfebd46afef1c3bf7669a281c06fb2f2c",
+  "createdUtc": "2026-08-12T11:09:32Z",
+  "releaseNotes": "Automatisch erstellt aus Tag v6.3.1.",
   "signature": ""
 }
