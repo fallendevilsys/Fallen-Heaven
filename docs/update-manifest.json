@@ -1,11 +1,11 @@
 {
-  "version": "6.3.2.0",
-  "expectedVersion": "6.3.2.0",
+  "version": "6.3.3.0",
+  "expectedVersion": "6.3.3.0",
   "entryExecutable": "Fallen-Heaven Discord App.exe",
-  "packageUrl": "https://github.com/fallendevilsys/Fallen-Heaven/releases/download/v6.3.2/fallen-heaven-6.3.2.zip",
-  "packageSize": 2438410,
-  "sha256": "8a43dad0e15017c818c836061945e4925c8f8af4c2d0fddd39808b51bc384ee0",
-  "createdUtc": "2026-08-12T17:24:58Z",
-  "releaseNotes": "Automatisch erstellt aus Tag v6.3.2.",
+  "packageUrl": "https://github.com/fallendevilsys/Fallen-Heaven/releases/download/v6.3.3/fallen-heaven-6.3.3.zip",
+  "packageSize": 2438519,
+  "sha256": "90a48924009dedbb470c43467a0a3eb4688e05dc4be027ca9866ebc26e4960a7",
+  "createdUtc": "2026-08-12T17:38:23Z",
+  "releaseNotes": "Automatisch erstellt aus Tag v6.3.3.",
   "signature": ""
 }
