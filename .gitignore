@@ -5,3 +5,5 @@ tools/venv/
 tools/dnlib.dll
 tools/patch.exe
 release/
+fh-testcert.pfx
+server-icon-cache.png
