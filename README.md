@@ -92,6 +92,14 @@ Alles andere gehört dir — Text, Status, Buttons und Bilder.
 - 🚀 **Automatische Updates** — lädt neue Versionen selbst und installiert sie
 - 🪟 **Läuft im Hintergrund weiter** — im Tray, optional mit Windows-Start
 - ✨ **Moderne Oberfläche** — mit animiertem Start
+- 🎨 **Farb-Themes** — wähle deine Akzentfarbe: Violett, Neon-Cyan, Crimson oder Cyberpunk
+
+### 🎨 Farb-Themes
+
+Unter **Einstellungen → Erscheinungsbild** wählst du die Akzentfarbe deiner
+App: **Violett**, **Neon-Cyan**, **Crimson** oder **Cyberpunk**. Tippe auf
+eine Farbe, drücke **Speichern** — die App startet kurz neu und übernimmt
+das neue Design. Du kannst jederzeit wechseln.
 
 ---
 
@@ -133,6 +141,7 @@ Lokal im App-Ordner. Die App ist portabel — kopiere einfach den Ordner und nim
 ## 📜 Versionshistorie
 
 **6.3.3** *(aktuell)*
+- 🎨 **Farb-Themes** — neues Menü „Erscheinungsbild" in den Einstellungen: wähle zwischen Violett, Neon-Cyan, Crimson und Cyberpunk — die App startet danach automatisch neu.
 - 🚀 **Updates noch zuverlässiger** — neue Versionen installieren sich auch dann sauber, wenn Windows die App besonders streng prüft; die App startet danach automatisch neu.
 
 **6.3.2**

@@ -92,6 +92,14 @@ Everything else is yours — text, status, buttons, and images.
 - 🚀 **Automatic updates** — downloads new versions and installs them by itself
 - 🪟 **Keeps running in the background** — in the tray, optionally with Windows start
 - ✨ **Modern interface** — with animated startup
+- 🎨 **Color themes** — pick your accent color: Violet, Neon Cyan, Crimson, or Cyberpunk
+
+### 🎨 Color themes
+
+Under **Settings → Appearance** you choose your app's accent color:
+**Violet**, **Neon Cyan**, **Crimson**, or **Cyberpunk**. Tap a color, hit
+**Save** — the app restarts briefly and applies the new design. You can
+switch at any time.
 
 ---
 
@@ -133,6 +141,7 @@ Locally in the app folder. The app is portable — just copy the folder and take
 ## 📜 Version history
 
 **6.3.3** *(current)*
+- 🎨 **Color themes** — new "Appearance" menu in Settings: choose between Violet, Neon Cyan, Crimson, and Cyberpunk — the app restarts automatically afterwards.
 - 🚀 **Even more reliable updates** — new versions install cleanly even when Windows strictly checks the app; the app restarts automatically afterwards.
 
 **6.3.2**
