@@ -4,7 +4,7 @@
 > das zu dir passt. Zeige Spiele, YouTube & Twitch oder bewirb deinen eigenen
 > Discord-Server direkt in deiner Presence. Einfach, lokal, ohne Installation.
 
-[![Version](https://img.shields.io/badge/Version-6.3.3-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
+[![Version](https://img.shields.io/badge/Version-6.3.4-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Sprachen](https://img.shields.io/badge/Sprachen-6-blue)
 ![Lizenz](https://img.shields.io/badge/Lizenz-All%20Rights%20Reserved-black)
 
@@ -140,11 +140,13 @@ Lokal im App-Ordner. Die App ist portabel — kopiere einfach den Ordner und nim
 
 ## 📜 Versionshistorie
 
-**6.3.3** *(aktuell)*
-- 🎨 **Farb-Themes** — neues Menü „Erscheinungsbild" in den Einstellungen: wähle zwischen Violett, Neon-Cyan, Crimson und Cyberpunk — die App startet danach automatisch neu.
-- 🚀 **Updates noch zuverlässiger** — neue Versionen installieren sich auch dann sauber, wenn Windows die App besonders streng prüft; die App startet danach automatisch neu.
+**6.3.4** *(aktuell)*
 - 🖥️ **Passt auf jeden Bildschirm** — die App passt sich deiner Bildschirmgröße an: Auf kleineren Monitoren verkleinern sich die Fenster automatisch, damit jeder Button sichtbar bleibt und nichts abgeschnitten wird.
 - 🔍 **Überall scharfer Text** — kein unscharfer Text mehr auf Laptops mit 125 %/150 % Vergrößerung; die App bleibt scharf, selbst wenn du sie zwischen zwei Monitoren verschiebst.
+
+**6.3.3**
+- 🎨 **Farb-Themes** — neues Menü „Erscheinungsbild" in den Einstellungen: wähle zwischen Violett, Neon-Cyan, Crimson und Cyberpunk — die App startet danach automatisch neu.
+- 🚀 **Updates noch zuverlässiger** — neue Versionen installieren sich auch dann sauber, wenn Windows die App besonders streng prüft; die App startet danach automatisch neu.
 
 **6.3.2**
 - 🎮 **Erkennung repariert** — Spiele, Browser und YouTube (Titel + Thumbnail) werden wieder zuverlässig erkannt und angezeigt.
