@@ -75,6 +75,10 @@ Ablauf für eine neue Version (z. B. 6.3.0):
      (Das Skript zeigt die EXE-Version an und bricht ab, wenn der
      Tag nicht dazu passt.)
 
+  2b) EXE signieren (empfohlen gegen SmartScreen/Smart App Control):
+        powershell -NoProfile -ExecutionPolicy Bypass -File tools/sign.ps1 -PfxPath C:\certs\codesign.pfx -PfxPassword "GEHEIM"
+      Details + Zertifikat-Kauf: siehe SIGNING.md
+
   3) Committen und pushen (NICHT vergessen!):
        git add .
        git commit -m "Version 6.3.0"
