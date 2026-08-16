@@ -111,8 +111,6 @@ mkdir -p "$STAGE_DIR"
 
 for f in \
   "$EXE" \
-  "FH.YoutubeResolver.dll" \
-  "FH.SpotifyResolver.dll" \
   "Fallen-Heaven Launcher.exe" \
   "fh-app.ico" \
   "fh-ui-logo.png" \
@@ -121,6 +119,16 @@ for f in \
   "LICENSE.md"
 do
   [ -f "$f" ] && cp "$f" "$STAGE_DIR/"
+done
+
+# Resolver-DLLs in den lib/-Unterordner (die EXE laedt sie per
+# AppDomain.AssemblyResolve aus lib/ neben der EXE)
+mkdir -p "$STAGE_DIR/lib"
+for f in \
+  "lib/FH.YoutubeResolver.dll" \
+  "lib/FH.SpotifyResolver.dll"
+do
+  [ -f "$f" ] && cp "$f" "$STAGE_DIR/lib/"
 done
 
 

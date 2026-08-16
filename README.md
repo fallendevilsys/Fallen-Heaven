@@ -4,7 +4,7 @@
 > das zu dir passt. Zeige Spiele, YouTube & Twitch oder bewirb deinen eigenen
 > Discord-Server direkt in deiner Presence. Einfach, lokal, ohne Installation.
 
-[![Version](https://img.shields.io/badge/Version-6.3.7-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
+[![Version](https://img.shields.io/badge/Version-6.3.8-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Sprachen](https://img.shields.io/badge/Sprachen-6-blue)
 ![Lizenz](https://img.shields.io/badge/Lizenz-All%20Rights%20Reserved-black)
 
@@ -140,7 +140,10 @@ Lokal im App-Ordner. Die App ist portabel — kopiere einfach den Ordner und nim
 
 ## 📜 Versionshistorie
 
-**6.3.7** *(aktuell)*
+**6.3.8** *(aktuell)*
+- 📁 **Aufgeräumt** — der App-Ordner ist jetzt übersichtlicher strukturiert, interne Bausteine liegen in einem eigenen Unterordner.
+
+**6.3.7**
 - 🔒 **Besser geschützt** — die App ist jetzt verschleiert, damit der Programmcode nicht mehr einfach ausgelesen werden kann.
 
 **6.3.6**

@@ -4,7 +4,7 @@
 > truly yours. Show games, YouTube & Twitch, or advertise your own Discord
 > server right in your presence. Simple, local, no installation required.
 
-[![Version](https://img.shields.io/badge/Version-6.3.7-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
+[![Version](https://img.shields.io/badge/Version-6.3.8-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Languages](https://img.shields.io/badge/Languages-6-blue)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-black)
 
@@ -140,7 +140,10 @@ Locally in the app folder. The app is portable — just copy the folder and take
 
 ## 📜 Version history
 
-**6.3.7** *(current)*
+**6.3.8** *(current)*
+- 📁 **Tidied up** — the app folder is now more clearly structured, with internal components in their own subfolder.
+
+**6.3.7**
 - 🔒 **Better protected** — the app is now obfuscated so the code can't be easily read.
 
 **6.3.6**
