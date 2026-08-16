@@ -1,0 +1,31 @@
+<project outputDir="obfuscated" baseDir=".." xmlns="http://confuser.codeplex.com">
+  <!--
+    Obfuscation als LETZTER Build-Schritt (nach Patch-Kette + Versions-Bump).
+    Aufruf:  Confuser.CLI.exe tools\obfuscate.crproj   (aus dem Projektstamm)
+
+    EXE (WinForms):  nur "constants" (String-Verschluesselung) + "ctrl flow".
+                     Kein "rename" — das zerschiest die WinForms-/Reflection-
+                     Aufloesung (TypeLoadException beim Start).
+
+    DLLs (Resolver): "rename" (Default: oeffentliche API bleibt stabil, damit
+                     die EXE sie weiterhin aufrufen kann) + "constants".
+  -->
+  <module path="Fallen-Heaven Discord App.exe">
+    <rule pattern="true" inherit="false">
+      <protection id="constants" />
+      <protection id="ctrl flow" />
+    </rule>
+  </module>
+  <module path="FH.YoutubeResolver.dll">
+    <rule pattern="true" inherit="false">
+      <protection id="rename" />
+      <protection id="constants" />
+    </rule>
+  </module>
+  <module path="FH.SpotifyResolver.dll">
+    <rule pattern="true" inherit="false">
+      <protection id="rename" />
+      <protection id="constants" />
+    </rule>
+  </module>
+</project>

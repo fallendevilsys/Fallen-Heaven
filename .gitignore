@@ -6,4 +6,12 @@ tools/dnlib.dll
 tools/patch.exe
 release/
 fh-testcert.pfx
+*.pfx
 server-icon-cache.png
+
+# Quellcode + Build-Tooling bleibt lokal (nicht oeffentlich)
+tools/*.cs
+tools/confuserex/
+tools/obf_test/
+backups/
+obfuscated/
