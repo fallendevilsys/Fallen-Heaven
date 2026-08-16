@@ -1,14 +1,14 @@
 # =====================================================================
 # Release-Ueberwachung — warnt und heilt fehlende Releases selbst
 #
-# Prueft stuendlich (und manuell ausloesbar), ob das Release, das das
-# Update-Manifest ankündigt, wirklich auf GitHub existiert.
+# Prueft stuendlich (und manuell ausloesbar):
+#   1) Update-Manifest (raw) und GitHub Pages erreichbar?
+#   2) Existiert das Release, das das Update-Manifest ankuendigt?
 #
-#   - Release fehlt    -> Warnung als GitHub-Issue + automatischer
-#                         Neustart des Release-Workflows (Selbstheilung)
-#   - Release wieder da -> Warnungs-Issue wird automatisch geschlossen
-#   - Tag fehlt        -> Warnung als Issue, manuelle Aktion noetig
-#                         (Selbstheilung ohne Tag nicht moeglich)
+#   - Manifest/Pages fehlt -> Warnung als GitHub-Issue
+#   - Release fehlt        -> Warnung als GitHub-Issue + automatischer
+#                             Neustart des Release-Workflows (Selbstheilung)
+#   - wieder da            -> Warnungs-Issue wird automatisch geschlossen
 #
 # Kein Checkout noetig - alles laeuft ueber die GitHub-API.
 # =====================================================================
@@ -28,6 +28,60 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
+      - name: Update-Pruefung: Manifest + GitHub Pages erreichbar?
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          REPO="${{ github.repository }}"
+          OWNER="${REPO%%/*}"
+          NAME="${REPO#*/}"
+          RAW_URL="https://raw.githubusercontent.com/${REPO}/main/docs/update-manifest.json"
+          PAGES_URL="https://${OWNER}.github.io/${NAME}/update-manifest.json"
+
+          warn_issue() {
+            local TITLE="$1" BODY="$2" SEARCH="$3"
+            local OPEN
+            OPEN="$(gh issue list --repo "$REPO" --search "\"${SEARCH}\" in:title" --state open --json number --jq 'length' 2>/dev/null || echo 0)"
+            if [ "${OPEN:-0}" -eq 0 ]; then
+              gh issue create --repo "$REPO" --title "$TITLE" --body "$BODY" || true
+            fi
+          }
+          close_issue() {
+            local SEARCH="$1" NOTE="$2"
+            local ISSUE
+            ISSUE="$(gh issue list --repo "$REPO" --search "\"${SEARCH}\" in:title" --state open --json number --jq '.[0].number // empty' 2>/dev/null || true)"
+            if [ -n "$ISSUE" ]; then
+              gh issue comment "$ISSUE" --repo "$REPO" --body "$NOTE" || true
+              gh issue close "$ISSUE" --repo "$REPO" || true
+            fi
+          }
+
+          # -----------------------------------------------------------
+          # 1) Raw-Manifest (Quelle der Wahrheit auf main)
+          # -----------------------------------------------------------
+          RAW_CODE="$(curl -sS -o /tmp/raw_manifest.json -w '%{http_code}' -m 20 "$RAW_URL" 2>/dev/null || echo 000)"
+          if [ "$RAW_CODE" = "200" ] && grep -q '"packageUrl"' /tmp/raw_manifest.json 2>/dev/null; then
+            echo "OK: Raw-Manifest erreichbar ($RAW_URL)."
+            close_issue "Update-Manifest nicht erreichbar" "Das Update-Manifest ist wieder erreichbar."
+          else
+            echo "FEHLER: Raw-Manifest nicht erreichbar ($RAW_URL -> HTTP ${RAW_CODE})."
+            warn_issue "Update-Manifest nicht erreichbar" "Das Update-Manifest unter ${RAW_URL} ist nicht erreichbar (HTTP ${RAW_CODE}). Die App kann so keine Updates mehr pruefen." "Update-Manifest nicht erreichbar"
+          fi
+
+          # -----------------------------------------------------------
+          # 2) GitHub Pages (dort prueft die App Updates)
+          # -----------------------------------------------------------
+          PAGES_CODE="$(curl -sS -o /tmp/pages_manifest.json -w '%{http_code}' -m 20 "$PAGES_URL" 2>/dev/null || echo 000)"
+          if [ "$PAGES_CODE" = "200" ] && grep -q '"packageUrl"' /tmp/pages_manifest.json 2>/dev/null; then
+            echo "OK: GitHub Pages erreichbar ($PAGES_URL)."
+            close_issue "GitHub Pages nicht erreichbar" "GitHub Pages liefert das Update-Manifest wieder aus."
+          else
+            echo "FEHLER: GitHub Pages nicht erreichbar ($PAGES_URL -> HTTP ${PAGES_CODE})."
+            warn_issue "GitHub Pages nicht erreichbar" "GitHub Pages liefert das Update-Manifest unter ${PAGES_URL} nicht aus (HTTP ${PAGES_CODE}). Die App prueft Updates ueber diese URL. Bitte GitHub Pages aktivieren (Settings -> Pages -> main -> /docs)." "GitHub Pages nicht erreichbar"
+          fi
+
       - name: Release-Pruefung + Selbstheilung
         shell: bash
         env:
