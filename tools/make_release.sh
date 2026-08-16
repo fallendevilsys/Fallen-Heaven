@@ -153,8 +153,16 @@ fi
 # ---------------------------------------------------------------------
 rm -f "$ZIP_PATH"
 
-# Reproduzierbare ZIPs: feste Zeitstempel (statt Datei-mtime)
-find "$STAGE_DIR" -exec touch -d "2000-01-01T00:00:00Z" {} +
+# Reproduzierbare ZIPs:
+# 1) Text-Zeilenenden auf LF normalisieren (git autocrlf erzeugt je nach
+#    Checkout CRLF oder LF -> unterschiedliche Bytes im ZIP).
+# 2) Feste Zeitstempel in LOKALER Zeit (ohne "Z"): Compress-Archive legt die
+#    DOS-Zeit in lokaler Zeit ab, daher wuerde UTC je nach Zeitzone
+#    unterschiedliche Bytes erzeugen (z. B. lokal 01:00, CI 00:00).
+find "$STAGE_DIR" -type f \
+  ! -name "*.exe" ! -name "*.dll" ! -name "*.png" ! -name "*.ico" \
+  -exec sed -i 's/\r$//' {} +
+find "$STAGE_DIR" -exec touch -d "2000-01-01 00:00:00" {} +
 
 make_zip() {
   if command -v zip >/dev/null 2>&1; then
