@@ -1,0 +1,16 @@
+# GitHub-Linguist: Build-/CI-Tooling zaehlt nicht als Projekt-Sprache.
+# Die eigentliche App ist C# (.NET) - der Quellcode ist aber bewusst
+# privat (gitignored) und die EXE obfuskiert. Diese Regeln sind reine
+# Kosmetik, damit GitHub nicht faelschlich "Shell"/"PowerShell"/"YAML"
+# als Haupt-Sprache anzeigt.
+
+# Build-/Release-Skripte
+tools/*.sh              linguist-vendored
+tools/*.ps1             linguist-vendored
+tools/*.crproj          linguist-vendored
+
+# CI-Workflows
+.github/workflows/*.yml linguist-vendored
+
+# Auto-generiertes Update-Manifest
+docs/update-manifest.json linguist-generated
