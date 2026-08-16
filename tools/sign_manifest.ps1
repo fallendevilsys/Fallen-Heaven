@@ -5,8 +5,9 @@
 #   {version}\n{packageUrl}\n{SHA256 GROSS}\n{entryExecutable}
 #
 # Private Key-Quellen (in dieser Reihenfolge):
-#   1) Umgebungsvariable FH_UPDATE_PRIVATE_KEY (fuer GitHub Actions Secret)
-#   2) Datei keys\private.xml (lokal)
+#   1) Umgebungsvariable FH_UPDATE_PRIVATE_KEY = BASE64-kodierter Key
+#      (fuer GitHub Actions Secret - einzeilig, robust gegen BOM/Umbrueche)
+#   2) Datei keys\private.xml (lokal, rohes XML)
 #
 # Aufruf (aus Projektstamm):
 #   powershell -NoProfile -ExecutionPolicy Bypass -File tools\sign_manifest.ps1 `
@@ -26,7 +27,9 @@ $ErrorActionPreference = 'Stop'
 
 $priv = $null
 if ($env:FH_UPDATE_PRIVATE_KEY) {
-    $priv = $env:FH_UPDATE_PRIVATE_KEY.TrimStart([char]0xFEFF).Trim()
+    # Secret ist base64 (einzeilig). Decodieren + evtl. BOM strippen.
+    $b64 = $env:FH_UPDATE_PRIVATE_KEY.Trim()
+    $priv = [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($b64)).TrimStart([char]0xFEFF).Trim()
 } elseif (Test-Path (Join-Path (Split-Path -Parent $PSScriptRoot) 'keys\private.xml')) {
     $keyFile = Join-Path (Split-Path -Parent $PSScriptRoot) 'keys\private.xml'
     $priv = [System.IO.File]::ReadAllText($keyFile).TrimStart([char]0xFEFF).Trim()
