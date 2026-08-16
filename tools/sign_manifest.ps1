@@ -26,7 +26,7 @@ $ErrorActionPreference = 'Stop'
 
 $priv = $null
 if ($env:FH_UPDATE_PRIVATE_KEY) {
-    $priv = $env:FH_UPDATE_PRIVATE_KEY
+    $priv = $env:FH_UPDATE_PRIVATE_KEY.TrimStart([char]0xFEFF).Trim()
 } elseif (Test-Path (Join-Path (Split-Path -Parent $PSScriptRoot) 'keys\private.xml')) {
     $keyFile = Join-Path (Split-Path -Parent $PSScriptRoot) 'keys\private.xml'
     $priv = [System.IO.File]::ReadAllText($keyFile).TrimStart([char]0xFEFF).Trim()
