@@ -116,7 +116,7 @@ for f in \
   "fh-ui-logo.png" \
   "fh_logo.png" \
   "README.md" \
-  "LICENSE.md"
+  "LICENSE"
 do
   [ -f "$f" ] && cp "$f" "$STAGE_DIR/"
 done
