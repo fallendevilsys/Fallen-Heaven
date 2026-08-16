@@ -135,7 +135,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "Manifest unveraendert - nichts zu committen."
           else
-            git commit -m "Update-Manifest ${{ steps.version.outputs.version }}"
+            git commit -m "Update ${{ steps.version.outputs.version }}"
             pushed=0
             for attempt in 1 2 3; do
               if git push origin main; then
