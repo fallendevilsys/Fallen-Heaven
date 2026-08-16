@@ -11,7 +11,11 @@ server-icon-cache.png
 
 # Quellcode + Build-Tooling bleibt lokal (nicht oeffentlich)
 tools/*.cs
+launcher.cs
 tools/confuserex/
 tools/obf_test/
 backups/
 obfuscated/
+
+# Persoenliche Config bleibt lokal (Release liefert app-config.example.json)
+app-config.json

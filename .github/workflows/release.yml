@@ -115,5 +115,18 @@ jobs:
             echo "Manifest unveraendert - nichts zu committen."
           else
             git commit -m "Update-Manifest ${{ steps.version.outputs.version }}"
-            git push origin main
+            pushed=0
+            for attempt in 1 2 3; do
+              if git push origin main; then
+                pushed=1
+                echo "Manifest gepusht."
+                break
+              fi
+              echo "Push fehlgeschlagen (Versuch ${attempt}) - hole main neu."
+              git pull --rebase origin main
+            done
+            if [ "$pushed" != "1" ]; then
+              echo "FEHLER: Manifest konnte nach 3 Versuchen nicht gepusht werden."
+              exit 1
+            fi
           fi

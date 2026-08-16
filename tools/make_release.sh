@@ -116,6 +116,7 @@ for f in \
   "fh-ui-logo.png" \
   "fh_logo.png" \
   "README.md" \
+  "README-EN.md" \
   "LICENSE"
 do
   [ -f "$f" ] && cp "$f" "$STAGE_DIR/"
@@ -132,15 +133,15 @@ do
 done
 
 
-# app-config.json als Vorlage "app-config.example.json" beilegen
-[ -f "app-config.json" ] && cp "app-config.json" "$STAGE_DIR/app-config.example.json"
+# Neutrale Vorlage ins Paket (persoenliche Config wird NICHT mitgeliefert)
+[ -f "app-config.example.json" ] && cp "app-config.example.json" "$STAGE_DIR/app-config.example.json"
 
 # app-config.json MIT ins Paket nehmen: Der Update-Helper startet aus dem
 # Staging-Ordner und braucht die Config dort (AppStorage.Initialize), sonst
 # crasht er beim Start und das Update wird nie installiert.
 # Beim Installieren wird app-config.json NICHT ueberschrieben (ShouldPreserve),
 # der Nutzer behaelt also seine eigene Config.
-[ -f "app-config.json" ] && cp "app-config.json" "$STAGE_DIR/app-config.json"
+[ -f "app-config.example.json" ] && cp "app-config.example.json" "$STAGE_DIR/app-config.json"
 
 if [ -z "$(ls -A "$STAGE_DIR")" ]; then
   echo "FEHLER: Keine App-Dateien im Projektstamm gefunden." >&2
@@ -151,6 +152,9 @@ fi
 # 5) ZIP erstellen (Fallback-Kette: zip -> bsdtar -> PowerShell)
 # ---------------------------------------------------------------------
 rm -f "$ZIP_PATH"
+
+# Reproduzierbare ZIPs: feste Zeitstempel (statt Datei-mtime)
+find "$STAGE_DIR" -exec touch -d "2000-01-01T00:00:00Z" {} +
 
 make_zip() {
   if command -v zip >/dev/null 2>&1; then
