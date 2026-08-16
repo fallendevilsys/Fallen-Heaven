@@ -133,9 +133,6 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 - 🎆 **Glitch-Titel** — animierter Schriftzug „BY ₣₳ⱠⱠɆ₦ ĐɆVłⱠ" im Fenster.
 - 🔘 **Buttons in der App** — Name und Link direkt in den Einstellungen änderbar.
 
-**6.2.0**
-- ✍️ **Dein eigener Status-Text** — Haupttext, rotierende Status-Zeilen, Kommentar und bis zu 2 Buttons.
-
 ---
 
 ## Community & Support

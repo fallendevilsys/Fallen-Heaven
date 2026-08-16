@@ -133,9 +133,6 @@ Locally in the app folder. The app is portable — just copy the folder.
 - 🎆 **Glitch title** — animated title "BY ₣₳ⱠⱠɆ₦ ĐɆVłⱠ" in the window.
 - 🔘 **Buttons in the app** — name and link can be changed directly in Settings.
 
-**6.2.0**
-- ✍️ **Your own status text** — main text, rotating status lines, comment, and up to 2 buttons.
-
 ---
 
 ## Community & support
