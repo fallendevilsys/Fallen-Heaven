@@ -1,4 +1,4 @@
-# FALLEN HEAVEN — Discord Rich Presence
+# FALLEN HEAVEN — Dein Discord-Status, so wie du willst
 
 > „Wo gefallene Engel landen" — verwandle deinen Discord-Status in etwas, das zu dir passt. Zeige Spiele, Musik oder deinen Discord-Server direkt in deinem Profil. Einfach, lokal, ohne Installation.
 

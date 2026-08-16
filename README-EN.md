@@ -1,4 +1,4 @@
-# FALLEN HEAVEN — Discord Rich Presence
+# FALLEN HEAVEN — Your Discord status, your way
 
 > "Where fallen angels land" — turn your Discord status into something that's truly yours. Show games, music, or your Discord server right in your profile. Simple, local, no installation required.
 
