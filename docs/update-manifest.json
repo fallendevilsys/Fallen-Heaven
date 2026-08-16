@@ -3,9 +3,9 @@
   "expectedVersion": "6.3.6.0",
   "entryExecutable": "Fallen-Heaven Discord App.exe",
   "packageUrl": "https://github.com/fallendevilsys/Fallen-Heaven/releases/download/v6.3.6/fallen-heaven-6.3.6.zip",
-  "packageSize": 2626330,
-  "sha256": "9d964c521c200f14557c359c1d8ca65b4c0a05ba89fcebf50a0a84a1b4029d87",
-  "createdUtc": "2026-08-16T21:07:16Z",
+  "packageSize": 2626479,
+  "sha256": "c2d8bbe276084a3f70c8fae3cfe8c72b1a83c8c9eb70cd2c7841a5121b4f8b71",
+  "createdUtc": "2026-08-16T21:10:01Z",
   "releaseNotes": "Automatisch erstellt aus Tag v6.3.6.",
   "signature": ""
 }
