@@ -1,8 +1,6 @@
 # FALLEN HEAVEN — Discord Rich Presence
 
-> „Wo gefallene Engel landen" — verwandle deinen Discord-Status in etwas,
-> das zu dir passt. Zeige Spiele, YouTube & Twitch oder bewirb deinen eigenen
-> Discord-Server direkt in deiner Presence. Einfach, lokal, ohne Installation.
+> „Wo gefallene Engel landen" — verwandle deinen Discord-Status in etwas, das zu dir passt. Zeige Spiele, Musik oder deinen Discord-Server direkt in deinem Profil. Einfach, lokal, ohne Installation.
 
 [![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Sprachen](https://img.shields.io/badge/Sprachen-6-blue)
@@ -16,125 +14,97 @@
 
 Eine kleine, portable Windows-App, die deinen Discord-Status automatisch gestaltet:
 
-- 🎮 **Spiele** — erkennbare Spiele erscheinen mit Icon in deinem Profil
-- ✍️ **Dein Text** — schreibe deine eigene Presence: Motto, Nachricht oder Server-Werbung
+- 🎮 **Spiele** — erkannte Spiele erscheinen mit ihrem Icon
+- 🎧 **Musik** — Spotify-Song, Interpret und Cover
+- ▶️ **YouTube & Twitch** — Videos und Streams mit Titel und Bild
+- ✍️ **Dein Text** — Motto, Nachricht oder Server-Werbung
 - 🔘 **Buttons** — bis zu 2 klickbare Buttons mit eigenem Namen und Link
-- ▶️ **YouTube & Twitch** — laufende Videos und Streams werden angezeigt
 
-Alles läuft **lokal** auf deinem PC — kein Konto, kein Tracking, nichts wird
-gespeichert oder hochgeladen.
+Alles läuft **lokal** auf deinem PC — kein Konto, kein Tracking, nichts wird hochgeladen.
 
 ---
 
 ## Schnellstart (2 Minuten)
 
-1. **App herunterladen** — die neueste Version findest du unter
-   [Releases](https://github.com/fallendevilsys/Fallen-Heaven/releases).
-   Die App ist **portabel**: keine Installation nötig, einfach starten.
-
-2. **Client ID eintragen** (einmalig, ca. 2 Minuten):
+1. **App herunterladen** — die neueste Version findest du unter [Releases](https://github.com/fallendevilsys/Fallen-Heaven/releases). Die App ist **portabel**: einfach starten, keine Installation.
+2. **Client ID eintragen** (einmalig):
    - Öffne das [Discord Developer Portal](https://discord.com/developers/applications)
-   - **New Application** → Name vergeben → bestätigen
-   - Unter **General Information** die **Application ID (Client ID)** kopieren
+   - **New Application** → Name vergeben
+   - **Application ID (Client ID)** kopieren
    - In der App einfügen: **Einstellungen → Client ID**
+3. **START drücken** — dein Status erscheint sofort in deinem Profil.
 
-3. **START drücken** — deine Presence erscheint sofort in deinem Discord-Profil.
-
-> 💡 Ohne eigene Client ID zeigt Discord keinen Rich-Presence-Status.
-> Die App führt dich Schritt für Schritt durch die Einrichtung.
+> 💡 Ohne eigene Client ID zeigt Discord keinen Status an. Die App führt dich Schritt für Schritt durch die Einrichtung.
 
 ---
 
-## ✍️ Deine Presence, dein Text
+## Dein Status, dein Text
 
-Du bestimmst, was andere in deinem Profil sehen — alles direkt in der App:
+Du bestimmst, was andere sehen:
 
-| Element | Beschreibung |
-|---|---|
-| **Haupttext** | Der große Text über deinem Status |
-| **Status-Zeilen** | Bis zu 3 Zeilen, die sich automatisch abwechseln |
-| **Kommentar** | Ein kurzer Text, der bei erkanntem Spiel erscheint |
-| **Buttons** | Bis zu 2 Buttons mit eigenem Namen und Link |
+- **Haupttext** — der große Text über deinem Status
+- **Status-Zeilen** — bis zu 3 Zeilen, die sich automatisch abwechseln
+- **Kommentar** — ein kurzer Text bei erkanntem Spiel
+- **Buttons** — bis zu 2 Buttons mit eigenem Namen und Link
 
-**So bewirbst du deinen Discord-Server:**
+**So wirbst du für deinen Discord-Server:**
 
-1. **Einstellungen → Presence** öffnen
+1. Öffne **Einstellungen → Status**
 2. **Haupttext**: z. B. `Unser Discord — wo alles passiert`
-3. **Status-Zeilen**: z. B. `Tägliche Events`, `Freundliche Community`, `Gaming & Chill`
-4. **Buttons**: z. B. „Mein Server" mit deinem Einladungslink und „Mein Profil" mit deinem Link
+3. **Status-Zeilen**: z. B. `Tägliche Events`, `Freundliche Community`
+4. **Buttons**: z. B. „Mein Server" mit Einladungslink und „Mein Profil" mit deinem Link
 5. **Speichern** — fertig.
 
-> 💡 **Hinweis:** Deine Buttons siehst du in deinem eigenen Profil nicht
-> (Discord-Einschränkung) — **andere Nutzer** sehen sie. Zum Testen schaue
-> mit einem zweiten Konto oder frag einen Freund.
+> 💡 **Hinweis:** Deine eigenen Buttons siehst du in deinem Profil nicht (Discord-Einschränkung) — **andere Nutzer** sehen sie.
 
-### 🔒 Erkennbar als FALLEN HEAVEN
-
-Damit die App als Fallen-Heaven-Produkt erkennbar bleibt, sind diese Elemente
-fest eingebaut und **nicht** änderbar:
-
-- FH-Logo + „FALLEN HEAVEN PRESENCE CONTROL" (oben links)
-- Animierter Glitch-Schriftzug „BY ₣₳ⱠⱠɆ₦ ĐɆVłⱠ"
-- Buttons „DISCORD-SERVER" und „CREATOR-PROFIL" (unten)
-- Verified-Badge in der Live-Aktivität
-
-Alles andere gehört dir — Text, Status, Buttons und Bilder.
+**Fest eingebaut** (nicht änderbar): das FH-Logo, der Glitch-Schriftzug „BY ₣₳ⱠⱠɆ₦ ĐɆVłⱠ", die Buttons „DISCORD-SERVER" und „CREATOR-PROFIL" sowie das Verified-Badge. Alles andere — Text, Status, Buttons und Bilder — gehört dir.
 
 ---
 
-## Alle Features
+## Features
 
-- 🎮 **Automatische Spiele-Erkennung** — inkl. eigener Spielregeln
-- ▶️ **YouTube & Twitch** — Titel, Kanal und Thumbnail als Presence
-- 👤 **Eigene Client ID** — bis zu 2 Client IDs möglich
-- 🔒 **Privacy-Modus** — bei OBS & Co. wird eine neutrale Presence gezeigt
-- 🌍 **6 Sprachen** — jederzeit in der App wechselbar
-- 🚀 **Automatische Updates** — lädt neue Versionen selbst und installiert sie
-- 🪟 **Läuft im Hintergrund weiter** — im Tray, optional mit Windows-Start
-- ✨ **Moderne Oberfläche** — mit animiertem Start
-- 🎨 **Farb-Themes** — wähle deine Akzentfarbe: Violett, Neon-Cyan, Crimson oder Cyberpunk
-
-### 🎨 Farb-Themes
-
-Unter **Einstellungen → Erscheinungsbild** wählst du die Akzentfarbe deiner
-App: **Violett**, **Neon-Cyan**, **Crimson** oder **Cyberpunk**. Tippe auf
-eine Farbe, drücke **Speichern** — die App startet kurz neu und übernimmt
-das neue Design. Du kannst jederzeit wechseln.
+- 🎮 **Spiele-Erkennung** — automatisch, inkl. eigener Spielregeln
+- 🎧 **Spotify** — Song, Interpret und Cover, mit Vorrang vor dem Browser
+- ▶️ **YouTube & Twitch** — Titel, Kanal und Vorschaubild
+- ✍️ **Eigener Text** — Haupttext, rotierende Zeilen, Kommentar, bis zu 2 Buttons
+- 👤 **Eigene Client ID** — bis zu 2 möglich
+- 🔒 **Privacy-Modus** — neutrale Anzeige bei OBS & Co.
+- 🌍 **6 Sprachen**
+- 🎨 **Farb-Themes** — Violett, Neon-Cyan, Crimson, Cyberpunk
+- 🖥️ **Passt auf jeden Bildschirm** — auf kleinen Monitoren bleibt alles sichtbar
+- 🚀 **Automatische Updates**
+- 🪟 **Hintergrund & Autostart** — läuft unsichtbar im Tray weiter
 
 ---
 
 ## Datenschutz
 
-Alles läuft **lokal**. Die App verbindet sich nur mit **Discord** (für deine
-Presence) und — nur wenn aktiviert — mit **YouTube/Twitch**. Update-Prüfungen
-laufen über das öffentliche GitHub-Release.
+Alles läuft **lokal**. Die App verbindet sich nur mit **Discord** und — nur wenn aktiviert — mit **YouTube/Twitch**. Spiele, Spotify und Browser werden lokal ausgelesen. Updates kommen über das öffentliche GitHub-Release.
 
 ---
 
 ## Updates
 
-Die App prüft beim Start automatisch auf neue Versionen und installiert sie
-**vollautomatisch** — du musst nichts tun. Ein Dialog zeigt den Fortschritt
-live. Manuell kannst du jederzeit über **UPDATES SUCHEN** nachschauen.
+Neue Versionen werden beim Start **automatisch** geladen und installiert — du musst nichts tun. Manuell: **UPDATES SUCHEN**.
 
 ---
 
 ## FAQ
 
-**Warum sehe ich keine Presence?**
+**Warum sehe ich keinen Status?**
 Fast immer fehlt die Client ID — siehe [Schnellstart](#schnellstart-2-minuten).
 
 **Warum sehe ich meine Buttons nicht selbst?**
-Discord zeigt Buttons nur anderen Nutzern. Teste mit einem zweiten Konto oder frag einen Freund.
+Discord zeigt Buttons nur anderen Nutzern. Teste mit einem zweiten Konto.
 
 **Die App erkennt mein Spiel nicht?**
 Lege eine eigene Spielregel an: **Einstellungen → Spielerkennung**.
 
 **Kann die App im Hintergrund laufen?**
-Ja — über „Fenster ausblenden" läuft sie unsichtbar im Tray weiter.
+Ja — „Fenster ausblenden" legt sie unsichtbar ins Tray.
 
 **Wo werden meine Einstellungen gespeichert?**
-Lokal im App-Ordner. Die App ist portabel — kopiere einfach den Ordner und nimm sie überallhin mit.
+Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 
 ---
 
@@ -179,5 +149,4 @@ Fragen, Feedback oder Ideen? Komm in die Community:
 
 ## Lizenz
 
-**Alle Rechte vorbehalten** — siehe [LICENSE](LICENSE). Vervielfältigung,
-Verbreitung oder Weiterverkauf nur mit ausdrücklicher schriftlicher Genehmigung.
+**Alle Rechte vorbehalten** — siehe [LICENSE](LICENSE). Vervielfältigung, Verbreitung oder Weiterverkauf nur mit ausdrücklicher schriftlicher Genehmigung.

@@ -1,8 +1,6 @@
 # FALLEN HEAVEN — Discord Rich Presence
 
-> "Where fallen angels land" — turn your Discord status into something that's
-> truly yours. Show games, YouTube & Twitch, or advertise your own Discord
-> server right in your presence. Simple, local, no installation required.
+> "Where fallen angels land" — turn your Discord status into something that's truly yours. Show games, music, or your Discord server right in your profile. Simple, local, no installation required.
 
 [![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Languages](https://img.shields.io/badge/Languages-6-blue)
@@ -16,116 +14,88 @@
 
 A small, portable Windows app that styles your Discord status automatically:
 
-- 🎮 **Games** — recognized games appear in your profile with their icon
-- ✍️ **Your text** — write your own presence: a motto, a message, or server advertising
+- 🎮 **Games** — recognized games appear with their icon
+- 🎧 **Music** — Spotify song, artist, and cover
+- ▶️ **YouTube & Twitch** — videos and streams with title and image
+- ✍️ **Your text** — a motto, a message, or server advertising
 - 🔘 **Buttons** — up to 2 clickable buttons with your own name and link
-- ▶️ **YouTube & Twitch** — playing videos and live streams are shown
 
-Everything runs **locally** on your PC — no account, no tracking, nothing is
-stored or uploaded.
+Everything runs **locally** on your PC — no account, no tracking, nothing is uploaded.
 
 ---
 
 ## Quick start (2 minutes)
 
-1. **Download the app** — the latest version is available under
-   [Releases](https://github.com/fallendevilsys/Fallen-Heaven/releases).
-   The app is **portable**: no installation required, just run it.
-
-2. **Enter your Client ID** (once, about 2 minutes):
+1. **Download the app** — the latest version is under [Releases](https://github.com/fallendevilsys/Fallen-Heaven/releases). The app is **portable**: just run it, no installation.
+2. **Enter your Client ID** (once):
    - Open the [Discord Developer Portal](https://discord.com/developers/applications)
-   - **New Application** → enter a name → confirm
-   - Under **General Information**, copy the **Application ID (Client ID)**
+   - **New Application** → choose a name
+   - Copy the **Application ID (Client ID)**
    - Paste it into the app: **Settings → Client ID**
+3. **Press START** — your status appears in your profile instantly.
 
-3. **Press START** — your presence appears in your Discord profile instantly.
-
-> 💡 Without your own Client ID, Discord won't show a rich presence status.
-> The app guides you through the setup step by step.
+> 💡 Without your own Client ID, Discord won't show a status. The app walks you through the setup step by step.
 
 ---
 
-## ✍️ Your presence, your text
+## Your status, your text
 
-You decide what others see in your profile — everything right in the app:
+You decide what others see:
 
-| Element | Description |
-|---|---|
-| **Main text** | The large text above your status |
-| **Status lines** | Up to 3 lines that rotate automatically |
-| **Comment** | A short text shown when a game is detected |
-| **Buttons** | Up to 2 buttons with your own name and link |
+- **Main text** — the large text above your status
+- **Status lines** — up to 3 lines that rotate automatically
+- **Comment** — a short text shown with a detected game
+- **Buttons** — up to 2 buttons with your own name and link
 
 **How to advertise your Discord server:**
 
-1. Open **Settings → Presence**
+1. Open **Settings → Status**
 2. **Main text**: e.g. `Our Discord — where it all happens`
-3. **Status lines**: e.g. `Daily events`, `Friendly community`, `Gaming & chill`
-4. **Buttons**: e.g. "My Server" with your invite link and "My profile" with your link
+3. **Status lines**: e.g. `Daily events`, `Friendly community`
+4. **Buttons**: e.g. "My Server" with your invite link and "My Profile" with your link
 5. **Save** — done.
 
-> 💡 **Note:** You won't see your buttons in your own profile (a Discord
-> limitation) — **other users** see them. To test, check with a second
-> account or ask a friend.
+> 💡 **Note:** You won't see your own buttons in your profile (a Discord limitation) — **other users** see them.
 
-### 🔒 Recognizable as FALLEN HEAVEN
-
-So the app stays recognizable as a Fallen Heaven product, these elements are
-built in and **cannot** be changed:
-
-- FH logo + "FALLEN HEAVEN PRESENCE CONTROL" (top left)
-- Animated glitch title "BY ₣₳ⱠⱠɆ₦ ĐɆVłⱠ"
-- "DISCORD-SERVER" and "CREATOR-PROFIL" buttons (bottom)
-- Verified badge in the live activity
-
-Everything else is yours — text, status, buttons, and images.
+**Built in** (not changeable): the FH logo, the glitch title "BY ₣₳ⱠⱠɆ₦ ĐɆVłⱠ", the "DISCORD-SERVER" and "CREATOR-PROFIL" buttons, and the verified badge. Everything else — text, status, buttons, and images — is yours.
 
 ---
 
-## All features
+## Features
 
-- 🎮 **Automatic game detection** — including your own game rules
-- ▶️ **YouTube & Twitch** — title, channel, and thumbnail as presence
-- 👤 **Your own Client ID** — up to 2 Client IDs supported
-- 🔒 **Privacy mode** — a neutral presence is shown while OBS & co. are running
-- 🌍 **6 languages** — switch at any time in the app
-- 🚀 **Automatic updates** — downloads new versions and installs them by itself
-- 🪟 **Keeps running in the background** — in the tray, optionally with Windows start
-- ✨ **Modern interface** — with animated startup
-- 🎨 **Color themes** — pick your accent color: Violet, Neon Cyan, Crimson, or Cyberpunk
-
-### 🎨 Color themes
-
-Under **Settings → Appearance** you choose your app's accent color:
-**Violet**, **Neon Cyan**, **Crimson**, or **Cyberpunk**. Tap a color, hit
-**Save** — the app restarts briefly and applies the new design. You can
-switch at any time.
+- 🎮 **Game detection** — automatic, including your own game rules
+- 🎧 **Spotify** — song, artist, and cover, taking priority over the browser
+- ▶️ **YouTube & Twitch** — title, channel, and preview image
+- ✍️ **Your own text** — main text, rotating lines, comment, up to 2 buttons
+- 👤 **Your own Client ID** — up to 2 supported
+- 🔒 **Privacy mode** — a neutral display while OBS & co. are running
+- 🌍 **6 languages**
+- 🎨 **Color themes** — Violet, Neon Cyan, Crimson, Cyberpunk
+- 🖥️ **Fits every screen** — everything stays visible even on small monitors
+- 🚀 **Automatic updates**
+- 🪟 **Background & autostart** — keeps running invisibly in the tray
 
 ---
 
 ## Privacy
 
-Everything runs **locally**. The app only connects to **Discord** (for your
-presence) and — only when enabled — to **YouTube/Twitch**. Update checks run
-through the public GitHub release.
+Everything runs **locally**. The app only connects to **Discord** and — only when enabled — to **YouTube/Twitch**. Games, Spotify, and browsers are detected locally. Updates come via the public GitHub release.
 
 ---
 
 ## Updates
 
-The app automatically checks for new versions on startup and installs them
-**fully automatically** — you don't have to do anything. A dialog shows the
-progress live. You can also check manually at any time with **CHECK FOR UPDATES**.
+New versions are downloaded and installed **automatically** on startup — you don't have to do anything. Manually: **CHECK FOR UPDATES**.
 
 ---
 
 ## FAQ
 
-**Why don't I see a presence?**
+**Why don't I see a status?**
 Almost always a missing Client ID — see [Quick start](#quick-start-2-minutes).
 
 **Why can't I see my own buttons?**
-Discord only shows buttons to other users. Test with a second account or ask a friend.
+Discord only shows buttons to other users. Test with a second account.
 
 **The app doesn't detect my game?**
 Create your own game rule: **Settings → Game detection**.
@@ -134,7 +104,7 @@ Create your own game rule: **Settings → Game detection**.
 Yes — "Hide window" keeps it running invisibly in the tray.
 
 **Where are my settings stored?**
-Locally in the app folder. The app is portable — just copy the folder and take it anywhere.
+Locally in the app folder. The app is portable — just copy the folder.
 
 ---
 
@@ -179,5 +149,4 @@ Questions, feedback or ideas? Join the community:
 
 ## License
 
-**All rights reserved** — see [LICENSE](LICENSE). Copying, distribution or
-resale only with explicit written permission.
+**All rights reserved** — see [LICENSE](LICENSE). Copying, distribution or resale only with explicit written permission.
