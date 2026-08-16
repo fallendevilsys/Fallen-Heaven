@@ -144,7 +144,7 @@ Lokal im App-Ordner. Die App ist portabel — kopiere einfach den Ordner und nim
 - 📁 **Aufgeräumt** — der App-Ordner ist jetzt übersichtlicher strukturiert, interne Bausteine liegen in einem eigenen Unterordner.
 
 **6.3.7**
-- 🔒 **Besser geschützt** — die App ist jetzt verschleiert, damit der Programmcode nicht mehr einfach ausgelesen werden kann.
+- 🔒 **Besser geschützt** — dein Programmcode ist jetzt geschützt und kann nicht mehr einfach ausgelesen werden.
 
 **6.3.6**
 - 🎧 **Spotify vor dem Browser** — dein Song erscheint jetzt auch bei offenem Browser (Spiele werden weiterhin zuerst angezeigt).
@@ -161,10 +161,10 @@ Lokal im App-Ordner. Die App ist portabel — kopiere einfach den Ordner und nim
 - 🚀 **Updates noch zuverlässiger** — neue Versionen installieren sich auch dann sauber, wenn Windows die App besonders streng prüft; die App startet danach automatisch neu.
 
 **6.3.2**
-- 🎮 **Erkennung repariert** — Spiele, Browser und YouTube (Titel + Thumbnail) werden wieder zuverlässig erkannt und angezeigt.
+- 🎮 **Erkennung repariert** — Spiele, Browser und YouTube (Titel + Vorschaubild) werden wieder zuverlässig erkannt und angezeigt.
 
 **6.3.1**
-- 🐛 **Sofort gespeichert** — Änderungen (z. B. ein Button-Name) werden sofort übernommen; deine Presence bleibt ohne Stopp/Start aktiv.
+- 🐛 **Sofort gespeichert** — Änderungen (z. B. ein Button-Name) werden sofort übernommen; dein Status bleibt ohne Neustart aktiv.
 - 🛠️ **Stabiler** — das App-Logo wird zuverlässig geladen; Einstellungen lassen sich immer speichern.
 
 **6.3.0**
@@ -173,7 +173,7 @@ Lokal im App-Ordner. Die App ist portabel — kopiere einfach den Ordner und nim
 - 🔘 **Buttons in der App** — Name und Link direkt in den Einstellungen änderbar.
 
 **6.2.0**
-- ✍️ **Eigener Presence-Text** — Haupttext, rotierende Status-Zeilen, Kommentar und bis zu 2 Buttons.
+- ✍️ **Dein eigener Status-Text** — Haupttext, rotierende Status-Zeilen, Kommentar und bis zu 2 Buttons.
 
 ---
 

@@ -144,7 +144,7 @@ Locally in the app folder. The app is portable — just copy the folder and take
 - 📁 **Tidied up** — the app folder is now more clearly structured, with internal components in their own subfolder.
 
 **6.3.7**
-- 🔒 **Better protected** — the app is now obfuscated so the code can't be easily read.
+- 🔒 **Better protected** — your code is now protected and can no longer be easily read.
 
 **6.3.6**
 - 🎧 **Spotify wins over the browser** — your song now shows even when a browser is open (games still appear first).
@@ -161,10 +161,10 @@ Locally in the app folder. The app is portable — just copy the folder and take
 - 🚀 **Even more reliable updates** — new versions install cleanly even when Windows strictly checks the app; the app restarts automatically afterwards.
 
 **6.3.2**
-- 🎮 **Detection fixed** — games, browsers, and YouTube (title + thumbnail) are recognized and shown reliably again.
+- 🎮 **Detection fixed** — games, browsers, and YouTube (title + preview image) are recognized and shown reliably again.
 
 **6.3.1**
-- 🐛 **Saved instantly** — changes (e.g. a button name) apply immediately; your presence stays active without stop/start.
+- 🐛 **Saved instantly** — changes (e.g. a button name) apply immediately; your status stays active without restarting.
 - 🛠️ **More stable** — the app logo loads reliably; settings can always be saved.
 
 **6.3.0**
@@ -173,7 +173,7 @@ Locally in the app folder. The app is portable — just copy the folder and take
 - 🔘 **Buttons in the app** — name and link can be changed directly in Settings.
 
 **6.2.0**
-- ✍️ **Your own presence text** — main text, rotating status lines, comment, and up to 2 buttons.
+- ✍️ **Your own status text** — main text, rotating status lines, comment, and up to 2 buttons.
 
 ---
 
