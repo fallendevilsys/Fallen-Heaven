@@ -2,7 +2,7 @@
 
 > "Where fallen angels land" — turn your Discord status into something that's truly yours. Show games, music, or your Discord server right in your profile. Simple, local, no installation required.
 
-[![Version](https://img.shields.io/badge/Version-6.3.6-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
+[![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Languages](https://img.shields.io/badge/Languages-6-blue)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-black)
 
@@ -110,10 +110,7 @@ Locally in the app folder. The app is portable — just copy the folder.
 
 ## 📜 Version history
 
-**6.3.6** *(current)*
-- 🔒 **Safer updates** — the app now verifies updates cryptographically and only accepts versions that are guaranteed to come from us.
-
-**6.3.5**
+**6.3.5** *(current)*
 - 🎧 **Spotify recognition** — show what you're listening to: song, artist, and cover now appear in your Discord status. The "YouTube" option now also covers Spotify — and your song takes priority over the browser.
 
 **6.3.4**

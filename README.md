@@ -2,7 +2,7 @@
 
 > „Wo gefallene Engel landen" — verwandle deinen Discord-Status in etwas, das zu dir passt. Zeige Spiele, Musik oder deinen Discord-Server direkt in deinem Profil. Einfach, lokal, ohne Installation.
 
-[![Version](https://img.shields.io/badge/Version-6.3.6-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
+[![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Sprachen](https://img.shields.io/badge/Sprachen-6-blue)
 ![Lizenz](https://img.shields.io/badge/Lizenz-All%20Rights%20Reserved-black)
 
@@ -110,10 +110,7 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 
 ## 📜 Versionshistorie
 
-**6.3.6** *(aktuell)*
-- 🔒 **Sicherere Updates** — die App prüft Updates jetzt kryptografisch und akzeptiert nur Versionen, die garantiert von uns stammen.
-
-**6.3.5**
+**6.3.5** *(aktuell)*
 - 🎧 **Spotify-Erkennung** — zeig, was du gerade hörst: Song, Interpret und Cover erscheinen jetzt in deinem Discord-Status. Die Option „YouTube" umfasst jetzt auch Spotify — dein Song hat dabei Vorrang vor dem Browser.
 
 **6.3.4**
