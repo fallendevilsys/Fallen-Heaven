@@ -112,6 +112,7 @@ mkdir -p "$STAGE_DIR"
 for f in \
   "$EXE" \
   "FH.YoutubeResolver.dll" \
+  "FH.SpotifyResolver.dll" \
   "Fallen-Heaven Launcher.exe" \
   "fh-app.ico" \
   "fh-ui-logo.png" \

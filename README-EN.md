@@ -4,7 +4,7 @@
 > truly yours. Show games, YouTube & Twitch, or advertise your own Discord
 > server right in your presence. Simple, local, no installation required.
 
-[![Version](https://img.shields.io/badge/Version-6.3.4-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
+[![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Languages](https://img.shields.io/badge/Languages-6-blue)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-black)
 
@@ -140,7 +140,10 @@ Locally in the app folder. The app is portable — just copy the folder and take
 
 ## 📜 Version history
 
-**6.3.4** *(current)*
+**6.3.5** *(current)*
+- 🎧 **Spotify recognition** — show what you're listening to: song, artist, and cover now appear in your Discord status. The "YouTube" option now also covers Spotify.
+
+**6.3.4**
 - 🖥️ **Fits every screen** — the app adapts to your screen size: on smaller monitors, windows shrink automatically so every button stays visible and nothing gets cut off.
 - 🔍 **Crisp text everywhere** — no more blurry text on laptops with 125%/150% zoom; the app stays sharp even when you move it between two monitors.
 
