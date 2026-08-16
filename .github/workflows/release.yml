@@ -60,6 +60,23 @@ jobs:
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
+      - name: Code-Signierung (EXE + DLLs) - falls Zertifikat hinterlegt
+        shell: powershell
+        env:
+          CODE_SIGN_PFX_BASE64: ${{ secrets.CODE_SIGN_PFX_BASE64 }}
+          CODE_SIGN_PASSWORD: ${{ secrets.CODE_SIGN_PASSWORD }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          if (-not $env:CODE_SIGN_PFX_BASE64) {
+            Write-Host "Kein Code-Signing-Zertifikat hinterlegt - Signierung uebersprungen."
+            exit 0
+          }
+          $env:FH_SIGN_PFX = Join-Path $env:RUNNER_TEMP "codesign.pfx"
+          [System.IO.File]::WriteAllBytes($env:FH_SIGN_PFX, [Convert]::FromBase64String($env:CODE_SIGN_PFX_BASE64))
+          $env:FH_SIGN_PASSWORD = $env:CODE_SIGN_PASSWORD
+          & (Join-Path $PWD 'tools\sign.ps1')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
       - name: Release-ZIP + Update-Manifest bauen
         shell: bash
         run: |
