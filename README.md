@@ -4,7 +4,7 @@
 > das zu dir passt. Zeige Spiele, YouTube & Twitch oder bewirb deinen eigenen
 > Discord-Server direkt in deiner Presence. Einfach, lokal, ohne Installation.
 
-[![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
+[![Version](https://img.shields.io/badge/Version-6.3.6-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Sprachen](https://img.shields.io/badge/Sprachen-6-blue)
 ![Lizenz](https://img.shields.io/badge/Lizenz-All%20Rights%20Reserved-black)
 
@@ -140,7 +140,10 @@ Lokal im App-Ordner. Die App ist portabel — kopiere einfach den Ordner und nim
 
 ## 📜 Versionshistorie
 
-**6.3.5** *(aktuell)*
+**6.3.6** *(aktuell)*
+- 🎧 **Spotify vor dem Browser** — dein Song erscheint jetzt auch bei offenem Browser (Spiele werden weiterhin zuerst angezeigt).
+
+**6.3.5**
 - 🎧 **Spotify-Erkennung** — zeig, was du gerade hörst: Song, Interpret und Cover erscheinen jetzt in deinem Discord-Status. Die Option „YouTube" umfasst jetzt auch Spotify.
 
 **6.3.4**
