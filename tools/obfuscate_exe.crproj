@@ -1,0 +1,10 @@
+<project outputDir="obfuscated" baseDir=".." xmlns="http://confuser.codeplex.com">
+  <!-- Nur die EXE verschluesseln (die Resolver-DLLs in lib/ sind bereits
+       verschluesselt). Kein "rename" - das zerschiest WinForms/Reflection. -->
+  <module path="Fallen-Heaven Discord App.exe">
+    <rule pattern="true" inherit="false">
+      <protection id="constants" />
+      <protection id="ctrl flow" />
+    </rule>
+  </module>
+</project>

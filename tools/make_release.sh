@@ -196,6 +196,22 @@ else
 fi
 
 # ---------------------------------------------------------------------
+# 6b) Signatur berechnen (RSA-SHA256, Base64) - nur wenn Private-Key
+#     verfuegbar ist. Ohne Key bleibt "signature" leer (unsigniertes
+#     Manifest fuer den gestuften Signatur-Rollout).
+# ---------------------------------------------------------------------
+SIGNATURE=""
+if [ -n "${FH_UPDATE_PRIVATE_KEY:-}" ] || [ -f "keys/private.xml" ]; then
+  SIGNATURE="$(powershell -NoProfile -ExecutionPolicy Bypass -File tools/sign_manifest.ps1 \
+    -Version "${EXE_VERSION}" -PackageUrl "${PACKAGE_URL}" \
+    -Sha256 "${SHA256}" -EntryExecutable "${ENTRY_EXE}")"
+  SIGNATURE="$(echo "$SIGNATURE" | tr -d '[:space:]')"
+  echo "Signatur       : vorhanden (${#SIGNATURE} Zeichen)"
+else
+  echo "Signatur       : leer (kein Private-Key -> unsigniertes Manifest)"
+fi
+
+# ---------------------------------------------------------------------
 # 7) Update-Manifest schreiben
 # ---------------------------------------------------------------------
 write_manifest() {
@@ -209,7 +225,7 @@ write_manifest() {
   "sha256": "${SHA256}",
   "createdUtc": "${CREATED_UTC}",
   "releaseNotes": "${NOTES}",
-  "signature": ""
+  "signature": "${SIGNATURE}"
 }
 EOF
 }

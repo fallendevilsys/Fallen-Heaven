@@ -19,3 +19,6 @@ obfuscated/
 
 # Persoenliche Config bleibt lokal (Release liefert app-config.example.json)
 app-config.json
+
+# Signatur-Schluessel (Private Key NIE committen!)
+keys/

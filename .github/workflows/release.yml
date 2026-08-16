@@ -66,6 +66,10 @@ jobs:
           bash tools/make_release.sh "${{ steps.version.outputs.version }}" "${{ github.repository }}"
         env:
           GITHUB_ACTIONS: "true"
+          # Signiert das Update-Manifest (RSA-SHA256), sobald das Secret
+          # hinterlegt ist. Solange es fehlt, bleibt "signature" leer -
+          # das ist der gestufte Signatur-Rollout.
+          FH_UPDATE_PRIVATE_KEY: ${{ secrets.UPDATE_PRIVATE_KEY }}
 
       - name: GitHub-Release anlegen + ZIP hochladen
         shell: bash

@@ -20,7 +20,7 @@
   "githubRepository": "fallendevilsys/Fallen-Heaven",
   "automaticUpdateCheck": true,
   "updateManifestUrl": "https://fallendevilsys.github.io/Fallen-Heaven/update-manifest.json",
-  "updatePublicKeyXml": "",
+  "updatePublicKeyXml": "<RSAKeyValue><Modulus>8ScyIGYMdySKToicYgRg/EWbApJOovAwFUsKPM5rClHPiMtgJLu0LVvkrXIAK8DG96nHHqxnpsF3tcEpZC998TdBunPkv9tx7YfcA5p7tkNKV6Ac+rEYXWDd2JFf7K1oCpZDVpbgG53PqgA7tE8aWrUYo6ct9SztDyUz5qV11TVR8hL/SURolXA9Xl8Ihnp4c9zAvAdH46DV64npDz93tujiN8f18/BI0p65Rp/YbleW1HAKItO6KwkIQkSmJm1YRUs1I2PVu3p+sA0DkHL1oicpMIpUA/2TOmRA7/zdutx/YqL+dHuI3rxTrQjf0QzBc+E26v5XQRR3rLgKNGTlLQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>",
   "youtubeChannelInfoEnabled": true,
   "twitchDetectionEnabled": false,
   "browserDetectionEnabled": false,
