@@ -129,9 +129,7 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 - 🛠️ **Stabiler** — das App-Logo wird zuverlässig geladen; Einstellungen lassen sich immer speichern.
 
 **6.3.0**
-- 🚀 **Vollautomatische Updates** — neue Versionen werden automatisch geladen, geprüft und installiert; die App startet selbst neu.
-- 🎆 **Glitch-Titel** — animierter Schriftzug „BY ₣₳ⱠⱠɆ₦ ĐɆVłⱠ" im Fenster.
-- 🔘 **Buttons in der App** — Name und Link direkt in den Einstellungen änderbar.
+- 🐛 **Bugfixes** — kleinere Fehler behoben und die App insgesamt stabiler gemacht.
 
 ---
 

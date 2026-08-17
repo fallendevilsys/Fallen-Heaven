@@ -129,9 +129,7 @@ Locally in the app folder. The app is portable — just copy the folder.
 - 🛠️ **More stable** — the app logo loads reliably; settings can always be saved.
 
 **6.3.0**
-- 🚀 **Fully automatic updates** — new versions are downloaded, verified, and installed automatically; the app restarts itself.
-- 🎆 **Glitch title** — animated title "BY ₣₳ⱠⱠɆ₦ ĐɆVłⱠ" in the window.
-- 🔘 **Buttons in the app** — name and link can be changed directly in Settings.
+- 🐛 **Bug fixes** — minor issues fixed and the app made more stable overall.
 
 ---
 
