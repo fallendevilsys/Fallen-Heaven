@@ -106,7 +106,6 @@ if ($pfx) {
 # ---------------------------------------------------------------------
 $files = @(
     (Join-Path $Root "Fallen-Heaven Discord App.exe"),
-    (Join-Path $Root "Fallen-Heaven Launcher.exe"),
     (Join-Path $Root "lib\FH.YoutubeResolver.dll"),
     (Join-Path $Root "lib\FH.SpotifyResolver.dll")
 ) | Where-Object { Test-Path $_ }

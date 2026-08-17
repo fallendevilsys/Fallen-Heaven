@@ -63,8 +63,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools\sign.ps1 `
 
 Das Skript signiert automatisch:
 - `Fallen-Heaven Discord App.exe`
-- `Fallen-Heaven Launcher.exe`
 - `FH.YoutubeResolver.dll`
+- `FH.SpotifyResolver.dll`
 
 und prüft danach jede Signatur.
 

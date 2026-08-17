@@ -109,9 +109,12 @@ echo "Entry-EXE     : ${ENTRY_EXE}"
 rm -rf "$STAGE_DIR"
 mkdir -p "$STAGE_DIR"
 
+# Hinweis: Der Launcher ist NICHT mehr Teil des Pakets. Er ist als
+# Ressource in der Haupt-EXE eingebettet und wird beim Update nach
+# %TEMP% entpackt (Update-Helfer). Der App-Ordner bleibt damit auf eine
+# sichtbare EXE aufgeraeumt.
 for f in \
   "$EXE" \
-  "Fallen-Heaven Launcher.exe" \
   "fh-app.ico" \
   "fh-ui-logo.png" \
   "fh_logo.png" \
