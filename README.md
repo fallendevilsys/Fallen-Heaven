@@ -1,10 +1,10 @@
 # FALLEN HEAVEN — Dein Discord-Status, so wie du willst
 
-> „Wo gefallene Engel landen" — verwandle deinen Discord-Status in etwas, das zu dir passt. Zeige Spiele, Musik oder deinen Discord-Server direkt in deinem Profil. Einfach, lokal, ohne Installation.
+> „Wo gefallene Engel landen" — mach aus deinem Discord-Status etwas, das zu dir passt. Zeige Spiele, Musik oder deinen Discord-Server direkt in deinem Profil. Einfach, lokal, ohne Installation.
 
 [![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Sprachen](https://img.shields.io/badge/Sprachen-6-blue)
-![Lizenz](https://img.shields.io/badge/Lizenz-All%20Rights%20Reserved-black)
+![Lizenz](https://img.shields.io/badge/Lizenz-Alle%20Rechte%20vorbehalten-black)
 
 *English version: [README-EN.md](README-EN.md)*
 
@@ -21,6 +21,13 @@ Eine kleine, portable Windows-App, die deinen Discord-Status automatisch gestalt
 - 🔘 **Buttons** — bis zu 2 klickbare Buttons mit eigenem Namen und Link
 
 Alles läuft **lokal** auf deinem PC — kein Konto, kein Tracking, nichts wird hochgeladen.
+
+---
+
+## Voraussetzungen
+
+- **Windows 10 oder 11**
+- **Discord-Desktop-App** — installiert und gestartet
 
 ---
 

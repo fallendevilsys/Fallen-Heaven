@@ -24,6 +24,13 @@ Everything runs **locally** on your PC — no account, no tracking, nothing is u
 
 ---
 
+## Requirements
+
+- **Windows 10 or 11**
+- **Discord desktop app** — installed and running
+
+---
+
 ## Quick start (2 minutes)
 
 1. **Download the app** — the latest version is under [Releases](https://github.com/fallendevilsys/Fallen-Heaven/releases). The app is **portable**: just run it, no installation.
