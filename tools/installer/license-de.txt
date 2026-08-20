@@ -1,0 +1,62 @@
+FALLEN HEAVEN - LIZENZVEREINBARUNG
+
+Copyright (c) 2026 Fallen Heaven. Alle Rechte vorbehalten.
+
+Bitte lies diese Lizenzvereinbarung sorgfältig, bevor du die Software
+installierst oder verwendest. Durch die Installation oder Verwendung
+der Software akzeptierst du die Bedingungen dieser Vereinbarung.
+
+1. LIZENZGEWÄHRUNG
+
+Vorbehaltlich der Bedingungen dieser Lizenz gewährt dir Fallen Heaven
+eine nicht ausschließliche, nicht übertragbare und widerrufliche Lizenz,
+die Software in ihrer ursprünglichen, unveränderten Form für persönliche,
+nicht kommerzielle Zwecke herunterzuladen und zu verwenden.
+
+2. EINSCHRÄNKUNGEN
+
+Ohne vorherige schriftliche Genehmigung des Rechteinhabers ist es dir
+nicht gestattet:
+
+- die Software zu kopieren, zu verändern, zu übersetzen, anzupassen oder abgeleitete Werke zu erstellen;
+- die Software oder Teile davon zu verbreiten, zu unterlizenzieren, zu vermieten, zu verleihen, zu verpachten oder weiterzuverkaufen;
+- die Software zurückzuentwickeln, zu dekompilieren, zu disassemblieren oder anderweitig zu versuchen, den Quellcode zu extrahieren;
+- die Software ganz oder teilweise in andere Produkte oder Dienstleistungen einzubetten;
+- Copyright-, Marken- oder Eigentumsvermerke zu entfernen oder zu verändern;
+- Namen, Logos oder andere Markenelemente von Fallen Heaven zu verwenden.
+
+3. EIGENTUM
+
+Die Software einschließlich sämtlichen Codes, Dokumentationen, Grafiken,
+Logos und zugehörigen Dateien ist das ausschließliche Eigentum von
+Fallen Heaven. Es werden keine Rechte gewährt, außer denen, die in
+dieser Lizenz ausdrücklich genannt sind.
+
+4. BEENDIGUNG
+
+Diese Lizenz gilt bis zu ihrer Beendigung. Sie endet automatisch, wenn
+du gegen eine ihrer Bedingungen verstößt. Nach Beendigung musst du die
+Verwendung der Software einstellen und alle Kopien löschen.
+
+5. GEWÄHRLEISTUNGSAUSSCHLUSS
+
+DIE SOFTWARE WIRD "WIE BESEHEN" OHNE JEGLICHE GEWÄHRLEISTUNG BEREITGESTELLT,
+AUSDRÜCKLICH ODER STILLSCHWEIGEND, EINSCHLIESSLICH, ABER NICHT BESCHRÄNKT
+AUF GEWÄHRLEISTUNGEN DER MARKTGÄNGIGKEIT, DER EIGNUNG FÜR EINEN BESTIMMTEN
+ZWECK UND DER NICHTVERLETZUNG VON RECHTEN DRITTER.
+
+6. HAFTUNGSBESCHRÄNKUNG
+
+FALLEN HEAVEN HAFTET IN KEINEM FALL FÜR DIREKTE, INDIREKTE,
+BEGLEIT- ODER FOLGESCHÄDEN, DIE AUS ODER IM ZUSAMMENHANG MIT DER
+VERWENDUNG ODER DER UNMÖGLICHKEIT DER VERWENDUNG DER SOFTWARE ENTSTEHEN.
+
+7. ANWENDBARES RECHT
+
+Diese Lizenz unterliegt dem Recht der Gerichtsbarkeit des Rechteinhabers,
+unbeschadet etwaiger kollisionsrechtlicher Grundsätze.
+
+8. KONTAKT
+
+Bei Fragen zur Nutzung, Lizenzierung oder zu kommerziellen Rechten
+kontaktiere bitte den Rechteinhaber.

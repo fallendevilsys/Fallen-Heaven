@@ -17,6 +17,9 @@ tools/obf_test/
 backups/
 obfuscated/
 
+# Portable Inno-Setup-Installation (lokal, nicht oeffentlich)
+tools/inno/
+
 # Persoenliche Config bleibt lokal (Release liefert app-config.example.json)
 app-config.json
 

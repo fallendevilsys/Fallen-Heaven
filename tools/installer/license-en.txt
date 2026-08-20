@@ -1,0 +1,59 @@
+FALLEN HEAVEN - SOFTWARE LICENSE AGREEMENT
+
+Copyright (c) 2026 Fallen Heaven. All rights reserved.
+
+Please read this license agreement carefully before installing or
+using the software. By installing or using the software, you accept
+the terms of this agreement.
+
+1. GRANT OF LICENSE
+
+Subject to the terms of this License, Fallen Heaven grants you a
+non-exclusive, non-transferable, revocable license to download and use
+the software in its original, unmodified form for personal,
+non-commercial purposes.
+
+2. RESTRICTIONS
+
+You may not, without prior written permission of the rights holder:
+
+- copy, modify, translate, adapt, or create derivative works from the software;
+- distribute, sublicense, rent, lease, lend, or resell the software or any part of it;
+- reverse engineer, decompile, disassemble, or otherwise attempt to extract the source code;
+- embed the software, in whole or in part, into other products or services;
+- remove or alter any copyright, trademark, or proprietary notices;
+- use the names, logos, or other brand elements of Fallen Heaven.
+
+3. OWNERSHIP
+
+The software, including all code, documentation, graphics, logos, and
+associated files, is the exclusive property of Fallen Heaven. No rights
+are granted except those expressly stated in this License.
+
+4. TERMINATION
+
+This License is effective until terminated. It terminates automatically
+if you fail to comply with any of its terms. Upon termination, you must
+stop using the software and delete all copies.
+
+5. DISCLAIMER OF WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+6. LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL FALLEN HEAVEN BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR IN
+CONNECTION WITH THE USE OR INABILITY TO USE THE SOFTWARE.
+
+7. GOVERNING LAW
+
+This License is governed by the laws of the rights holder's
+jurisdiction, without regard to conflict-of-law principles.
+
+8. CONTACT
+
+For questions about use, licensing, or commercial rights, please
+contact the rights holder.
