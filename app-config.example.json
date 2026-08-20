@@ -1,7 +1,7 @@
 {
   "clientId": "0000",
-  "details": "",
-  "states": [],
+  "details": "Fallen Heaven",
+  "states": ["Deine Community"],
   "rotationSeconds": 30,
   "syncSeconds": 5,
   "comments": [],
@@ -14,7 +14,10 @@
   "largeImageText": "Fallen Heaven",
   "activeServerBadgeImage": "",
   "activeServerBadgeText": "",
-  "buttons": [],
+  "buttons": [
+    { "label": "Mein Server", "url": "https://discord.gg/dein-server" },
+    { "label": "Mein Profil", "url": "https://guns.lol/dein-name" }
+  ],
   "language": "de",
   "installedLanguagePacks": ["en", "de"],
   "githubRepository": "fallendevilsys/Fallen-Heaven",
