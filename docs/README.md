@@ -1,6 +1,13 @@
-# Update-Manifest (GitHub Pages)
+# Dokumentation & Update-Manifest
 
-Dieser Ordner dient als **GitHub-Pages-Host für das Update-Manifest** der App.
+Dieser Ordner enthält die **Dokumentation** und den **GitHub-Pages-Host für das Update-Manifest** der App.
+
+## Dokumentation
+
+- `UPDATE-SETUP.txt` — Anleitung zum Einrichten der automatischen Updates
+- `SIGNING.md` — Informationen zur Code-Signierung (für Entwickler)
+
+## Update-Manifest
 
 - `update-manifest.json` wird bei jedem Release automatisch von
   `tools/make_release.sh` hierher geschrieben (und nach `release/`).
@@ -15,6 +22,5 @@ Dieser Ordner dient als **GitHub-Pages-Host für das Update-Manifest** der App.
 
   `"updateManifestUrl": "https://<DEINUSERNAME>.github.io/<REPO>/update-manifest.json"`
 
-Damit bekommt die App vollautomatische In-App-Updates (ZIP-Download,
-SHA-256-Prüfung, sichere Installation, Neustart) — siehe
-`UPDATE-SETUP.txt` Abschnitt 1 und 6.
+Damit bekommt die App vollautomatische In-App-Updates (Download, SHA-256-Prüfung,
+sichere Installation, Neustart) — siehe `UPDATE-SETUP.txt` Abschnitt 1 und 6.

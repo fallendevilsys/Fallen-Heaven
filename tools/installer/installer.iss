@@ -36,7 +36,7 @@ DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
 OutputDir=..\..\release
 OutputBaseFilename=Fallen-Heaven-Setup-{#MyAppVersion}
-SetupIconFile=..\..\fh-app.ico
+SetupIconFile=..\..\assets\fh-app.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
 UninstallDisplayName={#MyAppName} {#MyAppVersion}
 Compression=lzma2
@@ -63,9 +63,9 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "..\..\{#MyAppExeName}";      DestDir: "{app}";            Flags: ignoreversion
 Source: "..\..\lib\FH.YoutubeResolver.dll";  DestDir: "{app}\lib";  Flags: ignoreversion
 Source: "..\..\lib\FH.SpotifyResolver.dll";  DestDir: "{app}\lib";  Flags: ignoreversion
-Source: "..\..\fh-app.ico";            DestDir: "{app}";            Flags: ignoreversion
-Source: "..\..\fh-ui-logo.png";        DestDir: "{app}";            Flags: ignoreversion
-Source: "..\..\fh_logo.png";           DestDir: "{app}";            Flags: ignoreversion
+Source: "..\..\assets\fh-app.ico";     DestDir: "{app}";            Flags: ignoreversion
+Source: "..\..\assets\fh-ui-logo.png";  DestDir: "{app}";            Flags: ignoreversion
+Source: "..\..\assets\fh_logo.png";     DestDir: "{app}";            Flags: ignoreversion
 Source: "..\..\README.md";             DestDir: "{app}";            Flags: ignoreversion
 Source: "..\..\README-EN.md";          DestDir: "{app}";            Flags: ignoreversion
 Source: "..\..\LICENSE";               DestDir: "{app}";            Flags: ignoreversion

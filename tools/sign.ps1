@@ -11,7 +11,7 @@
 #   Ein SELBST erstelltes Zertifikat (self-signed) hilft NICHT -
 #   Smart App Control/SmartScreen vertrauen nur Zertifikaten einer
 #   oeffentlichen Zertifizierungsstelle (DigiCert, Sectigo, ...).
-#   Siehe SIGNING.md fuer Kauf + Einrichtung.
+#   Siehe docs/SIGNING.md fuer Kauf + Einrichtung.
 #
 # VORAUSSETZUNGEN:
 #   1) Code-Signing-Zertifikat:
