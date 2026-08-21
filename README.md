@@ -131,6 +131,7 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 
 **6.3.5** *(aktuell)*
 - 🎧 **Spotify-Erkennung** — zeig, was du gerade hörst: Song, Interpret und Cover erscheinen jetzt in deinem Discord-Status. Die Option „YouTube" umfasst jetzt auch Spotify — dein Song hat dabei Vorrang vor dem Browser.
+- ✨ **Schönere Start-Animation** — beim Öffnen der App steigen jetzt sanft leuchtende Partikel auf und das Logo bekommt einen pulsierenden Glanz.
 
 **6.3.4**
 - 🖥️ **Passt auf jeden Bildschirm** — die App passt sich deiner Bildschirmgröße an: Auf kleineren Monitoren verkleinern sich die Fenster automatisch, damit jeder Button sichtbar bleibt und nichts abgeschnitten wird.

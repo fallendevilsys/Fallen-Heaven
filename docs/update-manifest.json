@@ -3,9 +3,9 @@
   "expectedVersion": "6.3.5.0",
   "entryExecutable": "Fallen-Heaven Discord App.exe",
   "packageUrl": "https://github.com/fallendevilsys/Fallen-Heaven/releases/download/v6.3.5/Fallen-Heaven-Setup-6.3.5.exe",
-  "packageSize": 4631012,
-  "sha256": "97b97efaf306ec3b45b406c60cdf1563cdaf25d00ff5cb61c6d779fb2fd68ec7",
-  "createdUtc": "2026-08-21T10:26:12Z",
+  "packageSize": 4631902,
+  "sha256": "a543f347aeb0afc5554f05d64d51b2dbbd091e35d30ecd2c955e59c954bc256d",
+  "createdUtc": "2026-08-21T11:02:22Z",
   "releaseNotes": "Automatisch erstellt aus Tag v6.3.5.",
-  "signature": "4fjVsX0+ztNqTgIXN96RDC5+HaGR5LLMBQZj/L2ncnZKhgDNLYpfRyzmSV1UMG5u4sT48cRvG6L56iZOYqIK2wF2rAFoUdokWM8oEFVqj86ZQpFUq4GOyajwBkVcXXl2TJ4ygl/WdZRjaACIQeyxehtUektgKsLcpNdE9239PnsAhiV9zYoe7sUJS7aNuEBUYioGu0MvR1vKBloWAqwI3q/cBAdRnP9f++OsMkrkvL6Q3rMgjATJ+Dg487XuVshNBhR8Hq/GX/bNhpvg1Jhc0oGjiH4509NB+HemXBa9XOxnSeI2YIqkudg++r+O9rlqTLYzbT59rYWy01wVrPAJ0w=="
+  "signature": "f+SsR178Js2RpVvc342VjsvOT4G716wrCB/lwA9zAMtyO4YoGMYztTXxBukqUr9CpCuDVTE+yCJoBK04mU0wLherQWItboC7unRjaxV/StK7z5T+2J+Jmg9EF4Hyrl4fxU9prvDo/gBK4N0jKuLxrxDbpk/1Q8XROlC03GRI2I0p6yIQrXbyCIoWpL8ZP9zyeQfcLQ8QZwcUc4FF3qH71LguxViw1onrzzGrWLMK8MzO1Yqp95+peaYdINBHZzqR+dQjWyRdMlRDAfzOLeWUgpCI7bz1DYlN5rg9CGQN2eGKPoBRQG7NFQ7Jm1PDJLJMaQugxsssZS19DZ9KdqgieA=="
 }
