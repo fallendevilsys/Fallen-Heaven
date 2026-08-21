@@ -1,0 +1,33 @@
+#!/bin/sh
+# =====================================================================
+# commit-msg Hook — schuetzt die Commit-Historie
+#
+# Lehnt Commit-Nachrichten ab, die einen Co-Authored-By-Trailer mit
+# "Codebuff" enthalten. Solche Trailer verknuepft GitHub mit dem Konto
+# "codebuff-team" und zeigt es als Contributor an — das soll dauerhaft
+# verhindert werden.
+#
+# Installation (einmalig, pro Klon):
+#   git config core.hooksPath tools/git-hooks
+#
+# (Der Pfad ist versioniert, damit der Hook fuer alle Klone gilt.)
+# =====================================================================
+
+MSG_FILE="$1"
+
+# Erlaubte Trailer: alles ausser Co-Authored-By mit Codebuff.
+# Erkennen: Zeile beginnt mit "Co-Authored-By:" UND enthaelt "codebuff"
+# (case-insensitive).
+if grep -iE '^Co-Authored-By:.*codebuff' "$MSG_FILE" >/dev/null 2>&1; then
+    echo ""
+    echo "FEHLER: Commit abgelehnt - die Nachricht enthaelt einen"
+    echo "       'Co-Authored-By: ... Codebuff ...'-Trailer."
+    echo ""
+    echo "GitHub verknuepft solche Trailer mit dem Konto 'codebuff-team'"
+    echo "und zeigt es als Contributor an. Bitte die Zeile entfernen und"
+    echo "erneut committen."
+    echo ""
+    exit 1
+fi
+
+exit 0

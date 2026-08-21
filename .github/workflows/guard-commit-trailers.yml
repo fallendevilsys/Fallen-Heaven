@@ -1,0 +1,68 @@
+# =====================================================================
+# Guard: Commit-Trailer-Schutz
+#
+# Prueft bei jedem Push auf main, ob die neuen Commits einen
+# 'Co-Authored-By: ... Codebuff ...'-Trailer enthalten. Solche Trailer
+# verknuepft GitHub mit dem Konto 'codebuff-team' und zeigt es als
+# Contributor an.
+#
+# - Trailer gefunden  -> Workflow wird ROT (fehlgeschlagener Check),
+#                        der Push muss korrigiert/neu geschrieben werden.
+# - Keine Trailer     -> Gruener Check, alles gut.
+#
+# Dieser Workflow ist die zweite Schutzebene: Der lokale
+# commit-msg-Hook (tools/git-hooks/commit-msg) blockiert bereits beim
+# Erstellen des Commits; dieser Guard faengt auch Umgehungen ab
+# (z. B. Commits, die mit anderen Tools erstellt oder rebased wurden).
+# =====================================================================
+name: Commit-Trailer-Schutz
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Neue Commits auf verbotene Trailer pruefen
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          # Vorherigen Commit-Hash holen (vor diesem Push)
+          BASE_SHA="${{ github.event.before }}"
+          if [ "$BASE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            # Erster Push auf den Branch: nur den neuesten Commit pruefen
+            BASE_SHA="$(git rev-parse HEAD~1 2>/dev/null || echo 'HEAD~1')"
+          fi
+
+          if ! git rev-parse --verify "$BASE_SHA" >/dev/null 2>&1; then
+            echo "Base-Ref nicht verfuegbar ($BASE_SHA) - pruefe den letzten Commit."
+            BASE_SHA="$(git rev-parse HEAD~1 2>/dev/null || echo 'HEAD^')"
+          fi
+
+          echo "Pruefe Commits: $BASE_SHA..HEAD"
+
+          # Trailer in den neuen Commit-Nachrichten suchen
+          HITS="$(git log --format=%B "$BASE_SHA"..HEAD 2>/dev/null \
+                    | grep -iE '^Co-Authored-By:.*codebuff' || true)"
+
+          if [ -n "$HITS" ]; then
+            echo "::error::Verbotener Co-Authored-By-Trailer in den neuen Commits gefunden!"
+            echo "$HITS"
+            echo ""
+            echo "GitHub verknuepft solche Trailer mit dem Konto 'codebuff-team'"
+            echo "und zeigt es als Contributor an. Bitte die Historie per"
+            echo "History-Rewrite bereinigen (z. B. git filter-branch) und"
+            echo "erneut pushen."
+            exit 1
+          fi
+
+          echo "OK - keine verbotenen Trailer in den neuen Commits."
