@@ -18,9 +18,14 @@
 # Voraussetzung (einmalig): Repo -> Settings -> Pages ->
 #   "Deploy from a branch" -> main -> /docs  aktivieren.
 #
-# WICHTIG: Die EXE/DLL im Repo ist die Version, die verpackt wird.
-#   Vor dem Taggen also die neue App-Version committen+pushen
-#   (sonst wird die alte Version als "neu" verpackt).
+# WICHTIG: Die App-Datei (EXE) wird bewusst NICHT im Repo mitgeliefert,
+#   damit sie nicht ueber "Code -> Download ZIP" heruntergeladen werden
+#   kann. Der Installer wird deshalb lokal gebaut:
+#     1) Neue EXE in den Projektordner legen
+#     2) bash tools/make_release.sh <version> fallendevilsys/Fallen-Heaven
+#     3) release/Fallen-Heaven-Setup-<version>.exe hochladen (Release-Asset)
+#   Der Workflow baut nur, wenn die EXE im Checkout vorhanden ist (z. B.
+#   bei einem internen Test-Tag mit temporaer eingespielter EXE).
 # =====================================================================
 name: Release
 
@@ -78,9 +83,23 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Windows-Installer + Update-Manifest bauen
+        id: build
         shell: bash
         run: |
+          # Die App-Datei liegt bewusst nicht im Repo (kein ZIP-Download).
+          # Ohne sie kann der Installer nicht gebaut werden - dann endet der
+          # Workflow hier sauber mit einem Hinweis (Release wird lokal gebaut).
+          if [ ! -f "Fallen-Heaven Discord App.exe" ]; then
+            echo "Hinweis: Die App-Datei liegt nicht im Repo (bewusst, damit sie"
+            echo "nicht per ZIP heruntergeladen werden kann)."
+            echo "Release bitte lokal bauen und hochladen:"
+            echo "  bash tools/make_release.sh ${{ steps.version.outputs.version }} ${{ github.repository }}"
+            echo "  (Setup.exe danach als Asset zum Release hochladen)"
+            echo "built=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           bash tools/make_release.sh "${{ steps.version.outputs.version }}" "${{ github.repository }}"
+          echo "built=true" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_ACTIONS: "true"
           # Signiert das Update-Manifest (RSA-SHA256), sobald das Secret
@@ -90,6 +109,7 @@ jobs:
 
       - name: GitHub-Release anlegen + Setup.exe hochladen
         shell: bash
+        if: steps.build.outputs.built == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -114,6 +134,7 @@ jobs:
 
       - name: Release validieren (Selbstcheck)
         shell: bash
+        if: steps.build.outputs.built == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -121,6 +142,7 @@ jobs:
 
       - name: Manifest committen (GitHub Pages)
         shell: bash
+        if: steps.build.outputs.built == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
