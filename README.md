@@ -24,6 +24,18 @@ Alles läuft **lokal** auf deinem PC — kein Konto, kein Tracking, nichts wird 
 
 ---
 
+## 📸 Ein Blick auf die App
+
+![Hauptansicht der App — dein Dashboard für Status, Spiele, Musik und Buttons](assets/screenshots/app-overview.png)
+
+*Das Dashboard: dein Status, Spiele, Musik und Buttons — alles auf einen Blick.*
+
+![Ersteinrichtung — in wenigen Schritten mit deiner Client ID verbunden](assets/screenshots/app-setup.png)
+
+*Der erste Start: Die App führt dich Schritt für Schritt durch die Einrichtung.*
+
+---
+
 ## Voraussetzungen
 
 - **Windows 10 oder 11**
