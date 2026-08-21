@@ -4,9 +4,9 @@
 # Ablauf:   Neuen Tag pushen (z. B. v6.3.0)  ->  alles passiert automatisch
 #           Manuell/Selbstheilung: Workflow -> Release -> Run workflow -> tag angeben
 #
-#   1. Release-ZIP bauen  (tools/make_release.sh)
+#   1. Windows-Installer (Setup.exe) bauen  (tools/make_release.sh)
 #   2. Update-Manifest erzeugen  (docs/update-manifest.json)
-#   3. GitHub-Release anlegen + ZIP als Asset hochladen
+#   3. GitHub-Release anlegen + Setup.exe als Asset hochladen
 #   4. Release validieren (Selbstcheck)  ->  Workflow wird rot, wenn etwas kaputt ist
 #   5. Manifest committen + pushen  ->  GitHub Pages liefert es aus
 #
@@ -77,7 +77,7 @@ jobs:
           & (Join-Path $PWD 'tools\sign.ps1')
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
-      - name: Release-ZIP + Update-Manifest bauen
+      - name: Windows-Installer + Update-Manifest bauen
         shell: bash
         run: |
           bash tools/make_release.sh "${{ steps.version.outputs.version }}" "${{ github.repository }}"
@@ -88,27 +88,27 @@ jobs:
           # das ist der gestufte Signatur-Rollout.
           FH_UPDATE_PRIVATE_KEY: ${{ secrets.UPDATE_PRIVATE_KEY }}
 
-      - name: GitHub-Release anlegen + ZIP hochladen
+      - name: GitHub-Release anlegen + Setup.exe hochladen
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           TAG="${{ steps.version.outputs.tag }}"
           VERSION="${{ steps.version.outputs.version }}"
-          ZIP="release/fallen-heaven-${VERSION}.zip"
+          SETUP="release/Fallen-Heaven-Setup-${VERSION}.exe"
           if gh release view "$TAG" >/dev/null 2>&1; then
-            echo "Release $TAG existiert bereits - ZIP ergaenzen."
-            gh release upload "$TAG" "$ZIP" --clobber
+            echo "Release $TAG existiert bereits - Setup.exe ergaenzen."
+            gh release upload "$TAG" "$SETUP" --clobber
           else
             echo "Release $TAG wird erstellt."
-            gh release create "$TAG" "$ZIP" \
+            gh release create "$TAG" "$SETUP" \
               --title "Fallen Heaven ${VERSION}" \
               --notes "Automatisch erstellt aus Tag ${TAG}." \
               || {
                 # Zwei Workflows koennen sich ueberholen (z. B. Selbstheilung
                 # + normaler Tag-Push) - dann existiert das Release inzwischen.
-                echo "Release wurde parallel erstellt - ZIP ergaenzen."
-                gh release upload "$TAG" "$ZIP" --clobber
+                echo "Release wurde parallel erstellt - Setup.exe ergaenzen."
+                gh release upload "$TAG" "$SETUP" --clobber
               }
           fi
 

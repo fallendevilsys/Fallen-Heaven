@@ -6,15 +6,15 @@
 #   bash tools/validate_release.sh <VERSION> [<GITHUB_REPO>]
 #
 # Beispiel:
-#   bash tools/validate_release.sh 6.2.0 fallendevilsys/Fallen-Heaven
+#   bash tools/validate_release.sh 6.3.5 fallendevilsys/Fallen-Heaven
 #
 # Prueft:
-#   1. GitHub-Release + ZIP-Asset existieren
+#   1. GitHub-Release + Setup.exe-Asset existieren
 #   2. Update-Manifest (GitHub Pages) ist erreichbar
 #   3. Manifest-Version passt zur lokalen EXE-Version
-#   4. SHA-256 + Groesse des ZIP stimmen mit dem Manifest ueberein
+#   4. SHA-256 + Groesse der Setup.exe stimmen mit dem Manifest ueberein
 #      (und mit dem Digest, den GitHub selbst angibt)
-#   5. Die Entry-Executable (die die App sucht) liegt im ZIP
+#   5. Setup.exe ist ein gueltiger Windows-Installer (PE-Header, MZ)
 #
 # Exit-Code 0 = alles OK, 1 = mindestens eine Pruefung fehlgeschlagen.
 # =====================================================================
@@ -29,7 +29,7 @@ cd "$ROOT"
 OWNER="${REPO%%/*}"
 NAME="${REPO#*/}"
 TAG="v${VERSION}"
-ASSET="fallen-heaven-${VERSION}.zip"
+ASSET="Fallen-Heaven-Setup-${VERSION}.exe"
 ASSET_URL="https://github.com/${REPO}/releases/download/${TAG}/${ASSET}"
 MANIFEST_URL="https://${OWNER}.github.io/${NAME}/update-manifest.json"
 
@@ -58,7 +58,7 @@ json_get() { # datei, eigenschaft
     || true
 }
 
-# --- Version normalisieren (6.2.0 == 6.2.0.0) ---
+# --- Version normalisieren (6.3.5 == 6.3.5.0) ---
 norm_version() {
   echo "$1" | sed -E 's/(\.0)+$//'
 }
@@ -66,16 +66,16 @@ norm_version() {
 echo "== Validiere Release ${TAG} (${REPO}) =="
 
 # ---------------------------------------------------------------------
-# 1) GitHub-Release + ZIP-Asset
+# 1) GitHub-Release + Setup.exe-Asset
 # ---------------------------------------------------------------------
 echo "--- 1. GitHub-Release ---"
 RELEASE_JSON="${TMP}/release.json"
 if curl -sfSL "https://api.github.com/repos/${REPO}/releases/tags/${TAG}" -o "$RELEASE_JSON"; then
   report ok "Release ${TAG} existiert"
   if grep -q "$ASSET" "$RELEASE_JSON"; then
-    report ok "ZIP-Asset '${ASSET}' ist im Release vorhanden"
+    report ok "Setup-Asset '${ASSET}' ist im Release vorhanden"
   else
-    report bad "ZIP-Asset '${ASSET}' fehlt im Release"
+    report bad "Setup-Asset '${ASSET}' fehlt im Release"
   fi
 else
   report bad "Release ${TAG} nicht gefunden (404)"
@@ -129,14 +129,14 @@ else
 fi
 
 # ---------------------------------------------------------------------
-# 4) ZIP: Download + SHA-256 + Groesse
+# 4) Setup.exe: Download + SHA-256 + Groesse
 # ---------------------------------------------------------------------
-echo "--- 4. ZIP-Integritaet ---"
-PKG="${TMP}/pkg.zip"
+echo "--- 4. Setup-Integritaet ---"
+PKG="${TMP}/setup.exe"
 if curl -sfSL -o "$PKG" "$ASSET_URL"; then
-  report ok "ZIP heruntergeladen: ${ASSET_URL}"
+  report ok "Setup.exe heruntergeladen: ${ASSET_URL}"
 else
-  report bad "ZIP nicht ladbar: ${ASSET_URL}"
+  report bad "Setup.exe nicht ladbar: ${ASSET_URL}"
 fi
 
 if [ -s "$PKG" ]; then
@@ -148,13 +148,13 @@ if [ -s "$PKG" ]; then
   if [ -n "$MANIFEST_SHA" ] && [ "$SHA" = "$MANIFEST_SHA" ]; then
     report ok "SHA-256 stimmt: ${SHA}"
   else
-    report bad "SHA-256 weicht ab (Manifest: ${MANIFEST_SHA}, ZIP: ${SHA})"
+    report bad "SHA-256 weicht ab (Manifest: ${MANIFEST_SHA}, Setup: ${SHA})"
   fi
 
   if [ -n "$MANIFEST_SIZE" ] && [ "$SIZE" = "$MANIFEST_SIZE" ]; then
     report ok "Groesse stimmt: ${SIZE} Bytes"
   else
-    report bad "Groesse weicht ab (Manifest: ${MANIFEST_SIZE}, ZIP: ${SIZE})"
+    report bad "Groesse weicht ab (Manifest: ${MANIFEST_SIZE}, Setup: ${SIZE})"
   fi
 
   GH_DIGEST="$(grep -o '"digest": *"sha256:[a-f0-9]*"' "$RELEASE_JSON" 2>/dev/null \
@@ -169,20 +169,21 @@ if [ -s "$PKG" ]; then
 fi
 
 # ---------------------------------------------------------------------
-# 5) Entry-Executable im ZIP
+# 5) Installer ist ein Windows-PE (MZ-Header) + entryExecutable vorhanden
 # ---------------------------------------------------------------------
-echo "--- 5. Entry-Executable ---"
-if [ -s "$PKG" ] && [ -n "$MANIFEST_ENTRY" ]; then
-  PKG_WIN="$(cygpath -w "$PKG" 2>/dev/null || echo "$PKG")"
-  if powershell -NoProfile -Command \
-    "Add-Type -AssemblyName System.IO.Compression.FileSystem; \
-     \$z=[System.IO.Compression.ZipFile]::OpenRead('${PKG_WIN}'); \
-     \$found=(\$z.Entries.FullName -contains '${MANIFEST_ENTRY}'); \
-     \$z.Dispose(); if (\$found) { exit 0 } else { exit 1 }" >/dev/null 2>&1; then
-    report ok "Entry-Executable '${MANIFEST_ENTRY}' liegt im ZIP"
+echo "--- 5. Installer-Prüfung ---"
+if [ -s "$PKG" ]; then
+  if head -c 2 "$PKG" | od -An -c | grep -q 'M   Z'; then
+    report ok "Setup.exe traegt einen gueltigen PE-Header (MZ)"
   else
-    report bad "Entry-Executable '${MANIFEST_ENTRY}' fehlt im ZIP"
+    report bad "Setup.exe ist kein gueltiges Windows-Programm"
   fi
+fi
+
+if [ -n "$MANIFEST_ENTRY" ]; then
+  report ok "entryExecutable im Manifest: ${MANIFEST_ENTRY}"
+else
+  report bad "Kein entryExecutable im Manifest"
 fi
 
 # ---------------------------------------------------------------------

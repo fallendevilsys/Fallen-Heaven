@@ -124,11 +124,11 @@ jobs:
           fi
 
           # -----------------------------------------------------------
-          # 3) Existiert das Release inkl. ZIP-Asset?
+          # 3) Existiert das Release inkl. Setup.exe-Asset?
           # -----------------------------------------------------------
           RELEASE="$(gh api "repos/${REPO}/releases/tags/${TAG}" 2>/dev/null || true)"
           if [ -n "$RELEASE" ] && printf '%s' "$RELEASE" | grep -q "\"${ASSET}\""; then
-            echo "OK: Release ${TAG} mit Asset ${ASSET} vorhanden."
+            echo "OK: Release ${TAG} mit Setup.exe-Asset ${ASSET} vorhanden."
             ISSUE=$(gh issue list --repo "$REPO" --search "\"Release ${TAG} fehlt\" in:title" --state open --json number --jq '.[0].number // empty' 2>/dev/null || true)
             if [ -n "$ISSUE" ]; then
               gh issue comment "$ISSUE" --repo "$REPO" \

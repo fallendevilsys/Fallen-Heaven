@@ -6,17 +6,17 @@
 #   bash tools/validate_build.sh <VERSION> [<GITHUB_REPO>]
 #
 # Beispiel (im Workflow):
-#   bash tools/validate_build.sh 6.2.0 fallendevilsys/Fallen-Heaven
+#   bash tools/validate_build.sh 6.3.5 fallendevilsys/Fallen-Heaven
 #
 # Wird nach dem Bauen UND nach dem Hochladen des Releases ausgefuehrt.
 # Im Gegensatz zu validate_release.sh braucht es KEIN GitHub Pages
 # (Pages baut erst nach dem Lauf) — es prueft die frisch gebauten
 # Artefakte direkt im Runner:
 #
-#   1. ZIP + Manifest existieren
+#   1. Setup.exe + Manifest existieren
 #   2. Manifest-Version passt zum Tag UND zur EXE-Version
-#   3. SHA-256 + Groesse des ZIP stimmen mit dem Manifest ueberein
-#   4. Entry-Executable (die die App sucht) liegt im ZIP
+#   3. SHA-256 + Groesse der Setup.exe stimmen mit dem Manifest ueberein
+#   4. Setup.exe ist ein gueltiger Windows-Installer (PE-Header, MZ)
 #   5. GitHub-Check (nur wenn GH_TOKEN gesetzt, z. B. im Workflow):
 #      Release + Asset existieren, GitHub-Digest == lokaler SHA-256
 #
@@ -33,8 +33,8 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 TAG="v${VERSION}"
-ASSET="fallen-heaven-${VERSION}.zip"
-ZIP_PATH="release/${ASSET}"
+ASSET="Fallen-Heaven-Setup-${VERSION}.exe"
+SETUP_PATH="release/${ASSET}"
 MANIFEST_PATH="docs/update-manifest.json"
 
 PASS=0
@@ -59,7 +59,7 @@ json_get() { # datei, eigenschaft
     || true
 }
 
-# --- Version normalisieren (6.2.0 == 6.2.0.0) ---
+# --- Version normalisieren (6.3.5 == 6.3.5.0) ---
 norm_version() {
   echo "$1" | sed -E 's/(\.0)+$//'
 }
@@ -67,13 +67,13 @@ norm_version() {
 echo "== Selbstcheck fuer Release ${TAG} (${REPO}) =="
 
 # ---------------------------------------------------------------------
-# 1) ZIP + Manifest vorhanden
+# 1) Setup.exe + Manifest vorhanden
 # ---------------------------------------------------------------------
 echo "--- 1. Artefakte ---"
-if [ -s "$ZIP_PATH" ]; then
-  report ok "ZIP vorhanden: ${ZIP_PATH}"
+if [ -s "$SETUP_PATH" ]; then
+  report ok "Setup.exe vorhanden: ${SETUP_PATH}"
 else
-  report bad "ZIP fehlt: ${ZIP_PATH}"
+  report bad "Setup.exe fehlt: ${SETUP_PATH}"
 fi
 
 if [ -s "$MANIFEST_PATH" ]; then
@@ -82,7 +82,7 @@ else
   report bad "Manifest fehlt: ${MANIFEST_PATH}"
 fi
 
-if [ ! -s "$ZIP_PATH" ] || [ ! -s "$MANIFEST_PATH" ]; then
+if [ ! -s "$SETUP_PATH" ] || [ ! -s "$MANIFEST_PATH" ]; then
   echo
   echo "== Ergebnis: ${PASS} OK, ${FAIL} Fehler =="
   exit 1
@@ -131,43 +131,40 @@ else
 fi
 
 # ---------------------------------------------------------------------
-# 3) SHA-256 + Groesse des ZIP gegen das Manifest
+# 3) SHA-256 + Groesse der Setup.exe gegen das Manifest
 # ---------------------------------------------------------------------
-echo "--- 3. ZIP-Integritaet ---"
-SHA="$(sha256sum "$ZIP_PATH" | awk '{print $1}')"
-SIZE="$(stat -c %s "$ZIP_PATH" 2>/dev/null || wc -c < "$ZIP_PATH" | tr -d ' ')"
+echo "--- 3. Setup-Integritaet ---"
+SHA="$(sha256sum "$SETUP_PATH" | awk '{print $1}')"
+SIZE="$(stat -c %s "$SETUP_PATH" 2>/dev/null || wc -c < "$SETUP_PATH" | tr -d ' ')"
 MANIFEST_SHA="$(json_get "$MANIFEST_PATH" "sha256")"
 MANIFEST_SIZE="$(json_get "$MANIFEST_PATH" "packageSize")"
 
 if [ -n "$MANIFEST_SHA" ] && [ "$SHA" = "$MANIFEST_SHA" ]; then
   report ok "SHA-256 stimmt: ${SHA}"
 else
-  report bad "SHA-256 weicht ab (Manifest: ${MANIFEST_SHA}, ZIP: ${SHA})"
+  report bad "SHA-256 weicht ab (Manifest: ${MANIFEST_SHA}, Setup: ${SHA})"
 fi
 
 if [ -n "$MANIFEST_SIZE" ] && [ "$SIZE" = "$MANIFEST_SIZE" ]; then
   report ok "Groesse stimmt: ${SIZE} Bytes"
 else
-  report bad "Groesse weicht ab (Manifest: ${MANIFEST_SIZE}, ZIP: ${SIZE})"
+  report bad "Groesse weicht ab (Manifest: ${MANIFEST_SIZE}, Setup: ${SIZE})"
 fi
 
 # ---------------------------------------------------------------------
-# 4) Entry-Executable im ZIP
+# 4) Setup.exe ist ein Windows-PE (MZ-Header) + entryExecutable vorhanden
 # ---------------------------------------------------------------------
-echo "--- 4. Entry-Executable ---"
+echo "--- 4. Installer-Prüfung ---"
 if [ -n "$MANIFEST_ENTRY" ]; then
-  ZIP_WIN="$(cygpath -w "$ZIP_PATH" 2>/dev/null || echo "$ZIP_PATH")"
-  if powershell -NoProfile -Command \
-    "Add-Type -AssemblyName System.IO.Compression.FileSystem; \
-     \$z=[System.IO.Compression.ZipFile]::OpenRead('${ZIP_WIN}'); \
-     \$found=(\$z.Entries.FullName -contains '${MANIFEST_ENTRY}'); \
-     \$z.Dispose(); if (\$found) { exit 0 } else { exit 1 }" >/dev/null 2>&1; then
-    report ok "Entry-Executable '${MANIFEST_ENTRY}' liegt im ZIP"
-  else
-    report bad "Entry-Executable '${MANIFEST_ENTRY}' fehlt im ZIP"
-  fi
+  report ok "entryExecutable im Manifest: ${MANIFEST_ENTRY}"
 else
   report bad "Kein entryExecutable im Manifest"
+fi
+
+if head -c 2 "$SETUP_PATH" | od -An -c | grep -q 'M   Z'; then
+  report ok "Setup.exe traegt einen gueltigen PE-Header (MZ)"
+else
+  report bad "Setup.exe ist kein gueltiges Windows-Programm"
 fi
 
 # ---------------------------------------------------------------------
@@ -180,9 +177,9 @@ if [ -n "${GH_TOKEN:-}" ]; then
   if [ -n "$RELEASE_JSON" ]; then
     report ok "Release ${TAG} existiert auf GitHub"
     if echo "$RELEASE_JSON" | grep -q "$ASSET"; then
-      report ok "ZIP-Asset '${ASSET}' ist im Release hochgeladen"
+      report ok "Setup-Asset '${ASSET}' ist im Release hochgeladen"
     else
-      report bad "ZIP-Asset '${ASSET}' fehlt im Release"
+      report bad "Setup-Asset '${ASSET}' fehlt im Release"
     fi
     GH_DIGEST="$(echo "$RELEASE_JSON" | grep -o '"digest": *"sha256:[a-f0-9]*"' \
       | head -1 | sed -E 's/.*sha256:([a-f0-9]*).*/\1/')"

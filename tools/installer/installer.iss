@@ -45,6 +45,12 @@ WizardStyle=modern
 ArchitecturesInstallIn64BitMode=x64compatible
 ; Keine Explorer-Pfad-Aenderung noetig (portable App, kein PATH-Eintrag)
 ChangesAssociations=no
+; Stille Updates: Wenn die App beim Installieren noch laeuft (z. B. Update,
+; bevor sie sich selbst beendet hat), wird sie kontrolliert geschlossen und
+; danach nicht automatisch neu gestartet (das macht der App-Neustart weiter
+; unten nur bei /RESTARTAPP).
+CloseApplications=force
+RestartApplications=no
 
 [Languages]
 Name: "german";  MessagesFile: "compiler:Languages\German.isl";  LicenseFile: "license-de.txt"
@@ -72,5 +78,15 @@ Source: "..\..\app-config.example.json"; DestDir: "{app}"; DestName: "app-config
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}";  Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
+[Code]
+// Nur bei Updates (stiller Modus mit /RESTARTAPP): App nach der
+// Installation automatisch wieder starten.
+function ShouldRestartApp(): Boolean;
+begin
+  Result := ExpandConstant('{param:RESTARTAPP}') <> '';
+end;
+
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+; Stiller Update-Modus: App neu starten (nur wenn /RESTARTAPP uebergeben wurde)
+Filename: "{app}\{#MyAppExeName}"; Flags: nowait; Check: ShouldRestartApp
