@@ -10,7 +10,25 @@
 
 ---
 
-## What is FALLEN HEAVEN?
+## 📑 Table of contents
+
+- [What is FALLEN HEAVEN?](#-what-is-fallen-heaven)
+- [A look at the app](#-a-look-at-the-app)
+- [Requirements](#-requirements)
+- [Quick start](#-quick-start-2-minutes)
+- [Your status, your text](#-your-status-your-text)
+- [Languages](#-languages)
+- [Features](#-features)
+- [Privacy](#-privacy)
+- [Updates](#-updates)
+- [FAQ](#-faq)
+- [Version history](#-version-history)
+- [Community & support](#-community--support)
+- [License](#-license)
+
+---
+
+## 🌟 What is FALLEN HEAVEN?
 
 A small, portable Windows app that styles your Discord status automatically:
 
@@ -36,14 +54,14 @@ Everything runs **locally** on your PC — no account, no tracking, nothing is u
 
 ---
 
-## Requirements
+## ✅ Requirements
 
 - **Windows 10 or 11**
 - **Discord desktop app** — installed and running
 
 ---
 
-## Quick start (2 minutes)
+## 🚀 Quick start (2 minutes)
 
 1. **Download the app** — the latest version is under [Releases](https://github.com/fallendevilsys/Fallen-Heaven/releases). The app is **portable**: just run it, no installation.
 2. **Enter your Client ID** (once):
@@ -57,7 +75,7 @@ Everything runs **locally** on your PC — no account, no tracking, nothing is u
 
 ---
 
-## Your status, your text
+## ✍️ Your status, your text
 
 You decide what others see:
 
@@ -80,7 +98,20 @@ You decide what others see:
 
 ---
 
-## Features
+## 🌍 Languages
+
+The app is fully translated and switches languages automatically based on your Windows system language — you can also change it manually anytime in the settings:
+
+- 🇩🇪 **German**
+- 🇬🇧 **English**
+- 🇪🇸 **Spanish**
+- 🇫🇷 **French**
+- 🇷🇺 **Russian**
+- 🇸🇦 **Arabic**
+
+---
+
+## ✨ Features
 
 - 🎮 **Game detection** — automatic, including your own game rules
 - 🎧 **Spotify** — song, artist, and cover, taking priority over the browser
@@ -88,7 +119,7 @@ You decide what others see:
 - ✍️ **Your own text** — main text, rotating lines, comment, up to 2 buttons
 - 👤 **Your own Client ID** — up to 2 supported
 - 🔒 **Privacy mode** — a neutral display while OBS & co. are running
-- 🌍 **6 languages**
+- 🌍 **6 languages** — German, English, Spanish, French, Russian, Arabic
 - 🎨 **Color themes** — Violet, Neon Cyan, Crimson, Cyberpunk
 - 🖥️ **Fits every screen** — everything stays visible even on small monitors
 - 🚀 **Automatic updates**
@@ -96,22 +127,22 @@ You decide what others see:
 
 ---
 
-## Privacy
+## 🔒 Privacy
 
 Everything runs **locally**. The app only connects to **Discord** and — only when enabled — to **YouTube/Twitch**. Games, Spotify, and browsers are detected locally. Updates come via the public GitHub release.
 
 ---
 
-## Updates
+## 🔄 Updates
 
 New versions are downloaded and installed **automatically** on startup — you don't have to do anything. Manually: **CHECK FOR UPDATES**.
 
 ---
 
-## FAQ
+## ❓ FAQ
 
 **Why don't I see a status?**
-Almost always a missing Client ID — see [Quick start](#quick-start-2-minutes).
+Almost always a missing Client ID — see [Quick start](#-quick-start-2-minutes).
 
 **Why can't I see my own buttons?**
 Discord only shows buttons to other users. Test with a second account.
@@ -130,30 +161,30 @@ Locally in the app folder. The app is portable — just copy the folder.
 ## 📜 Version history
 
 **6.3.5** *(current)*
-- 🎧 **Spotify recognition** — show what you're listening to: song, artist, and cover now appear in your Discord status. The "YouTube" option now also covers Spotify — and your song takes priority over the browser.
-- ✨ **Beautiful startup animation** — when the app opens, soft glowing particles now rise up and the logo gets a pulsing shine.
+- 🎧 **Spotify recognition** — show what you're listening to: song, artist, and cover appear in your Discord status. Your song takes priority over the browser.
+- ✨ **Beautiful startup animation** — soft glowing particles rise up and the logo gets a pulsing shine.
 
 **6.3.4**
-- 🖥️ **Fits every screen** — the app adapts to your screen size: on smaller monitors, windows shrink automatically so every button stays visible and nothing gets cut off.
-- 🔍 **Crisp text everywhere** — no more blurry text on laptops with 125%/150% zoom; the app stays sharp even when you move it between two monitors.
+- 🖥️ **Fits every screen** — the app shrinks windows automatically on small monitors so nothing gets cut off.
+- 🔍 **Crisp text everywhere** — no more blurry text on laptops with 125%/150% zoom.
 
 **6.3.3**
-- 🎨 **Color themes** — new "Appearance" menu in Settings: choose between Violet, Neon Cyan, Crimson, and Cyberpunk — the app restarts automatically afterwards.
-- 🚀 **Even more reliable updates** — new versions install cleanly even when Windows strictly checks the app; the app restarts automatically afterwards.
+- 🎨 **Color themes** — choose between Violet, Neon Cyan, Crimson, and Cyberpunk.
+- 🚀 **More reliable updates** — new versions install cleanly and restart the app automatically.
 
 **6.3.2**
-- 🎮 **Detection fixed** — games, browsers, and YouTube (title + preview image) are recognized and shown reliably again.
+- 🎮 **Detection improved** — games, browsers, and YouTube are recognized reliably again.
 
 **6.3.1**
-- 🐛 **Saved instantly** — changes (e.g. a button name) apply immediately; your status stays active without restarting.
-- 🛠️ **More stable** — the app logo loads reliably; settings can always be saved.
+- ⚡ **Saved instantly** — changes apply without restarting; your status stays active.
+- 🛠️ **More stable** — settings can always be saved reliably.
 
 **6.3.0**
-- 🐛 **Bug fixes** — minor issues fixed and the app made more stable overall.
+- 🐛 **Bug fixes** — minor issues fixed and the app made more stable.
 
 ---
 
-## Community & support
+## 💬 Community & support
 
 Questions, feedback or ideas? Join the community:
 
@@ -162,6 +193,6 @@ Questions, feedback or ideas? Join the community:
 
 ---
 
-## License
+## 📄 License
 
 **All rights reserved** — see [LICENSE](LICENSE). Copying, distribution or resale only with explicit written permission.

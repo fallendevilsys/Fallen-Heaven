@@ -10,7 +10,25 @@
 
 ---
 
-## Was ist FALLEN HEAVEN?
+## 📑 Inhaltsverzeichnis
+
+- [Was ist FALLEN HEAVEN?](#-was-ist-fallen-heaven)
+- [Ein Blick auf die App](#-ein-blick-auf-die-app)
+- [Voraussetzungen](#-voraussetzungen)
+- [Schnellstart](#-schnellstart-2-minuten)
+- [Dein Status, dein Text](#-dein-status-dein-text)
+- [Sprachen](#-sprachen)
+- [Features](#-features)
+- [Datenschutz](#-datenschutz)
+- [Updates](#-updates)
+- [FAQ](#-faq)
+- [Versionshistorie](#-versionshistorie)
+- [Community & Support](#-community--support)
+- [Lizenz](#-lizenz)
+
+---
+
+## 🌟 Was ist FALLEN HEAVEN?
 
 Eine kleine, portable Windows-App, die deinen Discord-Status automatisch gestaltet:
 
@@ -36,14 +54,14 @@ Alles läuft **lokal** auf deinem PC — kein Konto, kein Tracking, nichts wird 
 
 ---
 
-## Voraussetzungen
+## ✅ Voraussetzungen
 
 - **Windows 10 oder 11**
 - **Discord-Desktop-App** — installiert und gestartet
 
 ---
 
-## Schnellstart (2 Minuten)
+## 🚀 Schnellstart (2 Minuten)
 
 1. **App herunterladen** — die neueste Version findest du unter [Releases](https://github.com/fallendevilsys/Fallen-Heaven/releases). Die App ist **portabel**: einfach starten, keine Installation.
 2. **Client ID eintragen** (einmalig):
@@ -57,7 +75,7 @@ Alles läuft **lokal** auf deinem PC — kein Konto, kein Tracking, nichts wird 
 
 ---
 
-## Dein Status, dein Text
+## ✍️ Dein Status, dein Text
 
 Du bestimmst, was andere sehen:
 
@@ -80,7 +98,20 @@ Du bestimmst, was andere sehen:
 
 ---
 
-## Features
+## 🌍 Sprachen
+
+Die App ist vollständig übersetzt und wechselt die Sprache automatisch anhand deiner Windows-Systemsprache — du kannst sie aber auch jederzeit manuell in den Einstellungen umstellen:
+
+- 🇩🇪 **Deutsch**
+- 🇬🇧 **Englisch**
+- 🇪🇸 **Spanisch**
+- 🇫🇷 **Französisch**
+- 🇷🇺 **Russisch**
+- 🇸🇦 **Arabisch**
+
+---
+
+## ✨ Features
 
 - 🎮 **Spiele-Erkennung** — automatisch, inkl. eigener Spielregeln
 - 🎧 **Spotify** — Song, Interpret und Cover, mit Vorrang vor dem Browser
@@ -88,7 +119,7 @@ Du bestimmst, was andere sehen:
 - ✍️ **Eigener Text** — Haupttext, rotierende Zeilen, Kommentar, bis zu 2 Buttons
 - 👤 **Eigene Client ID** — bis zu 2 möglich
 - 🔒 **Privacy-Modus** — neutrale Anzeige bei OBS & Co.
-- 🌍 **6 Sprachen**
+- 🌍 **6 Sprachen** — Deutsch, Englisch, Spanisch, Französisch, Russisch, Arabisch
 - 🎨 **Farb-Themes** — Violett, Neon-Cyan, Crimson, Cyberpunk
 - 🖥️ **Passt auf jeden Bildschirm** — auf kleinen Monitoren bleibt alles sichtbar
 - 🚀 **Automatische Updates**
@@ -96,22 +127,22 @@ Du bestimmst, was andere sehen:
 
 ---
 
-## Datenschutz
+## 🔒 Datenschutz
 
 Alles läuft **lokal**. Die App verbindet sich nur mit **Discord** und — nur wenn aktiviert — mit **YouTube/Twitch**. Spiele, Spotify und Browser werden lokal ausgelesen. Updates kommen über das öffentliche GitHub-Release.
 
 ---
 
-## Updates
+## 🔄 Updates
 
 Neue Versionen werden beim Start **automatisch** geladen und installiert — du musst nichts tun. Manuell: **UPDATES SUCHEN**.
 
 ---
 
-## FAQ
+## ❓ FAQ
 
 **Warum sehe ich keinen Status?**
-Fast immer fehlt die Client ID — siehe [Schnellstart](#schnellstart-2-minuten).
+Fast immer fehlt die Client ID — siehe [Schnellstart](#-schnellstart-2-minuten).
 
 **Warum sehe ich meine Buttons nicht selbst?**
 Discord zeigt Buttons nur anderen Nutzern. Teste mit einem zweiten Konto.
@@ -130,30 +161,30 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 ## 📜 Versionshistorie
 
 **6.3.5** *(aktuell)*
-- 🎧 **Spotify-Erkennung** — zeig, was du gerade hörst: Song, Interpret und Cover erscheinen jetzt in deinem Discord-Status. Die Option „YouTube" umfasst jetzt auch Spotify — dein Song hat dabei Vorrang vor dem Browser.
-- ✨ **Schönere Start-Animation** — beim Öffnen der App steigen jetzt sanft leuchtende Partikel auf und das Logo bekommt einen pulsierenden Glanz.
+- 🎧 **Spotify-Erkennung** — zeig, was du gerade hörst: Song, Interpret und Cover erscheinen in deinem Discord-Status. Dein Song hat dabei Vorrang vor dem Browser.
+- ✨ **Schönere Start-Animation** — beim Öffnen steigen sanft leuchtende Partikel auf und das Logo bekommt einen pulsierenden Glanz.
 
 **6.3.4**
-- 🖥️ **Passt auf jeden Bildschirm** — die App passt sich deiner Bildschirmgröße an: Auf kleineren Monitoren verkleinern sich die Fenster automatisch, damit jeder Button sichtbar bleibt und nichts abgeschnitten wird.
-- 🔍 **Überall scharfer Text** — kein unscharfer Text mehr auf Laptops mit 125 %/150 % Vergrößerung; die App bleibt scharf, selbst wenn du sie zwischen zwei Monitoren verschiebst.
+- 🖥️ **Passt auf jeden Bildschirm** — die App verkleinert Fenster auf kleinen Monitoren automatisch, damit nichts abgeschnitten wird.
+- 🔍 **Überall scharfer Text** — kein unscharfer Text mehr auf Laptops mit 125 %/150 % Vergrößerung.
 
 **6.3.3**
-- 🎨 **Farb-Themes** — neues Menü „Erscheinungsbild" in den Einstellungen: wähle zwischen Violett, Neon-Cyan, Crimson und Cyberpunk — die App startet danach automatisch neu.
-- 🚀 **Updates noch zuverlässiger** — neue Versionen installieren sich auch dann sauber, wenn Windows die App besonders streng prüft; die App startet danach automatisch neu.
+- 🎨 **Farb-Themes** — wähle zwischen Violett, Neon-Cyan, Crimson und Cyberpunk.
+- 🚀 **Zuverlässigere Updates** — neue Versionen installieren sich sauber und starten die App automatisch neu.
 
 **6.3.2**
-- 🎮 **Erkennung repariert** — Spiele, Browser und YouTube (Titel + Vorschaubild) werden wieder zuverlässig erkannt und angezeigt.
+- 🎮 **Erkennung verbessert** — Spiele, Browser und YouTube werden wieder zuverlässig erkannt.
 
 **6.3.1**
-- 🐛 **Sofort gespeichert** — Änderungen (z. B. ein Button-Name) werden sofort übernommen; dein Status bleibt ohne Neustart aktiv.
-- 🛠️ **Stabiler** — das App-Logo wird zuverlässig geladen; Einstellungen lassen sich immer speichern.
+- ⚡ **Sofort gespeichert** — Änderungen gelten ohne Neustart; dein Status bleibt aktiv.
+- 🛠️ **Stabiler** — Einstellungen lassen sich immer zuverlässig speichern.
 
 **6.3.0**
-- 🐛 **Bugfixes** — kleinere Fehler behoben und die App insgesamt stabiler gemacht.
+- 🐛 **Bugfixes** — kleinere Fehler behoben und die App stabiler gemacht.
 
 ---
 
-## Community & Support
+## 💬 Community & Support
 
 Fragen, Feedback oder Ideen? Komm in die Community:
 
@@ -162,6 +193,6 @@ Fragen, Feedback oder Ideen? Komm in die Community:
 
 ---
 
-## Lizenz
+## 📄 Lizenz
 
 **Alle Rechte vorbehalten** — siehe [LICENSE](LICENSE). Vervielfältigung, Verbreitung oder Weiterverkauf nur mit ausdrücklicher schriftlicher Genehmigung.
