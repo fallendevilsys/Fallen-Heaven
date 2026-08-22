@@ -3,7 +3,7 @@
 > „Wo gefallene Engel landen" — mach aus deinem Discord-Status etwas, das zu dir passt. Zeige Spiele, Musik oder deinen Discord-Server direkt in deinem Profil. Einfach, lokal, ohne Installation.
 
 [![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
-![Sprachen](https://img.shields.io/badge/Sprachen-6-blue)
+![Sprachen](https://img.shields.io/badge/Sprachen-9-blue)
 ![Lizenz](https://img.shields.io/badge/Lizenz-Alle%20Rechte%20vorbehalten-black)
 
 *English version: [README-EN.md](README-EN.md)*
@@ -108,6 +108,9 @@ Die App ist vollständig übersetzt und wechselt die Sprache automatisch anhand 
 - 🇫🇷 **Französisch**
 - 🇷🇺 **Russisch**
 - 🇸🇦 **Arabisch**
+- 🇹🇷 **Türkisch**
+- 🇮🇹 **Italienisch**
+- 🇵🇱 **Polnisch**
 
 ---
 
@@ -119,7 +122,7 @@ Die App ist vollständig übersetzt und wechselt die Sprache automatisch anhand 
 - ✍️ **Eigener Text** — Haupttext, rotierende Zeilen, Kommentar, bis zu 2 Buttons
 - 👤 **Eigene Client ID** — bis zu 2 möglich
 - 🔒 **Privacy-Modus** — neutrale Anzeige bei OBS & Co.
-- 🌍 **6 Sprachen** — Deutsch, Englisch, Spanisch, Französisch, Russisch, Arabisch
+- 🌍 **9 Sprachen** — Deutsch, Englisch, Spanisch, Französisch, Russisch, Arabisch, Türkisch, Italienisch, Polnisch
 - 🎨 **Farb-Themes** — Violett, Neon-Cyan, Crimson, Cyberpunk
 - 🖥️ **Passt auf jeden Bildschirm** — auf kleinen Monitoren bleibt alles sichtbar
 - 🚀 **Automatische Updates**
@@ -161,6 +164,7 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 ## 📜 Versionshistorie
 
 **6.3.5** *(aktuell)*
+- 🌍 **9 Sprachen** — neu dabei: Türkisch, Italienisch und Polnisch. Die komplette App-Oberfläche ist in allen Sprachen übersetzt.
 - 🎧 **Spotify-Erkennung** — zeig, was du gerade hörst: Song, Interpret und Cover erscheinen in deinem Discord-Status. Dein Song hat dabei Vorrang vor dem Browser.
 - ✨ **Schönere Start-Animation** — beim Öffnen steigen sanft leuchtende Partikel auf und das Logo bekommt einen pulsierenden Glanz.
 

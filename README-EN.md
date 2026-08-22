@@ -3,7 +3,7 @@
 > "Where fallen angels land" — turn your Discord status into something that's truly yours. Show games, music, or your Discord server right in your profile. Simple, local, no installation required.
 
 [![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
-![Languages](https://img.shields.io/badge/Languages-6-blue)
+![Languages](https://img.shields.io/badge/Languages-9-blue)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-black)
 
 *Deutsche Version: [README.md](README.md)*
@@ -108,6 +108,9 @@ The app is fully translated and switches languages automatically based on your W
 - 🇫🇷 **French**
 - 🇷🇺 **Russian**
 - 🇸🇦 **Arabic**
+- 🇹🇷 **Turkish**
+- 🇮🇹 **Italian**
+- 🇵🇱 **Polish**
 
 ---
 
@@ -119,7 +122,7 @@ The app is fully translated and switches languages automatically based on your W
 - ✍️ **Your own text** — main text, rotating lines, comment, up to 2 buttons
 - 👤 **Your own Client ID** — up to 2 supported
 - 🔒 **Privacy mode** — a neutral display while OBS & co. are running
-- 🌍 **6 languages** — German, English, Spanish, French, Russian, Arabic
+- 🌍 **9 languages** — German, English, Spanish, French, Russian, Arabic, Turkish, Italian, Polish
 - 🎨 **Color themes** — Violet, Neon Cyan, Crimson, Cyberpunk
 - 🖥️ **Fits every screen** — everything stays visible even on small monitors
 - 🚀 **Automatic updates**
@@ -161,6 +164,7 @@ Locally in the app folder. The app is portable — just copy the folder.
 ## 📜 Version history
 
 **6.3.5** *(current)*
+- 🌍 **9 languages** — new: Turkish, Italian, and Polish. The entire app interface is fully translated.
 - 🎧 **Spotify recognition** — show what you're listening to: song, artist, and cover appear in your Discord status. Your song takes priority over the browser.
 - ✨ **Beautiful startup animation** — soft glowing particles rise up and the logo gets a pulsing shine.
 

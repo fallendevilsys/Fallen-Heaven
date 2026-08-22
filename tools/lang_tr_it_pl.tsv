@@ -1,0 +1,248 @@
+presence_control	PRESENCE KONTROL UYGULAMASI	APP PRESENCE CONTROL	APLIKACJA PRESENCE CONTROL
+discord_workspace	Discord Çalışma Alanı	Spazio di lavoro Discord	Przestrzeń Discord
+control_center	KONTROL MERKEZİ	CENTRO DI CONTROLLO	CENTRUM STEROWANIA
+overview	GENEL BAKIŞ	PANORAMICA	PRZEGLĄD
+live_dashboard	Canlı Pano	Dashboard live	Panel na żywo
+settings	AYARLAR	IMPOSTAZIONI	USTAWIENIA
+status_games	Durum, Oyunlar ve Dil	Stato, giochi e lingua	Status, gry i język
+developer_links	GELİŞTİRİCİ BAĞLANTILARI	LINK SVILUPPATORE	LINKI TWÓRCY
+my_server	SUNUCUM	IL MIO SERVER	MÓJ SERWER
+open_discord	Discord'u Aç	Apri Discord	Otwórz Discorda
+creator	OLUŞTURUCU	CREATORE	TWÓRCA
+open_guns	guns.lol'u Aç	Apri guns.lol	Otwórz guns.lol
+system_ready	SİSTEM HAZIR	SISTEMA PRONTO	SYSTEM GOTOWY
+presence_ready	Yerel Presence hazır	La Presence locale è pronta	Lokalna Presence jest gotowa
+desktop	FALLEN-HEAVEN  //  MASAÜSTÜ	FALLEN-HEAVEN  //  DESKTOP	FALLEN-HEAVEN  //  PULPIT
+presence_overview	FALLEN HEAVEN  /  PRESENCE GENEL BAKIŞ	FALLEN HEAVEN  /  PANORAMICA PRESENCE	FALLEN HEAVEN  /  PRZEGLĄD PRESENCE
+hero_title	Presence'in. Senin tarzın.	La tua presence. A modo tuo.	Twoja presence. Po twojemu.
+hero_subtitle	Topluluk durumu ve mevcut oyunun — otomatik, sakin ve yerel.	Stato della community e gioco in corso — automatico, discreto e locale.	Status społeczności i bieżąca gra — automatycznie, spokojnie i lokalnie.
+discord_status	DISCORD DURUMU	STATO DISCORD	STATUS DISCORD
+ready	Hazır	Pronto	Gotowy
+discord_sync	DISCORD SENKRONİZASYONU	SYNC DISCORD	SYNC DISCORD
+rpc_update	Doğrudan RPC güncellemesi	Aggiornamento RPC diretto	Bezpośrednia aktualizacja RPC
+game_check	OYUN KONTROLÜ	CONTROLLO GIOCO	KONTROLA GRY
+off	KAPALI	SPENTO	WYŁ.
+steam_detection	Yerel Steam algılama	Rilevamento Steam locale	Lokalne wykrywanie Steama
+session	OTURUM	SESSIONE	SESJA
+presence_runtime	Güncel Presence süresi	Durata attuale della Presence	Bieżący czas Presence
+live_activity	CANLI ETKİNLİK	ATTIVITÀ LIVE	AKTYWNOŚĆ NA ŻYWO
+community_signal	TOPLULUK SİNYALİ	SEGNALE COMMUNITY	SYGNAŁ SPOŁECZNOŚCI
+control_panel	KONTROL PANELİ	PANNELLO DI CONTROLLO	PANEL STEROWANIA
+control_hint	Presence ve Windows davranışı	Presence e comportamento di Windows	Presence i zachowanie systemu Windows
+start	BAŞLAT	AVVIA	START
+activate	Etkinleştir	Attiva	Aktywuj
+stop	DURDUR	STOP	STOP
+remove	Kaldır	Rimuovi	Usuń
+tray	PENCEREYİ GİZLE	NASCONDI FINESTRA	UKRYJ OKNO
+tray_hint	Uygulama arka planda çalışmaya devam eder	L'app continua a funzionare in background	Aplikacja działa dalej w tle
+autostart	WINDOWS OTOMATİK BAŞLATMA	AVVIO AUTOMATICO WINDOWS	AUTOSTART WINDOWS
+autostart_hint	İsteğe bağlı oturum açmada başlat	Avvio opzionale al login	Opcjonalny start przy logowaniu
+discord_server	DISCORD SUNUCUSU	SERVER DISCORD	SERWER DISCORD
+creator_profile	OLUŞTURUCU PROFİLİ	PROFILO CREATORE	PROFIL TWÓRCY
+event_ready	SİSTEM  //  Yerel Discord bağlantısı için hazır	SISTEMA  //  Pronto per la connessione Discord locale	SYSTEM  //  Gotowy do lokalnego połączenia z Discordem
+update_search	GÜNCELLEME KONTROLÜ	CONTROLLA AGGIORNAMENTI	SPRAWDŹ AKTUALIZACJE
+checking	KONTROL EDİLİYOR …	CONTROLLO …	SPRAWDZANIE …
+update_ready	GÜNCELLEME MEVCUT	AGGIORNAMENTO DISPONIBILE	DOSTĘPNA AKTUALIZACJA
+retry	TEKRAR DENE	RIPROVA	SPRÓBUJ PONOWNIE
+app_current	UYGULAMA GÜNCEL	APP AGGIORNATA	APLIKACJA JEST AKTUALNA
+paused	PRESENCE DURAKLATILDI	PRESENCE IN PAUSA	PRESENCE WSTRZYMANA
+manual_start	Manuel başlatma için hazır	Pronto per l'avvio manuale	Gotowy do ręcznego uruchomienia
+status_removed	DISCORD DURUMU KALDIRILDI	STATO DISCORD RIMOSSO	STATUS DISCORD USUNIĘTY
+connecting	BAĞLANIYOR	CONNESSIONE	ŁĄCZENIE
+rpc_check	Discord RPC kontrol ediliyor	Verifica Discord RPC	Sprawdzanie Discord RPC
+local_handshake	YEREL EL SIKIŞMA	HANDSHAKE LOCALE	LOKALNE UŚCIŚNIENIE
+game_detected	OYUN ALGILANDI	GIOCO RILEVATO	WYKRYTO GRĘ
+system_online	SİSTEM ÇEVRİMİÇİ	SISTEMA ONLINE	SYSTEM ONLINE
+discord_synced	Discord senkronize edildi	Discord sincronizzato	Discord zsynchronizowany
+discord_offline	DISCORD ÇEVRİMDIŞI	DISCORD OFFLINE	DISCORD OFFLINE
+desktop_search	Discord masaüstü uygulaması aranıyor	Ricerca dell'app desktop Discord	Szukanie aplikacji Discord
+automatic_retry	OTOMATİK TEKRAR DENEME	NUOVO TENTATIVO AUTOMATICO	AUTOMATYCZNA PONOWNA PRÓBA
+connected	Discord bağlandı	Discord connesso	Discord połączony
+stopped	Durduruldu	Fermato	Zatrzymano
+not_connected	Bağlı değil	Non connesso	Nie połączono
+connect_short	Bağlanıyor …	Connessione …	Łączenie …
+app_status_live	UYGULAMA DURUMU  /  CANLI	STATO APP  /  LIVE	STATUS APLIKACJI  /  NA ŻYWO
+local_control	YEREL KONTROL	CONTROLLO LOCALE	KONTROLA LOKALNA
+local_short	YEREL	LOCALE	LOKALNIE
+now_playing	ŞU AN ÇALIYOR	IN RIPRODUZIONE	TERAZ ODTWARZANE
+scanning	TARANIYOR	SCANSIONE	SKANOWANIE
+detected	ALGILANDI	RILEVATO	WYKRYTO
+no_game	Yapılandırılmış oyun algılanmadı	Nessun gioco configurato rilevato	Nie wykryto skonfigurowanej gry
+no_comment	Yorum ayarlanmamış	Nessun commento impostato	Nie ustawiono komentarza
+comment_after_game	Yorum yalnızca bir oyun algılandığında görünür	Il commento appare solo quando viene rilevato un gioco	Komentarz pojawia się tylko po wykryciu gry
+startup_rpc	YEREL DISCORD RPC  //  SİSTEM BAŞLATILDI	RPC DISCORD LOCALE  //  SISTEMA INIZIALIZZATO	LOKALNE RPC DISCORD  //  SYSTEM ZAINICJOWANY
+skip	GEÇMEK İÇİN TIKLA	CLICCA PER SALTARE	KLIKNIJ, ABY POMINĄĆ
+settings_title	Presence Ayarları	Impostazioni Presence	Ustawienia Presence
+settings_subtitle	Etkinliği doğrudan düzenle ve kalıcı olarak kaydet	Modifica l'attività direttamente e salvala in modo permanente	Edytuj aktywność bezpośrednio i zapisz na stałe
+activity_text	ETKİNLİK METNİ	TESTO ATTIVITÀ	TEKST AKTYWNOŚCI
+description	AÇIKLAMA	DESCRIZIONE	OPIS
+community_1	TOPLULUK DURUMU 01	STATO COMMUNITY 01	STATUS SPOŁECZNOŚCI 01
+community_2	TOPLULUK DURUMU 02	STATO COMMUNITY 02	STATUS SPOŁECZNOŚCI 02
+community_3	TOPLULUK DURUMU 03	STATO COMMUNITY 03	STATUS SPOŁECZNOŚCI 03
+timing	ZAMANLAMA	TEMPI	CZASOWANIE
+status_rotation	DURUM DEĞİŞİMİ	ROTAZIONE STATO	ROTACJA STATUSU
+discord_synchronization	DISCORD SENKRONİZASYONU	SINCRONIZZAZIONE DISCORD	SYNCHRONIZACJA DISCORD
+seconds	Saniye	Secondi	Sekundy
+variety	ÇEŞİTLİLİK	VARIETÀ	RÓŻNORODNOŚĆ
+comments_hint	YORUMLAR  •  BİRDEN FAZLASINI | İLE AYIRIN	COMMENTI  •  SEPARA PIÙ COMMENTI CON |	KOMENTARZE  •  ODDZIEL WIELE ZNAKIEM |
+sync_hint	Senkronizasyon 5 ile 300 saniye arasında olabilir. Varsayılan: 12 saniye.	La sincronizzazione può essere tra 5 e 300 secondi. Predefinito: 12 secondi.	Synchronizacja może wynosić od 5 do 300 sekund. Domyślnie: 12 sekund.
+game_detection	OYUN ALGILAMA	RILEVAMENTO GIOCHI	WYKRYWANIE GIER
+language	DİL	LINGUA	JĘZYK
+cancel	İPTAL	ANNULLA	ANULUJ
+save	KAYDET	SALVA	ZAPISZ
+apply	UYGULA	APPLICA	ZASTOSUJ
+game_settings_subtitle	API, bot veya ağ isteği olmadan yerel oyun algılama	Rilevamento giochi locale senza API, bot o richieste di rete	Lokalne wykrywanie gier bez API, bota i zapytań sieciowych
+auto_game	Otomatik oyun algılamayı etkinleştir	Attiva il rilevamento automatico dei giochi	Włącz automatyczne wykrywanie gier
+auto_steam	Steam kitaplıklarını otomatik algıla	Rileva automaticamente le librerie Steam	Automatycznie wykrywaj biblioteki Steam
+steam_artwork	Discord'da Steam oyun görselini kullan	Usa l'immagine del gioco Steam in Discord	Używaj grafiki gier Steam w Discordzie
+manual_rules	İSTEĞE BAĞLI MANUEL KURALLAR  •  İŞLEM = GÖRÜNTÜLENEN AD	REGOLE MANUALI OPZIONALI  •  PROCESSO = NOME VISUALIZZATO	OPCJONALNE REGUŁY RĘCZNE  •  PROCES = NAZWA WYŚWIETLANA
+steam_hint	Steam oyunları steamapps'ten otomatik algılanır.\nİsteğe bağlı manuel kural: Oyunum.exe = Görüntülenen adım	I giochi Steam vengono rilevati automaticamente da steamapps.\nRegola manuale opzionale: MioGioco.exe = Nome visualizzato	Gry Steam są wykrywane automatycznie z folderu steamapps.\nOpcjonalna reguła ręczna: MojaGra.exe = Wyświetlana nazwa
+select_open_app	AÇIK UYGULAMA SEÇ	SELEZIONA APP APERTA	WYBIERZ OTWARTĄ APLIKACJĘ
+open_apps_title	Çalışan uygulamayı seç	Seleziona l'applicazione in esecuzione	Wybierz uruchomioną aplikację
+open_apps_subtitle	Açık bir program seç. İşlemi ve görüntülenen adı otomatik eklenir.	Scegli un programma aperto. Processo e nome visualizzato vengono aggiunti automaticamente.	Wybierz otwarty program. Jego proces i nazwa wyświetlana zostaną dodane automatycznie.
+refresh_apps	YENİLE	AGGIORNA	ODŚWIEŻ
+add_as_rule	KURAL OLARAK EKLE	AGGIUNGI COME REGOLA	DODAJ JAKO REGUŁĘ
+no_open_apps	Uygun açık uygulama bulunamadı.	Nessuna applicazione aperta adatta trovata.	Nie znaleziono odpowiednich otwartych aplikacji.
+scan_interval	TARAMA ARALIĞI	INTERVALLO DI SCANSIONE	INTERWAŁ SKANOWANIA
+seconds_recommended	Saniye  •  5 önerilir	Secondi  •  5 consigliati	Sekundy  •  zalecane 5
+language_center	FALLEN HEAVEN  /  DİL MERKEZİ	FALLEN HEAVEN  /  CENTRO LINGUE	FALLEN HEAVEN  /  CENTRUM JĘZYKOWE
+language_title	Senin dilin. Senin deneyimin.	La tua lingua. La tua esperienza.	Twój język. Twoje doświadczenie.
+language_subtitle	Tüm uygulama için dili seç.	Scegli la lingua per l'intera app.	Wybierz język dla całej aplikacji.
+active	Aktif	Attivo	Aktywny
+language_pack	Dil paketi	Pacchetto lingua	Pakiet językowy
+download	İNDİR	SCARICA	POBIERZ
+installed	KURULU	INSTALLATO	ZAINSTALOWANY
+activate_language	ETKİNLEŞTİR	ATTIVA	AKTYWUJ
+downloading	Dil paketi indiriliyor …	Download del pacchetto lingua …	Pobieranie pakietu językowego …
+almost_installed	NEREDEYSE KURULDU	QUASI INSTALLATO	PRAWIE ZAINSTALOWANY
+local_languages	Dil paketleri yerel olarak saklanır.	I pacchetti lingua vengono salvati localmente.	Pakiety językowe są przechowywane lokalnie.
+standard	VARSAYILAN	PREDEFINITO	DOMYŚLNY
+active_default	Aktif  •  Varsayılan	Attivo  •  Predefinito	Aktywny  •  Domyślny
+language_applied_title	Dil etkinleştirildi	Lingua attivata	Język aktywowany
+language_applied_body	Tüm uygulama artık seçilen dili kullanıyor. Dil paketi yerel olarak saklı kalır.	L'intera app ora usa la lingua selezionata. Il pacchetto lingua resta salvato localmente.	Cała aplikacja używa teraz wybranego języka. Pakiet językowy pozostaje zapisany lokalnie.
+setting_applied	AYAR UYGULANDI	IMPOSTAZIONE APPLICATA	USTAWIENIE ZASTOSOWANE
+update_result_current_title	Güncelsin	Sei aggiornato	Masz aktualną wersję
+update_result_current_body	Yeni güncelleme bulunamadı.	Nessun nuovo aggiornamento trovato.	Nie znaleziono nowej aktualizacji.
+update_result_error_title	Güncelleme kontrolü kullanılamıyor	Controllo aggiornamenti non disponibile	Sprawdzanie aktualizacji niedostępne
+update_result_error_body	Lütfen daha sonra tekrar dene.	Riprova più tardi.	Spróbuj ponownie później.
+done	TAMAM	FATTO	GOTOWE
+open_release	SÜRÜMÜ AÇ	APRI RELEASE	OTWÓRZ WYDANIE
+open_control_center	Kontrol Merkezi'ni aç	Apri il Centro di controllo	Otwórz Centrum sterowania
+start_presence	Rich Presence'i başlat	Avvia Rich Presence	Uruchom Rich Presence
+stop_presence	Rich Presence'i durdur	Ferma Rich Presence	Zatrzymaj Rich Presence
+exit	Çıkış	Esci	Wyjście
+link_error	Bağlantı açılamadı	Impossibile aprire il link	Nie można otworzyć linku
+save_error	Ayarlar kaydedilemedi	Impossibile salvare le impostazioni	Nie można zapisać ustawień
+check_input	Girdileri kontrol et	Controlla i dati inseriti	Sprawdź dane wejściowe
+required_activity	Açıklama ve üç durum satırının tümü zorunludur.	Descrizione e tutte e tre le righe di stato sono obbligatorie.	Opis i wszystkie trzy linie statusu są wymagane.
+comment_required	En az bir yorum girin.	Inserisci almeno un commento.	Wpisz co najmniej jeden komentarz.
+comment_max	En fazla on yorum eklenebilir.	È consentito un massimo di dieci commenti.	Maksymalnie dziesięć komentarzy.
+comment_length	Her yorum en fazla 128 karakter içerebilir.	Ogni commento può contenere fino a 128 caratteri.	Każdy komentarz może zawierać do 128 znaków.
+rules_check	Oyun kurallarını kontrol et	Controlla le regole dei giochi	Sprawdź reguły gier
+autostart_error	Otomatik başlatma değiştirilemedi	Impossibile modificare l'avvio automatico	Nie można zmienić autostartu
+discord_online_local	DISCORD ÇEVRİMİÇİ  •  YEREL	DISCORD ONLINE  •  LOCALE	DISCORD ONLINE  •  LOKALNIE
+rule_format	{0} satırı şu biçimde olmalı: İşlem.exe = Görüntülenen ad	La riga {0} deve usare: Processo.exe = Nome visualizzato	Linia {0} musi mieć format: Proces.exe = Nazwa wyświetlana
+rule_incomplete	{0} satırı eksik.	La riga {0} è incompleta.	Linia {0} jest niekompletna.
+store_autostart_body	Store sürümünde otomatik başlatma Windows Ayarları'ndan yönetilir.	Nella versione Store l'avvio automatico si gestisce dalle impostazioni di Windows.	W wersji ze sklepu autostartem zarządza się w ustawieniach systemu Windows.
+windows_autostart	Windows Otomatik Başlatma	Avvio automatico di Windows	Autostart systemu Windows
+log_settings_saved	Ayarlar kaydedildi  //  Senk. {0}sn	Impostazioni salvate  //  Sync {0}s	Ustawienia zapisane  //  Sync {0}s
+log_update_found	Yeni sürüm mevcut  //  {0}	Nuova versione disponibile  //  {0}	Dostępna nowa wersja  //  {0}
+log_update_current	Güncelleme kontrolü  //  Uygulama güncel.	Controllo aggiornamenti  //  L'app è aggiornata.	Sprawdzanie aktualizacji  //  Aplikacja jest aktualna.
+log_update_failed	Güncelleme kontrolü başarısız	Controllo aggiornamenti non riuscito	Sprawdzanie aktualizacji nie powiodło się
+log_signal	Sinyal değişti: {0}	Segnale cambiato: {0}	Sygnał zmieniony: {0}
+log_game_ended	Oyun kapatıldı  //  Topluluk durumu geri yüklendi.	Gioco chiuso  //  Stato community ripristinato.	Gra zamknięta  //  Przywrócono status społeczności.
+log_no_game	Yapılandırılmış oyun algılanmadı.	Nessun gioco configurato rilevato.	Nie wykryto skonfigurowanej gry.
+log_game_detected	Oyun algılandı  //  {0}	Gioco rilevato  //  {0}	Wykryto grę  //  {0}
+log_presence_start	Yerel Rich Presence başlatılıyor.	Avvio della Rich Presence locale.	Uruchamianie lokalnej Rich Presence.
+log_presence_stopped	Rich Presence durduruldu.	Rich Presence fermata.	Rich Presence zatrzymana.
+log_presence_synced	Presence senkronize edildi  //  {0}	Presence sincronizzata  //  {0}	Presence zsynchronizowana  //  {0}
+log_autostart_on	Windows otomatik başlatma etkinleştirildi.	Avvio automatico di Windows attivato.	Autostart systemu Windows włączony.
+log_autostart_off	Windows otomatik başlatma devre dışı.	Avvio automatico di Windows disattivato.	Autostart systemu Windows wyłączony.
+update_required_title	Zorunlu güncelleme	Aggiornamento necessario	Wymagana aktualizacja
+update_required_body	Daha yeni bir sürüm gerekiyor. Uygulama onu güvenle indirir, doğrular ve otomatik yeniden başlatır.	È necessaria una versione più recente. L'app la scarica in modo sicuro, la verifica e si riavvia automaticamente.	Wymagana jest nowsza wersja. Aplikacja pobiera ją bezpiecznie, weryfikuje i uruchamia się ponownie automatycznie.
+update_downloading	Güncelleme indiriliyor …	Download dell'aggiornamento …	Pobieranie aktualizacji …
+update_downloading_detail	Şifreli HTTPS indirmesi arka planda çalışıyor.	Il download HTTPS cifrato è in corso in background.	Zaszyfrowane pobieranie HTTPS działa w tle.
+update_verifying	Bütünlük doğrulanıyor …	Verifica dell'integrità …	Weryfikacja integralności …
+update_verifying_detail	Paket SHA-256 sağlama toplamıyla karşılaştırılıyor.	Il pacchetto viene confrontato con il suo checksum SHA-256.	Pakiet jest sprawdzany względem sumy SHA-256.
+update_extracting	Dosyalar hazırlanıyor …	Preparazione dei file …	Przygotowywanie plików …
+update_extracting_detail	Doğrulanan paket korumalı bir hazırlık klasörüne açılır.	Il pacchetto verificato viene estratto in una cartella protetta.	Zweryfikowany pakiet jest rozpakowywany do chronionego folderu.
+update_preparing	Kurulum hazırlanıyor …	Preparazione dell'installazione …	Przygotowywanie instalacji …
+update_preparing_detail	Geçerli sürüm otomatik geri alma için kullanılabilir kalır.	La versione attuale resta disponibile per un ripristino automatico.	Bieżąca wersja pozostaje dostępna do automatycznego przywrócenia.
+update_restarting	Uygulama yeniden başlatılıyor …	Riavvio dell'app …	Ponowne uruchamianie aplikacji …
+update_restarting_detail	Güncelleme yardımcısı dosyaları değiştirir ve uygulamayı yeniden açar.	L'assistente di aggiornamento sostituirà i file e riaprirà l'app.	Asystent aktualizacji zastąpi pliki i otworzy aplikację ponownie.
+update_failed	Güncelleme başarısız	Aggiornamento non riuscito	Aktualizacja nie powiodła się
+exit_app	UYGULAMADAN ÇIK	ESCI DALL'APP	ZAMKNIJ APLIKACJĘ
+background_transition_title	Arka planda çalışıyor	In esecuzione in background	Działa w tle
+background_transition_body	Pencere gizlendi. Discord durumun aktif kalır.	La finestra è nascosta. Il tuo stato Discord resta attivo.	Okno jest ukryte. Twój status Discord pozostaje aktywny.
+configure_app	Uygulamayı yapılandır	Configura l'app	Skonfiguruj aplikację
+settings_hub_title	Ayarlar	Impostazioni	Ustawienia
+settings_hub_subtitle	Presence, oyunlar ve dili tek bir net kontrol merkezinde yapılandır.	Configura presence, giochi e lingua in un unico centro di controllo.	Skonfiguruj presence, gry i język w jednym czytelnym centrum.
+settings_areas	AYAR ALANLARI	AREE DI IMPOSTAZIONE	OBSZARY USTAWIEŃ
+presence_community	PRESENCE  &  TOPLULUK	PRESENCE  &  COMMUNITY	PRESENCE I SPOŁECZNOŚĆ
+presence_nav	PRESENCE	PRESENCE	PRESENCE
+presence_community_hint	Etkinlik metni ve dönen durum	Testo attività e stato rotante	Tekst aktywności i rotacja statusu
+game_nav_hint	Steam algılama ve oyun görselleri	Rilevamento Steam e immagini dei giochi	Wykrywanie Steam i grafiki gier
+language_nav_hint	Arayüz ve dil paketleri	Interfaccia e pacchetti lingua	Interfejs i pakiety językowe
+local_settings	YEREL YAPILANDIRMA	CONFIGURAZIONE LOCALE	KONFIGURACJA LOKALNA
+local_settings_hint	Değişiklikler yalnızca bu bilgisayarda saklanır.	Le modifiche vengono salvate solo su questo PC.	Zmiany są zapisywane tylko na tym komputerze.
+comments_game_hint	Yalnızca bir oyun algılandığında görünür.	Appare solo quando viene rilevato un gioco.	Pojawia się tylko po wykryciu gry.
+comments_title	YORUMLAR	COMMENTI	KOMENTARZE
+discord_sync_short	DISCORD SENKRONİZASYONU	SYNC DISCORD	SYNC DISCORD
+rule_artwork_link	{0} satırında geçersiz resim bağlantısı var.	La riga {0} contiene un link immagine non valido.	Linia {0} zawiera nieprawidłowy link do obrazu.
+confirm_stop_title	Presence durdurulsun mu?	Fermare la presence?	Zatrzymać presence?
+confirm_stop_message	Discord Rich Presence şu anda aktif. Gerçekten durdurulsun mu?	La Rich Presence di Discord è attiva. Vuoi davvero fermarla?	Rich Presence Discorda jest teraz aktywna. Na pewno ją zatrzymać?
+client_id	CLIENT ID	CLIENT ID	CLIENT ID
+client_id_nav_hint	Discord uygulama kimlikleri	ID delle applicazioni Discord	ID aplikacji Discord
+client_id_dialog_sub	Discord Developer Portal'dan uygulama kimlikleri	ID applicazione dal portale sviluppatori Discord	ID aplikacji z portalu deweloperskiego Discord
+client_id_card_title	Discord Uygulamaları	Applicazioni Discord	Aplikacje Discord
+client_id_field1	Client ID (Hesap 1)	Client ID (Account 1)	Client ID (Konto 1)
+client_id_field2	Client ID 2 (Hesap 2)	Client ID 2 (Account 2)	Client ID 2 (Konto 2)
+client_id_use2	Client ID 2'yi kullan (2. hesap)	Usa Client ID 2 (2° account)	Użyj Client ID 2 (2. konto)
+client_id_hide	GİZLE	NASCONDI	UKRYJ
+client_id_show	GÖSTER	MOSTRA	POKAŻ
+client_id_invalid1	Geçersiz Client ID	Client ID non valido	Nieprawidłowy Client ID
+client_id_invalid1_msg	Lütfen Discord Developer Portal'dan Application ID girin (yalnızca rakamlar).	Inserisci l'Application ID dal portale sviluppatori Discord (solo cifre).	Wpisz Application ID z portalu deweloperskiego Discord (tylko cyfry).
+client_id_invalid2	Client ID 2 geçersiz	Client ID 2 non valido	Client ID 2 nieprawidłowy
+client_id_invalid2_msg	İkinci hesap için geçerli bir Application ID girin veya seçeneği kapatın.	Inserisci un Application ID valido per il secondo account o disattiva l'opzione.	Wpisz prawidłowy Application ID dla drugiego konta lub wyłącz opcję.
+serverName	Sunucu adı	Nome del server	Nazwa serwera
+buttons_title	BUTONLAR	PULSANTI	PRZYCISKI
+button_1_name	BUTON 1 - AD	PULSANTE 1 - NOME	PRZYCISK 1 - NAZWA
+button_1_url	BUTON 1 - LİNK	PULSANTE 1 - LINK	PRZYCISK 1 - LINK
+button_2_name	BUTON 2 - AD	PULSANTE 2 - NOME	PRZYCISK 2 - NAZWA
+button_2_url	BUTON 2 - LİNK	PULSANTE 2 - LINK	PRZYCISK 2 - LINK
+theme_nav	Görünüm	Aspetto	Wygląd
+theme_nav_hint	Renkler ve stil	Colori e stile	Kolory i styl
+theme_title	Görünüm	Aspetto	Wygląd
+theme_subtitle	Vurgu rengini seç	Scegli il tuo colore d'accento	Wybierz kolor akcentu
+theme_restart_hint	Bir renk seç, ardından Kaydet'e dokun — uygulama uygulamak için yeniden başlar	Scegli un colore, poi tocca Salva — l'app si riavvia per applicarlo	Wybierz kolor, potem dotknij Zapisz — aplikacja uruchomi się ponownie, aby go zastosować
+theme_violet	Menekşe	Viola	Fiolet
+theme_cyan	Neon Cyan	Ciano neon	Neonowy cyjan
+theme_crimson	Kızıl	Cremisi	Karmazyn
+theme_cyberpunk	Cyberpunk	Cyberpunk	Cyberpunk
+theme_active	✓ Aktif	✓ Attivo	✓ Aktywny
+theme_desc_violet	Klasik	Classico	Klasyczny
+theme_desc_cyan	Neon	Neon	Neon
+theme_desc_crimson	Cesur	Deciso	Wyrazisty
+theme_desc_cyberpunk	Aşırı	Estremo	Ekstremalny
+theme_selected	✓ Seçildi	✓ Selezionato	✓ Wybrano
+wizard_step1	3 ADIMDAN 1. ADIM	PASSO 1 DI 3	KROK 1 Z 3
+wizard_step2	3 ADIMDAN 2. ADIM	PASSO 2 DI 3	KROK 2 Z 3
+wizard_step3	3 ADIMDAN 3. ADIM	PASSO 3 DI 3	KROK 3 Z 3
+wizard_welcome_title	Fallen Heaven'a hoş geldin	Benvenuto in Fallen Heaven	Witaj w Fallen Heaven
+wizard_welcome_sub	Presence'ini 30 saniyede kur.	Configura la tua presence in 30 secondi.	Skonfiguruj swoją presence w 30 sekund.
+wizard_welcome_hint	Durum metnin ve vurgu rengin — hepsi daha sonra Ayarlar'dan değiştirilebilir.	Il testo dello stato e il colore d'accento — tutto modificabile in seguito nelle Impostazioni.	Twój tekst statusu i kolor akcentu — wszystko można później zmienić w Ustawieniach.
+wizard_status_title	Durumun	Il tuo stato	Twój status
+wizard_status_sub	Durumunun üstünde büyük ne görünsün?	Cosa deve apparire in grande sopra il tuo stato?	Co ma się pojawić duże nad twoim statusem?
+wizard_status_hint	Metni daha sonra istediğin zaman değiştirebilirsin.	Puoi modificare il testo in qualsiasi momento.	Tekst możesz zmienić w każdej chwili.
+wizard_theme_title	Teman	Il tuo tema	Twój motyw
+wizard_theme_sub	Vurgu rengini seç.	Scegli il tuo colore d'accento.	Wybierz swój kolor akcentu.
+wizard_theme_hint	Tema uygulamanı renklendirir — her zaman değiştirilebilir.	Il tema colora la tua app — modificabile in qualsiasi momento.	Motyw nadaje kolor twojej aplikacji — można go zmienić w każdej chwili.
+wizard_back	GERİ	INDIETRO	WSTECZ
+wizard_next	İLERİ	AVANTI	DALEJ
+wizard_skip	SONRA	DOPO	PÓŹNIEJ
+wizard_finish	HADİ BAŞLAYALIM	INIZIAMO	ZACZYNAMY
+wizard_theme_violet	Menekşe	Viola	Fiolet
+wizard_theme_cyan	Cyan	Ciano	Cyjan
+wizard_theme_crimson	Kızıl	Cremisi	Karmazyn
+wizard_theme_cyberpunk	Cyberpunk	Cyberpunk	Cyberpunk
+wizard_title	Fallen Heaven — Kurulum	Fallen Heaven — Configurazione	Fallen Heaven — Konfiguracja
