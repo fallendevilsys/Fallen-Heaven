@@ -164,9 +164,10 @@ Locally in the app folder. The app is portable — just copy the folder.
 ## 📜 Version history
 
 **6.3.5** *(current)*
-- 🌍 **9 languages** — new: Turkish, Italian, and Polish. The entire app interface is fully translated.
+- 🌍 **New languages added** — Turkish, Italian, and Polish. The entire app interface is now translated into **9 languages**.
 - 🎧 **Spotify recognition** — show what you're listening to: song, artist, and cover appear in your Discord status. Your song takes priority over the browser.
-- ✨ **Beautiful startup animation** — soft glowing particles rise up and the logo gets a pulsing shine.
+- 🐛 **Arabic flag fixed** — the flag in the language center now displays reliably without the app crashing.
+- 🐛 **Translations completed** — missing dialog and status texts are now translated in all languages.
 
 **6.3.4**
 - 🖥️ **Fits every screen** — the app shrinks windows automatically on small monitors so nothing gets cut off.

@@ -18,9 +18,5 @@ Dieser Ordner enthält die **Dokumentation** und den **GitHub-Pages-Host für da
 
   (Repo → Settings → Pages → „Deploy from a branch" → `main` → `/docs`)
 
-- In `app-config.json` der Nutzer dann eintragen:
-
-  `"updateManifestUrl": "https://<DEINUSERNAME>.github.io/<REPO>/update-manifest.json"`
-
-Damit bekommt die App vollautomatische In-App-Updates (Download, SHA-256-Prüfung,
-sichere Installation, Neustart) — siehe `UPDATE-SETUP.txt` Abschnitt 1 und 6.
+Die App liest das Manifest automatisch beim Start — keine manuelle Konfiguration nötig.
+Siehe `UPDATE-SETUP.txt` für Details.
