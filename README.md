@@ -159,35 +159,35 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 
 ## 📜 Versionshistorie
 
-**6.3.6** *(aktuell)*
-- 🎧 **Spotify-Erkennung verbessert** — Songs, Interpreten und Cover werden zuverlässiger erkannt und automatisch in deinem Discord-Status angezeigt.
-- 🐛 **Fehler behoben** — kleinere Probleme bei der Erkennung und Darstellung wurden beseitigt.
-- ✨ **Mehr Komfort** — die App arbeitet im Alltag stabiler und zuverlässiger.
+### 6.3.6 *(aktuell)*
+- 🎧 **Spotify läuft zuverlässiger** — Titel, Interpret und Cover werden sicherer erkannt und automatisch in deinem Discord-Status angezeigt.
+- 🛠️ **Kleinere Fehler behoben** — Erkennung und Darstellung funktionieren im Alltag stabiler.
+- ✅ **Update verbessert** — die App erkennt jetzt zuverlässiger, ob die aktuelle Version bereits installiert ist.
 
-**6.3.5**
+### 6.3.5
 - 🐛 **Bugfixes** — kleinere Fehler behoben und die App stabiler gemacht.
-- ✨ **Schönere Start-Animation** — beim Öffnen steigen sanft leuchtende Partikel auf und das Logo bekommt einen pulsierenden Glanz.
-- 🌍 **Neue und verbesserte Sprachen** — die App unterstützt jetzt 6 Sprachen: Deutsch, Englisch, Spanisch, Französisch, Russisch und Arabisch. Sprachwechsel und arabische Darstellung funktionieren zuverlässig.
-- 🎧 **Spotify-Erkennung verbessert** — Song, Interpret und Cover erscheinen automatisch in deinem Discord-Status. Spotify wird dabei bevorzugt erkannt.
-- 🐛 **Fehler behoben** — fehlende Übersetzungen ergänzt und einen Absturz beim arabischen Sprachsymbol behoben.
+- ✨ **Schönere Start-Animation** — leuchtende Partikel und ein sanft pulsierendes Logo sorgen für einen angenehmeren Start.
+- 🌍 **Sechs Sprachen** — Deutsch, Englisch, Spanisch, Französisch, Russisch und Arabisch werden unterstützt. Die Sprachumschaltung und arabische Darstellung funktionieren zuverlässig.
+- 🎧 **Spotify-Unterstützung verbessert** — Song, Interpret und Cover werden automatisch in deinem Discord-Status angezeigt.
+- 🐛 **Weitere Fehler behoben** — fehlende Übersetzungen ergänzt und einen Absturz beim arabischen Sprachsymbol beseitigt.
 
-**6.3.4**
-- 🖥️ **Passt auf jeden Bildschirm** — die App verkleinert Fenster auf kleinen Monitoren automatisch, damit nichts abgeschnitten wird.
-- 🔍 **Überall scharfer Text** — kein unscharfer Text mehr auf Laptops mit 125 %/150 % Vergrößerung.
+### 6.3.4
+- 🖥️ **Besser auf kleinen Bildschirmen** — die Fenstergröße passt sich an, damit alle Inhalte sichtbar bleiben.
+- 🔍 **Schärfere Darstellung** — Texte bleiben auch bei 125 % oder 150 % Windows-Skalierung gut lesbar.
 
-**6.3.3**
-- 🎨 **Farb-Themes** — wähle zwischen Violett, Neon-Cyan, Crimson und Cyberpunk.
-- 🚀 **Zuverlässigere Updates** — neue Versionen installieren sich sauber und starten die App automatisch neu.
+### 6.3.3
+- 🎨 **Vier Farbwelten** — Violett, Neon-Cyan, Crimson und Cyberpunk stehen zur Auswahl.
+- 🚀 **Zuverlässigere Updates** — Aktualisierungen werden sauber installiert und die App startet danach wieder automatisch.
 
-**6.3.2**
-- 🎮 **Erkennung verbessert** — Spiele, Browser und YouTube werden wieder zuverlässig erkannt.
+### 6.3.2
+- 🎮 **Erkennung verbessert** — Spiele, Browser und YouTube werden wieder zuverlässiger erkannt.
 
-**6.3.1**
-- ⚡ **Sofort gespeichert** — Änderungen gelten ohne Neustart; dein Status bleibt aktiv.
-- 🛠️ **Stabiler** — Einstellungen lassen sich immer zuverlässig speichern.
+### 6.3.1
+- ⚡ **Änderungen sofort sichtbar** — Einstellungen werden ohne Neustart übernommen.
+- 🛠️ **Speichern funktioniert zuverlässig** — deine Einstellungen bleiben erhalten.
 
-**6.3.0**
-- 🐛 **Bugfixes** — kleinere Fehler behoben und die App stabiler gemacht.
+### 6.3.0
+- 🐛 **Grundlegende Stabilitätsverbesserungen** — kleinere Fehler wurden behoben.
 
 ---
 
