@@ -3,7 +3,7 @@
 > „Wo gefallene Engel landen" — mach aus deinem Discord-Status etwas, das zu dir passt. Zeige Spiele, Musik oder deinen Discord-Server direkt in deinem Profil. Einfach, lokal, ohne Installation.
 
 [![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
-![Sprachen](https://img.shields.io/badge/Sprachen-9-blue)
+![Sprachen](https://img.shields.io/badge/Sprachen-6-blue)
 ![Lizenz](https://img.shields.io/badge/Lizenz-Alle%20Rechte%20vorbehalten-black)
 
 *English version: [README-EN.md](README-EN.md)*
@@ -107,10 +107,6 @@ Die App ist vollständig übersetzt und wechselt die Sprache automatisch anhand 
 - 🇪🇸 **Spanisch**
 - 🇫🇷 **Französisch**
 - 🇷🇺 **Russisch**
-- 🇸🇦 **Arabisch**
-- 🇹🇷 **Türkisch**
-- 🇮🇹 **Italienisch**
-- 🇵🇱 **Polnisch**
 
 ---
 
@@ -122,7 +118,7 @@ Die App ist vollständig übersetzt und wechselt die Sprache automatisch anhand 
 - ✍️ **Eigener Text** — Haupttext, rotierende Zeilen, Kommentar, bis zu 2 Buttons
 - 👤 **Eigene Client ID** — bis zu 2 möglich
 - 🔒 **Privacy-Modus** — neutrale Anzeige bei OBS & Co.
-- 🌍 **9 Sprachen** — Deutsch, Englisch, Spanisch, Französisch, Russisch, Arabisch, Türkisch, Italienisch, Polnisch
+- 🌍 **6 Sprachen** — Deutsch, Englisch, Spanisch, Französisch, Russisch und Arabisch
 - 🎨 **Farb-Themes** — Violett, Neon-Cyan, Crimson, Cyberpunk
 - 🖥️ **Passt auf jeden Bildschirm** — auf kleinen Monitoren bleibt alles sichtbar
 - 🚀 **Automatische Updates**
@@ -164,10 +160,11 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 ## 📜 Versionshistorie
 
 **6.3.5** *(aktuell)*
-- 🌍 **Neue Sprachen hinzugefügt** — Türkisch, Italienisch und Polnisch. Die komplette App-Oberfläche ist jetzt in **9 Sprachen** übersetzt.
-- 🎧 **Spotify-Erkennung** — zeig, was du gerade hörst: Song, Interpret und Cover erscheinen in deinem Discord-Status. Dein Song hat dabei Vorrang vor dem Browser.
-- 🐛 **Arabische Flagge repariert** — die Flagge im Sprachzentrum wird jetzt zuverlässig angezeigt, ohne dass die App abstürzt.
-- 🐛 **Übersetzungen vervollständigt** — fehlende Dialog- und Statustexte sind jetzt in allen Sprachen übersetzt.
+- 🌍 **Sprachunterstützung stabilisiert** — Deutsch, Englisch, Spanisch, Französisch, Russisch und Arabisch sind verfügbar.
+- 🗣️ **Sprachzentrum verbessert** — Sprachwechsel, Flaggen und arabische Darstellung funktionieren stabil; der bisherige Absturz beim arabischen Sprachsymbol ist behoben.
+- 🎧 **Spotify-Erkennung** — Song, Interpret und Cover erscheinen in deinem Discord-Status. Spotify hat dabei Vorrang vor dem Browser.
+- 🐛 **Übersetzungen vervollständigt** — fehlende Dialog-, Einstellungs- und Statustexte wurden in den 6 verfügbaren Sprachen ergänzt.
+- ✅ **Stabilitäts- und Darstellungsverbesserungen** — die Sprachunterstützung bleibt auch nach einem Neustart zuverlässig erhalten.
 
 **6.3.4**
 - 🖥️ **Passt auf jeden Bildschirm** — die App verkleinert Fenster auf kleinen Monitoren automatisch, damit nichts abgeschnitten wird.
