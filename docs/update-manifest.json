@@ -3,8 +3,8 @@
   "expectedVersion": "6.3.6.0",
   "entryExecutable": "Fallen-Heaven Discord App.exe",
   "packageUrl": "https://github.com/fallendevilsys/Fallen-Heaven/releases/download/v6.3.6/Fallen-Heaven-Setup-6.3.6.exe",
-  "packageSize": 4876019,
-  "sha256": "240f4d614bf88ff03f979460b57411e87089158195cea93f6238ff5dcaa9fb88",
+  "packageSize": 4876236,
+  "sha256": "60a8d259f20afed0923e7b5a143131758dbaecea78dd20c5ae65e658b88c428e",
   "createdUtc": "2026-08-28T00:00:00Z",
   "releaseNotes": "Sprachunterstützung verbessert, Spotify-Erkennung verbessert und Fehler behoben.",
   "signature": ""
