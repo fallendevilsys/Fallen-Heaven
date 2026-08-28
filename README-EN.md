@@ -160,35 +160,35 @@ Locally in the app folder. The app is portable — just copy the folder.
 
 ## 📜 Version history
 
-**6.3.6** *(current)*
-- 🎧 **Improved Spotify recognition** — songs, artists, and covers are detected more reliably and shown automatically in your Discord status.
-- 🐛 **Bug fixes** — smaller detection and display issues have been resolved.
-- ✨ **More everyday reliability** — the app is more stable and dependable in daily use.
+### 6.3.6 *(current)*
+- 🎧 **Spotify works more reliably** — songs, artists, and covers are detected more consistently and shown automatically in your Discord status.
+- 🛠️ **Small issues fixed** — detection and display are more stable in everyday use.
+- ✅ **Improved updates** — the app more reliably recognizes when the current version is already installed.
 
-**6.3.5**
+### 6.3.5
 - 🐛 **Bug fixes** — minor issues were fixed and the app was made more stable.
-- ✨ **Improved startup animation** — softly glowing particles rise when the app opens, while the logo gets a pulsing glow.
-- 🌍 **New and improved languages** — the app now supports 6 languages: German, English, Spanish, French, Russian, and Arabic. Language switching and Arabic display work reliably.
-- 🎧 **Improved Spotify recognition** — song, artist, and cover appear automatically in your Discord status. Spotify is detected first.
-- 🐛 **Bugs fixed** — missing translations were added and a crash related to the Arabic language icon was fixed.
+- ✨ **Improved startup animation** — glowing particles and a softly pulsing logo make startup feel smoother.
+- 🌍 **Six languages** — German, English, Spanish, French, Russian, and Arabic are supported. Language switching and Arabic display work reliably.
+- 🎧 **Improved Spotify support** — songs, artists, and covers appear automatically in your Discord status.
+- 🐛 **More issues fixed** — missing translations were added and a crash related to the Arabic language icon was resolved.
 
-**6.3.4**
-- 🖥️ **Fits every screen** — the app shrinks windows automatically on small monitors so nothing gets cut off.
-- 🔍 **Crisp text everywhere** — no more blurry text on laptops with 125%/150% zoom.
+### 6.3.4
+- 🖥️ **Better on small screens** — the window adapts so all content stays visible.
+- 🔍 **Sharper display** — text stays clear at 125% or 150% Windows scaling.
 
-**6.3.3**
-- 🎨 **Color themes** — choose between Violet, Neon Cyan, Crimson, and Cyberpunk.
-- 🚀 **More reliable updates** — new versions install cleanly and restart the app automatically.
+### 6.3.3
+- 🎨 **Four color themes** — choose from Violet, Neon Cyan, Crimson, and Cyberpunk.
+- 🚀 **More reliable updates** — updates install cleanly and the app starts again automatically.
 
-**6.3.2**
-- 🎮 **Detection improved** — games, browsers, and YouTube are recognized reliably again.
+### 6.3.2
+- 🎮 **Improved detection** — games, browsers, and YouTube are recognized more reliably.
 
-**6.3.1**
-- ⚡ **Saved instantly** — changes apply without restarting; your status stays active.
-- 🛠️ **More stable** — settings can always be saved reliably.
+### 6.3.1
+- ⚡ **Changes apply immediately** — settings take effect without restarting.
+- 🛠️ **Reliable saving** — your settings stay safely stored.
 
-**6.3.0**
-- 🐛 **Bug fixes** — minor issues fixed and the app made more stable.
+### 6.3.0
+- 🐛 **Core stability improvements** — minor issues were fixed.
 
 ---
 
