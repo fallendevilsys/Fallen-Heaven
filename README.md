@@ -160,18 +160,16 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 ## 📜 Versionshistorie
 
 **6.3.6** *(aktuell)*
-- 🌍 **Sprachunterstützung verbessert** — Deutsch, Englisch, Spanisch, Französisch, Russisch und Arabisch funktionieren zuverlässig.
-- 🎧 **Spotify-Erkennung verbessert** — Song, Interpret und Cover erscheinen automatisch in deinem Discord-Status. Spotify wird dabei bevorzugt erkannt.
-- 🐛 **Fehler behoben** — fehlende Übersetzungen ergänzt und einen Absturz beim arabischen Sprachsymbol behoben.
+- 🎧 **Spotify-Erkennung verbessert** — Songs, Interpreten und Cover werden zuverlässiger erkannt und automatisch in deinem Discord-Status angezeigt.
+- 🐛 **Fehler behoben** — kleinere Probleme bei der Erkennung und Darstellung wurden beseitigt.
+- ✨ **Mehr Komfort** — die App arbeitet im Alltag stabiler und zuverlässiger.
 
 **6.3.5**
-- 🐛 **Bugfixes** — kleinere Fehler behoben und die App stabiler gemacht.
+- 🌍 **9 Sprachen verfügbar** — Türkisch, Italienisch und Polnisch sind neu dazugekommen.
+- 🚩 **Korrekte Sprach-Flaggen** — jede Sprache wird jetzt mit der passenden Flagge angezeigt.
+- 💬 **Vollständig übersetzte Oberfläche** — Dialoge und Meldungen sind in allen unterstützten Sprachen verfügbar.
+- 🛠️ **Verbesserungen und Stabilitäts-Fixes** — die App läuft zuverlässiger im Alltag.
 - ✨ **Schönere Start-Animation** — beim Öffnen steigen sanft leuchtende Partikel auf und das Logo bekommt einen pulsierenden Glanz.
-
-
-- 🌍 **Neue und verbesserte Sprachen** — die App unterstützt jetzt 6 Sprachen: Deutsch, Englisch, Spanisch, Französisch, Russisch und Arabisch. Sprachwechsel und arabische Darstellung funktionieren zuverlässig.
-- 🎧 **Spotify-Erkennung verbessert** — Song, Interpret und Cover erscheinen automatisch in deinem Discord-Status. Spotify wird dabei bevorzugt erkannt.
-- 🐛 **Fehler behoben** — fehlende Übersetzungen ergänzt und einen Absturz beim arabischen Sprachsymbol behoben.
 
 **6.3.4**
 - 🖥️ **Passt auf jeden Bildschirm** — die App verkleinert Fenster auf kleinen Monitoren automatisch, damit nichts abgeschnitten wird.
