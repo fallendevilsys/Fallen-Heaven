@@ -2,7 +2,7 @@
 
 > „Wo gefallene Engel landen" — mach aus deinem Discord-Status etwas, das zu dir passt. Zeige Spiele, Musik oder deinen Discord-Server direkt in deinem Profil. Einfach, lokal, ohne Installation.
 
-[![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
+[![Version](https://img.shields.io/badge/Version-6.3.6-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Sprachen](https://img.shields.io/badge/Sprachen-6-blue)
 ![Lizenz](https://img.shields.io/badge/Lizenz-Alle%20Rechte%20vorbehalten-black)
 
@@ -159,7 +159,16 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 
 ## 📜 Versionshistorie
 
-**6.3.5** *(aktuell)*
+**6.3.6** *(aktuell)*
+- 🌍 **Sprachunterstützung verbessert** — Deutsch, Englisch, Spanisch, Französisch, Russisch und Arabisch funktionieren zuverlässig.
+- 🎧 **Spotify-Erkennung verbessert** — Song, Interpret und Cover erscheinen automatisch in deinem Discord-Status. Spotify wird dabei bevorzugt erkannt.
+- 🐛 **Fehler behoben** — fehlende Übersetzungen ergänzt und einen Absturz beim arabischen Sprachsymbol behoben.
+
+**6.3.5**
+- 🐛 **Bugfixes** — kleinere Fehler behoben und die App stabiler gemacht.
+- ✨ **Schönere Start-Animation** — beim Öffnen steigen sanft leuchtende Partikel auf und das Logo bekommt einen pulsierenden Glanz.
+
+
 - 🌍 **Neue und verbesserte Sprachen** — die App unterstützt jetzt 6 Sprachen: Deutsch, Englisch, Spanisch, Französisch, Russisch und Arabisch. Sprachwechsel und arabische Darstellung funktionieren zuverlässig.
 - 🎧 **Spotify-Erkennung verbessert** — Song, Interpret und Cover erscheinen automatisch in deinem Discord-Status. Spotify wird dabei bevorzugt erkannt.
 - 🐛 **Fehler behoben** — fehlende Übersetzungen ergänzt und einen Absturz beim arabischen Sprachsymbol behoben.

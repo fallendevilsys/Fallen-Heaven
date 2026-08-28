@@ -2,7 +2,7 @@
 
 > "Where fallen angels land" — turn your Discord status into something that's truly yours. Show games, music, or your Discord server right in your profile. Simple, local, no installation required.
 
-[![Version](https://img.shields.io/badge/Version-6.3.5-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
+[![Version](https://img.shields.io/badge/Version-6.3.6-9665ff)](https://github.com/fallendevilsys/Fallen-Heaven/releases)
 ![Languages](https://img.shields.io/badge/Languages-6-blue)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-black)
 
@@ -160,7 +160,16 @@ Locally in the app folder. The app is portable — just copy the folder.
 
 ## 📜 Version history
 
-**6.3.5** *(current)*
+**6.3.6** *(current)*
+- 🌍 **Improved language support** — German, English, Spanish, French, Russian, and Arabic work reliably.
+- 🎧 **Improved Spotify recognition** — song, artist, and cover appear automatically in your Discord status. Spotify is detected first.
+- 🐛 **Bugs fixed** — missing translations were added and a crash related to the Arabic language icon was fixed.
+
+**6.3.5**
+- 🐛 **Bug fixes** — minor issues fixed and the app made more stable.
+- ✨ **Improved startup animation** — softly glowing particles and a pulsing logo make startup feel smoother.
+
+
 - 🌍 **New and improved languages** — the app now supports 6 languages: German, English, Spanish, French, Russian, and Arabic. Language switching and Arabic rendering work reliably.
 - 🎧 **Improved Spotify recognition** — song, artist, and cover appear automatically in your Discord status. Spotify is detected first.
 - 🐛 **Bugs fixed** — missing translations were added and a crash related to the Arabic language icon was fixed.
