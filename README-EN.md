@@ -166,11 +166,11 @@ Locally in the app folder. The app is portable — just copy the folder.
 - ✨ **More everyday reliability** — the app is more stable and dependable in daily use.
 
 **6.3.5**
-- 🌍 **9 languages available** — Turkish, Italian, and Polish have been added.
-- 🚩 **Correct language flags** — each language now displays its matching flag.
-- 💬 **Fully translated interface** — dialogs and messages are available in all supported languages.
-- 🛠️ **Improvements and stability fixes** — the app runs more reliably in everyday use.
-- ✨ **Improved startup animation** — softly glowing particles and a pulsing logo make startup feel smoother.
+- 🐛 **Bug fixes** — minor issues were fixed and the app was made more stable.
+- ✨ **Improved startup animation** — softly glowing particles rise when the app opens, while the logo gets a pulsing glow.
+- 🌍 **New and improved languages** — the app now supports 6 languages: German, English, Spanish, French, Russian, and Arabic. Language switching and Arabic display work reliably.
+- 🎧 **Improved Spotify recognition** — song, artist, and cover appear automatically in your Discord status. Spotify is detected first.
+- 🐛 **Bugs fixed** — missing translations were added and a crash related to the Arabic language icon was fixed.
 
 **6.3.4**
 - 🖥️ **Fits every screen** — the app shrinks windows automatically on small monitors so nothing gets cut off.
