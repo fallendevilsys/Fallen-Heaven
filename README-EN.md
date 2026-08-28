@@ -161,11 +161,9 @@ Locally in the app folder. The app is portable — just copy the folder.
 ## 📜 Version history
 
 **6.3.5** *(current)*
-- 🌍 **Language support stabilized** — German, English, Spanish, French, Russian, and Arabic are available.
-- 🗣️ **Improved language center** — language switching, flags, and Arabic rendering are stable; the former crash caused by the Arabic language icon is fixed.
-- 🎧 **Spotify recognition** — song, artist, and cover appear in your Discord status. Spotify takes priority over the browser.
-- 🐛 **Translations completed** — missing dialog, settings, and status texts have been added in the 6 available languages.
-- ✅ **Stability and display improvements** — language support remains reliable after restarting the app.
+- 🌍 **New and improved languages** — the app now supports 6 languages: German, English, Spanish, French, Russian, and Arabic. Language switching and Arabic rendering work reliably.
+- 🎧 **Improved Spotify recognition** — song, artist, and cover appear automatically in your Discord status. Spotify is detected first.
+- 🐛 **Bugs fixed** — missing translations were added and a crash related to the Arabic language icon was fixed.
 
 **6.3.4**
 - 🖥️ **Fits every screen** — the app shrinks windows automatically on small monitors so nothing gets cut off.

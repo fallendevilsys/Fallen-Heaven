@@ -160,11 +160,9 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 ## 📜 Versionshistorie
 
 **6.3.5** *(aktuell)*
-- 🌍 **Sprachunterstützung stabilisiert** — Deutsch, Englisch, Spanisch, Französisch, Russisch und Arabisch sind verfügbar.
-- 🗣️ **Sprachzentrum verbessert** — Sprachwechsel, Flaggen und arabische Darstellung funktionieren stabil; der bisherige Absturz beim arabischen Sprachsymbol ist behoben.
-- 🎧 **Spotify-Erkennung** — Song, Interpret und Cover erscheinen in deinem Discord-Status. Spotify hat dabei Vorrang vor dem Browser.
-- 🐛 **Übersetzungen vervollständigt** — fehlende Dialog-, Einstellungs- und Statustexte wurden in den 6 verfügbaren Sprachen ergänzt.
-- ✅ **Stabilitäts- und Darstellungsverbesserungen** — die Sprachunterstützung bleibt auch nach einem Neustart zuverlässig erhalten.
+- 🌍 **Neue und verbesserte Sprachen** — die App unterstützt jetzt 6 Sprachen: Deutsch, Englisch, Spanisch, Französisch, Russisch und Arabisch. Sprachwechsel und arabische Darstellung funktionieren zuverlässig.
+- 🎧 **Spotify-Erkennung verbessert** — Song, Interpret und Cover erscheinen automatisch in deinem Discord-Status. Spotify wird dabei bevorzugt erkannt.
+- 🐛 **Fehler behoben** — fehlende Übersetzungen ergänzt und einen Absturz beim arabischen Sprachsymbol behoben.
 
 **6.3.4**
 - 🖥️ **Passt auf jeden Bildschirm** — die App verkleinert Fenster auf kleinen Monitoren automatisch, damit nichts abgeschnitten wird.
