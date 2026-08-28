@@ -169,7 +169,6 @@ Lokal im App-Ordner. Die App ist portabel — einfach den Ordner mitnehmen.
 - ✨ **Schönere Start-Animation** — leuchtende Partikel und ein sanft pulsierendes Logo sorgen für einen angenehmeren Start.
 - 🌍 **Sechs Sprachen** — Deutsch, Englisch, Spanisch, Französisch, Russisch und Arabisch werden unterstützt. Die Sprachumschaltung und arabische Darstellung funktionieren zuverlässig.
 - 🎧 **Spotify-Unterstützung verbessert** — Song, Interpret und Cover werden automatisch in deinem Discord-Status angezeigt.
-- 🐛 **Weitere Fehler behoben** — fehlende Übersetzungen ergänzt und einen Absturz beim arabischen Sprachsymbol beseitigt.
 
 ### 6.3.4
 - 🖥️ **Besser auf kleinen Bildschirmen** — die Fenstergröße passt sich an, damit alle Inhalte sichtbar bleiben.
