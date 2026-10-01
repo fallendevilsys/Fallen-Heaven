@@ -1,0 +1,56 @@
+# =====================================================================
+# Dieses Repo ist bewusst minimal.
+#
+# Oeffentlich sind nur: README, LICENSE, die Screenshots fuer die
+# README und docs/update-manifest.json (Update-Anker fuer die App).
+# Quellcode, Build-Tooling, interne Doku und die EXE liegen NICHT hier.
+#
+# Die Dateien unten bleiben lokal im Arbeitsordner und werden nie
+# committet - falls doch einmal, faengt diese Liste sie ab.
+# =====================================================================
+
+# Update-Manifest (das EINZIGE, was aus docs/ oeffentlich sein darf)
+docs/*
+!docs/update-manifest.json
+
+# Anwendung + Build
+*.exe
+*.dll
+*.pck
+*.pfx
+lib/
+tools/
+.github/
+release/
+rebuilt/
+bin/
+obj/
+keys/
+flag_cache/
+flag_data/
+backups/
+analysis/
+*.cs
+*.crproj
+*.iss
+
+# Lokale Konfiguration und Logs
+app-config.json
+*.log
+*.bak
+*.bundle
+*.zip
+start_app.bat
+launch_app.ps1
+app-config.json.before-*
+
+# Wegwerf-Ordner und Notizen aus der Entwicklung
+.freebuff/
+_update*/
+release-work/
+*.csproj
+PROJEKTSTAND.md
+SAC_AUSSCHALTEN.txt
+fh-*.png
+fh-*.ico
+server-icon-cache.png

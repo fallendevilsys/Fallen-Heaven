@@ -1,0 +1,20 @@
+# =====================================================================
+# Release-Archiv: nur die README + LICENSE
+#
+# GitHub haengt an jedes Release automatisch "Source code (zip/tar.gz)".
+# Das Archiv wird per 'git archive' erzeugt und beachtet 'export-ignore'.
+# Diese Regeln sind hier eine zweite Sicherheitslinie: selbst wenn
+# versehentlich mal eine Datei committet wird, landet sie nicht im
+# Download-Archiv, das sich Nutzer herunterladen koennen.
+#
+# Oeffentlich (und im Archiv) sind nur:
+#   README.md / README-EN.md   -> Anleitung, Verweis auf den Installer
+#   LICENSE                    -> Lizenz
+# =====================================================================
+*                export-ignore
+README.md        -export-ignore
+README-EN.md     -export-ignore
+LICENSE          -export-ignore
+
+# Update-Manifest wird nicht von GitHub-Linguist gezaehlt
+docs/update-manifest.json linguist-generated
